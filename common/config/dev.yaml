@@ -1,0 +1,14 @@
+
+mysql:
+  user: "root"
+  password: "mysql_nNP5wS"
+  host: "117.27.231.169"
+  port: "3306"
+  database: "seckill_project_db"
+
+redis:
+  host: "117.27.231.169:6379"
+  password: "redis_ZGcTkz"
+
+es:
+  address: "http://117.27.231.169:9200"

@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package product;
+option go_package = ".;product";
+
+message ProductDetailReq {
+  uint64 ProductId = 1;
+}
+
+message ProductDetailResp {
+  uint64 MerId = 1;
+  string Image = 2;
+  string StoreName = 3;
+  string StoreInfo = 4;
+  float  Price = 5;
+  float  VipPrice = 6;
+  float  Postage = 7;
+  uint64 Stock = 8;
+  uint64 IsShow = 9;
+  uint64 IsPostage = 10;
+  uint64 IsSeckill = 11;
+  uint64 Browse = 12;
+}
+
+service Product {
+  rpc ProductDetail(ProductDetailReq) returns (ProductDetailResp);
+}
