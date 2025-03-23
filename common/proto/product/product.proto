@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package product;
+option go_package = ".;product";
+
+message ProductDetailRequest {
+  uint64 ProductId = 1;
+}
+
+message ProductDetailResponse {
+   int64 Id = 1;//编号
+   string Image = 2; //图片
+   string StoreName = 3; //商品名称
+   string  StoreInfo = 4; //商品简介
+   float Price = 5; //商品价格
+   float Postage = 6; //邮费
+   int64  IsPostage = 7; //是否包邮
+   int64   Stock = 8; //库存
+   int64  Browse = 9; //浏览量
+}
+message EsAddProductRequest{
+}
+message EsAddProductResponse{
+  bool Success = 1;
+}
+message GetAllProductRequest{}
+message GetAllProductResponse{
+  repeated ProductDetailResponse AllProductResponse = 1;
+}
+service Product {
+  rpc ProductDetail(ProductDetailRequest) returns (ProductDetailResponse);
+  rpc EsAddProduct(EsAddProductRequest) returns (EsAddProductResponse);
+  rpc GetAllProduct(GetAllProductRequest) returns (GetAllProductResponse);
+}
