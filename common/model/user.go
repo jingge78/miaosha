@@ -19,6 +19,9 @@ type User struct {
 	Addres   string  `gorm:"column:addres;type:varchar(255);comment:详细地址;" json:"addres"`                              // 详细地址
 }
 
+func (u *User) TableName() string {
+	return "user"
+}
 func (u *User) LoginUser(account string) error {
 	return global.DB.Where("account = ?", account).Limit(1).Find(&u).Error
 }

@@ -43,7 +43,7 @@ func SetSearch(index string) error {
 	defer res.Body.Close()
 	return nil
 }
-func CreateEs(products []*product.ProductDetailResp) error {
+func CreateEs(products []*product.ProductDetailResponse) error {
 	err := SetSearch("product")
 	if err != nil {
 		return err
@@ -52,7 +52,7 @@ func CreateEs(products []*product.ProductDetailResp) error {
 	for _, productOne := range products {
 		wg.Add(1)
 
-		go func(productOne *product.ProductDetailResp) {
+		go func(productOne *product.ProductDetailResponse) {
 			defer wg.Done()
 
 			// Build the request body.
