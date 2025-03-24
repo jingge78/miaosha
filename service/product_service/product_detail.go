@@ -7,10 +7,6 @@ import (
 	"miaosha-jjl/common/proto/product"
 )
 
-type ServerProduct struct {
-	product.UnimplementedProductServer
-}
-
 func (p *ServerProduct) ProductDetail(ctx context.Context, in *product.ProductDetailRequest) (*product.ProductDetailResponse, error) {
 	productDetail := model.Product{}
 	err := productDetail.ProductDetailReq(in.ProductId)

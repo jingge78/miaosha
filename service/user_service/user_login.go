@@ -8,10 +8,6 @@ import (
 	"miaosha-jjl/common/utils"
 )
 
-type ServerUser struct {
-	user.UnimplementedUserServer
-}
-
 func (s *ServerUser) Login(ctx context.Context, in *user.LoginRequest) (*user.LoginResponse, error) {
 	var users model.User
 	err := users.LoginUser(in.Account)
