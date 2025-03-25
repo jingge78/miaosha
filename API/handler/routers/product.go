@@ -45,3 +45,18 @@ func ProductSyncEs(c *gin.Context) {
 	}
 	response.CurrencySuccessResponse(c, "同步成功", nil)
 }
+func EsSearchByKeyWord(c *gin.Context) {
+	var data request.EsSearchByKeyWordRequest
+	if err := c.ShouldBind(&data); err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	res, err := client.EsSearchByKeyWord(c, &product.EsSearchByKeyWordRequest{
+		KeyWord: data.KeyWord,
+	})
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	response.CurrencySuccessResponse(c, "查询成功", map[string]interface{}{"res": res.EsSearchByKeyWordResponse})
+}

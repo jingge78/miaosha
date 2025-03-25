@@ -56,3 +56,16 @@ func GetAllProduct(ctx context.Context, in *product.GetAllProductRequest) (*prod
 	}
 	return client.(*product.GetAllProductResponse), nil
 }
+func EsSearchByKeyWord(ctx context.Context, in *product.EsSearchByKeyWordRequest) (*product.EsSearchByKeyWordResponse, error) {
+	client, err := ProductClient(ctx, func(ctx context.Context, client product.ProductClient) (interface{}, error) {
+		detail, err := client.EsSearchByKeyWord(ctx, in)
+		if err != nil {
+			return nil, err
+		}
+		return detail, nil
+	})
+	if err != nil {
+		return nil, err
+	}
+	return client.(*product.EsSearchByKeyWordResponse), nil
+}

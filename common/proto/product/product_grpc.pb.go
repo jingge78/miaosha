@@ -19,9 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion8
 
 const (
-	Product_ProductDetail_FullMethodName = "/product.Product/ProductDetail"
-	Product_EsAddProduct_FullMethodName  = "/product.Product/EsAddProduct"
-	Product_GetAllProduct_FullMethodName = "/product.Product/GetAllProduct"
+	Product_ProductDetail_FullMethodName     = "/product.Product/ProductDetail"
+	Product_EsAddProduct_FullMethodName      = "/product.Product/EsAddProduct"
+	Product_GetAllProduct_FullMethodName     = "/product.Product/GetAllProduct"
+	Product_EsSearchByKeyWord_FullMethodName = "/product.Product/EsSearchByKeyWord"
 )
 
 // ProductClient is the client API for Product service.
@@ -31,6 +32,7 @@ type ProductClient interface {
 	ProductDetail(ctx context.Context, in *ProductDetailRequest, opts ...grpc.CallOption) (*ProductDetailResponse, error)
 	EsAddProduct(ctx context.Context, in *EsAddProductRequest, opts ...grpc.CallOption) (*EsAddProductResponse, error)
 	GetAllProduct(ctx context.Context, in *GetAllProductRequest, opts ...grpc.CallOption) (*GetAllProductResponse, error)
+	EsSearchByKeyWord(ctx context.Context, in *EsSearchByKeyWordRequest, opts ...grpc.CallOption) (*EsSearchByKeyWordResponse, error)
 }
 
 type productClient struct {
@@ -71,6 +73,16 @@ func (c *productClient) GetAllProduct(ctx context.Context, in *GetAllProductRequ
 	return out, nil
 }
 
+func (c *productClient) EsSearchByKeyWord(ctx context.Context, in *EsSearchByKeyWordRequest, opts ...grpc.CallOption) (*EsSearchByKeyWordResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EsSearchByKeyWordResponse)
+	err := c.cc.Invoke(ctx, Product_EsSearchByKeyWord_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ProductServer is the server API for Product service.
 // All implementations must embed UnimplementedProductServer
 // for forward compatibility
@@ -78,6 +90,7 @@ type ProductServer interface {
 	ProductDetail(context.Context, *ProductDetailRequest) (*ProductDetailResponse, error)
 	EsAddProduct(context.Context, *EsAddProductRequest) (*EsAddProductResponse, error)
 	GetAllProduct(context.Context, *GetAllProductRequest) (*GetAllProductResponse, error)
+	EsSearchByKeyWord(context.Context, *EsSearchByKeyWordRequest) (*EsSearchByKeyWordResponse, error)
 	mustEmbedUnimplementedProductServer()
 }
 
@@ -93,6 +106,9 @@ func (UnimplementedProductServer) EsAddProduct(context.Context, *EsAddProductReq
 }
 func (UnimplementedProductServer) GetAllProduct(context.Context, *GetAllProductRequest) (*GetAllProductResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllProduct not implemented")
+}
+func (UnimplementedProductServer) EsSearchByKeyWord(context.Context, *EsSearchByKeyWordRequest) (*EsSearchByKeyWordResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method EsSearchByKeyWord not implemented")
 }
 func (UnimplementedProductServer) mustEmbedUnimplementedProductServer() {}
 
@@ -161,6 +177,24 @@ func _Product_GetAllProduct_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Product_EsSearchByKeyWord_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EsSearchByKeyWordRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProductServer).EsSearchByKeyWord(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Product_EsSearchByKeyWord_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProductServer).EsSearchByKeyWord(ctx, req.(*EsSearchByKeyWordRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Product_ServiceDesc is the grpc.ServiceDesc for Product service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -179,6 +213,10 @@ var Product_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAllProduct",
 			Handler:    _Product_GetAllProduct_Handler,
+		},
+		{
+			MethodName: "EsSearchByKeyWord",
+			Handler:    _Product_EsSearchByKeyWord_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
