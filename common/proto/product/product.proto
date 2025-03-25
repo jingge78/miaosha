@@ -56,6 +56,28 @@ message PriceInfo{
   int64  Browse = 9; //浏览量
 }
 
+// 商品分类请求
+message ProductCategoryRequest {
+  int32 parent_id = 1;  // 用于获取指定父分类下的所有子分类，0代表根分类
+}
+
+// 商品分类响应
+message ProductCategoryResponse {
+  repeated Category categories = 1;  // 返回的分类列表
+
+  // 分类信息
+  message Category {
+    int32 id = 1;           // 分类ID
+    int32 parent_id = 2;    // 父分类ID
+    string cate_name = 3;   // 分类名称
+    string pic = 4;         // 分类图标
+    int32 sort = 5;         // 排序字段
+    int32 is_show = 6;       // 是否推荐
+    int32 add_time = 7;     // 添加时间
+    repeated Category sub_categories = 8; // 子分类，递归调用
+  }
+}
+
 
 service Product {
   rpc ProductDetail(ProductDetailRequest) returns (ProductDetailResponse);
@@ -63,4 +85,6 @@ service Product {
   rpc GetAllProduct(GetAllProductRequest) returns (GetAllProductResponse);
   rpc EsSearchByKeyWord(EsSearchByKeyWordRequest) returns (EsSearchByKeyWordResponse);
   rpc PriceFind(PriceFindRequest)returns(PriceFindResponse);//价格查找//jj
+  rpc ProductCategory(ProductCategoryRequest)returns(ProductCategoryResponse);//商品分类(liBang)
+
 }

@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="270bd093-53c3-4014-959c-f9b239f04893" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/common/utils/user_redis.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GOHCache.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GOHCache.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/global/global.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/global/global.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/initialition/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/initialition/init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/proto/user/user.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/user/user.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/proto/user/user.proto" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/user/user.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/user_service/user_password_recovery.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/user_service/user_password_recovery.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/user_service/user_sendsms.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/user_service/user_sendsms.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/client/product_client.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/client/product_client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/handler/routers/product.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/handler/routers/product.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/handler/routers/routers.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/handler/routers/routers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/model/store_category.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/model/store_category.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/proto/product/product.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/product/product.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/proto/product/product.proto" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/product/product.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/proto/product/product_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/product/product_grpc.pb.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +26,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../../GoWork/go1.23.6" />
+  <component name="GOROOT" url="file://D:/goWork/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.windows-amd64" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -44,24 +41,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultGoTemplateProperty": "Go File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "git-widget-placeholder": "gqr",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "D:/Users/鬼谷纵横/Desktop/123/miaosha/common",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;libang&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/李棒111&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\common" />
@@ -71,6 +69,10 @@
       <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\李棒111\Desktop\11\miaosha" />
+      <recent name="C:\Users\李棒111\Desktop\11\miaosha\common" />
+      <recent name="C:\Users\李棒111\Desktop\11\miaosha\common\model" />
+      <recent name="C:\Users\李棒111\Desktop\11\miaosha\service\product_service" />
       <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\common" />
     </key>
   </component>
