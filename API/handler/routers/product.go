@@ -45,6 +45,7 @@ func ProductSyncEs(c *gin.Context) {
 	}
 	response.CurrencySuccessResponse(c, "同步成功", nil)
 }
+<<<<<<< HEAD
 func EsSearchByKeyWord(c *gin.Context) {
 	var data request.EsSearchByKeyWordRequest
 	if err := c.ShouldBind(&data); err != nil {
@@ -54,9 +55,25 @@ func EsSearchByKeyWord(c *gin.Context) {
 	res, err := client.EsSearchByKeyWord(c, &product.EsSearchByKeyWordRequest{
 		KeyWord: data.KeyWord,
 	})
+=======
+func PriceFind(c *gin.Context) {
+	var data request.ProductPriceFind
+	err := c.ShouldBind(&data)
+>>>>>>> 191b45c85ebaaf39781b1967de285d914c6581a1
 	if err != nil {
 		response.CurrencyErrorResponse(c, err.Error())
 		return
 	}
+<<<<<<< HEAD
 	response.CurrencySuccessResponse(c, "查询成功", map[string]interface{}{"res": res.EsSearchByKeyWordResponse})
+=======
+	find, err := client.PriceFind(c, &product.PriceFindRequest{
+		Price: float32(data.Price),
+	})
+	if err != nil {
+		response.CurrencyErrorResponse(c, "查找失败")
+		return
+	}
+	response.CurrencySuccessResponse(c, "成功", map[string]interface{}{"price_find": find.List})
+>>>>>>> 191b45c85ebaaf39781b1967de285d914c6581a1
 }
