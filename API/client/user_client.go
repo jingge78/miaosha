@@ -56,3 +56,31 @@ func Update(ctx context.Context, i *user.UpdateRequest) (*user.UpdateResponse, e
 	}
 	return client.(*user.UpdateResponse), nil
 }
+
+func SendSms(ctx context.Context, i *user.SendSmsRequest) (*user.SendSmsResponse, error) {
+	client, err := UserClient(ctx, func(ctx context.Context, client user.UserClient) (interface{}, error) {
+		login, err := client.SendSms(ctx, i)
+		if err != nil {
+			return nil, err
+		}
+		return login, nil
+	})
+	if err != nil {
+		return nil, err
+	}
+	return client.(*user.SendSmsResponse), nil
+}
+
+func PasswordRecovery(ctx context.Context, i *user.PasswordRecoveryRequest) (*user.PasswordRecoveryResponse, error) {
+	client, err := UserClient(ctx, func(ctx context.Context, client user.UserClient) (interface{}, error) {
+		login, err := client.PasswordRecovery(ctx, i)
+		if err != nil {
+			return nil, err
+		}
+		return login, nil
+	})
+	if err != nil {
+		return nil, err
+	}
+	return client.(*user.PasswordRecoveryResponse), nil
+}

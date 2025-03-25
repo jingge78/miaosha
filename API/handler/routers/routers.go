@@ -8,6 +8,8 @@ func LoadRouters(r *gin.Engine) {
 		user.POST("/login", UserLogin)
 		user.POST("/register", UserRegister)
 		user.POST("/update", Update)
+		user.POST("/send", SendSms)
+		user.POST("/recovery", PassWordRecovery)
 	}
 	product := r.Group("/product")
 	{
