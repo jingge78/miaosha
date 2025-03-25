@@ -17,37 +17,6 @@
             </set>
           </value>
         </entry>
-<<<<<<< HEAD
-        <entry key="EsAddProductRequest">
-          <value>
-            <set>
-              <option value="file://$PROJECT_DIR$/common/proto/product/product.pb.go" />
-            </set>
-          </value>
-        </entry>
-        <entry key="EsAddProductResponse">
-          <value>
-            <set>
-              <option value="file://$PROJECT_DIR$/common/proto/product/product.pb.go" />
-            </set>
-          </value>
-        </entry>
-        <entry key="GetAllProductRequest">
-          <value>
-            <set>
-              <option value="file://$PROJECT_DIR$/common/proto/product/product.pb.go" />
-            </set>
-          </value>
-        </entry>
-        <entry key="GetAllProductResponse">
-          <value>
-            <set>
-              <option value="file://$PROJECT_DIR$/common/proto/product/product.pb.go" />
-            </set>
-          </value>
-        </entry>
-=======
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
         <entry key="JWT">
           <value>
             <set>
@@ -58,22 +27,16 @@
         <entry key="LoginRequest">
           <value>
             <set>
-<<<<<<< HEAD
               <option value="file://$PROJECT_DIR$/common/proto/user/user.pb.go" />
-=======
               <option value="file://$PROJECT_DIR$/common/proto/user/user/user.pb.go" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
             </set>
           </value>
         </entry>
         <entry key="LoginResponse">
           <value>
             <set>
-<<<<<<< HEAD
               <option value="file://$PROJECT_DIR$/common/proto/user/user.pb.go" />
-=======
               <option value="file://$PROJECT_DIR$/common/proto/user/user/user.pb.go" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
             </set>
           </value>
         </entry>
@@ -84,7 +47,6 @@
             </set>
           </value>
         </entry>
-<<<<<<< HEAD
         <entry key="ProductDetailRequest">
           <value>
             <set>
@@ -93,17 +55,6 @@
             </set>
           </value>
         </entry>
-        <entry key="ProductDetailResponse">
-=======
-        <entry key="ProductDetailReq">
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
-          <value>
-            <set>
-              <option value="file://$PROJECT_DIR$/common/proto/product/product.pb.go" />
-            </set>
-          </value>
-        </entry>
-<<<<<<< HEAD
         <entry key="RegisterRequest">
           <value>
             <set>
@@ -115,12 +66,6 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/common/proto/user/user.pb.go" />
-=======
-        <entry key="ProductDetailResp">
-          <value>
-            <set>
-              <option value="file://$PROJECT_DIR$/common/proto/product/product.pb.go" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
             </set>
           </value>
         </entry>
@@ -134,11 +79,8 @@
         <entry key="ServerUser">
           <value>
             <set>
-<<<<<<< HEAD
-              <option value="file://$PROJECT_DIR$/service/user_service/user_login.go" />
-=======
               <option value="file://$PROJECT_DIR$/service/user_service/user.go" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
+              <option value="file://$PROJECT_DIR$/service/user_service/user_login.go" />
             </set>
           </value>
         </entry>
@@ -152,7 +94,7 @@
         <entry key="UnimplementedUserServer">
           <value>
             <set>
-<<<<<<< HEAD
+              <option value="file://$PROJECT_DIR$/common/proto/user/user/user_grpc.pb.go" />
               <option value="file://$PROJECT_DIR$/common/proto/user/user_grpc.pb.go" />
             </set>
           </value>
@@ -175,9 +117,6 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/common/proto/user/user.pb.go" />
-=======
-              <option value="file://$PROJECT_DIR$/common/proto/user/user/user_grpc.pb.go" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
             </set>
           </value>
         </entry>
@@ -188,7 +127,6 @@
             </set>
           </value>
         </entry>
-<<<<<<< HEAD
         <entry key="UserLoginRequest">
           <value>
             <set>
@@ -203,8 +141,6 @@
             </set>
           </value>
         </entry>
-=======
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
         <entry key="productClient">
           <value>
             <set>
@@ -215,23 +151,16 @@
         <entry key="userClient">
           <value>
             <set>
-<<<<<<< HEAD
-              <option value="file://$PROJECT_DIR$/common/proto/user/user_grpc.pb.go" />
-=======
               <option value="file://$PROJECT_DIR$/common/proto/user/user/user_grpc.pb.go" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
+              <option value="file://$PROJECT_DIR$/common/proto/user/user_grpc.pb.go" />
             </set>
           </value>
         </entry>
         <entry key="x">
           <value>
             <set>
-              <option value="file://$PROJECT_DIR$/common/proto/product/product.pb.go" />
-<<<<<<< HEAD
               <option value="file://$PROJECT_DIR$/common/proto/user/user.pb.go" />
-=======
               <option value="file://$PROJECT_DIR$/common/proto/user/user/user.pb.go" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
             </set>
           </value>
         </entry>
@@ -239,7 +168,13 @@
     </option>
     <option name="scannedPathMapping">
       <map>
-<<<<<<< HEAD
+        <entry key="file://$PROJECT_DIR$/API/client/client.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742868295289" />
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/API/client/product_client.go">
           <value>
             <ScannedPath>
@@ -258,31 +193,20 @@
           <value>
             <ScannedPath>
               <option name="lastModified" value="1742789571982" />
-=======
-        <entry key="file://$PROJECT_DIR$/API/client/client.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1742615778214" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/API/handler/routers/routers.go">
           <value>
             <ScannedPath>
-<<<<<<< HEAD
-              <option name="lastModified" value="1742819348996" />
-=======
-              <option name="lastModified" value="1742615778239" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
+              <option name="lastModified" value="1742868295290" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/API/handler/routers/user.go">
           <value>
             <ScannedPath>
-<<<<<<< HEAD
-              <option name="lastModified" value="1742819590645" />
+              <option name="lastModified" value="1742868295290" />
             </ScannedPath>
           </value>
         </entry>
@@ -295,17 +219,13 @@
                   <option value="ProductDetailRequest" />
                 </list>
               </option>
-=======
-              <option name="lastModified" value="1742615778253" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/API/request/user.go">
           <value>
             <ScannedPath>
-<<<<<<< HEAD
-              <option name="lastModified" value="1742819348696" />
+              <option name="lastModified" value="1742868295291" />
               <option name="schema">
                 <list>
                   <option value="UserLoginRequest" />
@@ -313,42 +233,27 @@
                   <option value="Update" />
                 </list>
               </option>
-=======
-              <option name="lastModified" value="1742615778274" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/API/response/currencyResponse.go">
           <value>
             <ScannedPath>
-<<<<<<< HEAD
-              <option name="lastModified" value="1742789571984" />
-=======
-              <option name="lastModified" value="1742615778293" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
+              <option name="lastModified" value="1742868295292" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/common/GRPC/registerGrpc.go">
           <value>
             <ScannedPath>
-<<<<<<< HEAD
               <option name="lastModified" value="1742789571986" />
-=======
-              <option name="lastModified" value="1742615778318" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/common/config/config.go">
           <value>
             <ScannedPath>
-<<<<<<< HEAD
               <option name="lastModified" value="1742789571986" />
-=======
-              <option name="lastModified" value="1742615778337" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
               <option name="schema">
                 <list>
                   <option value="Config" />
@@ -360,44 +265,28 @@
         <entry key="file://$PROJECT_DIR$/common/global/global.go">
           <value>
             <ScannedPath>
-<<<<<<< HEAD
               <option name="lastModified" value="1742789571987" />
-=======
-              <option name="lastModified" value="1742615778366" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/common/initialition/init.go">
           <value>
             <ScannedPath>
-<<<<<<< HEAD
-              <option name="lastModified" value="1742789571988" />
-=======
-              <option name="lastModified" value="1742615778383" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
+              <option name="lastModified" value="1742868295293" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/common/middleware/rabbitmq.go">
           <value>
             <ScannedPath>
-<<<<<<< HEAD
               <option name="lastModified" value="1742789571989" />
-=======
-              <option name="lastModified" value="1742615778400" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/common/model/product.go">
           <value>
             <ScannedPath>
-<<<<<<< HEAD
-              <option name="lastModified" value="1742789571989" />
-=======
-              <option name="lastModified" value="1742615778420" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
+              <option name="lastModified" value="1742868295294" />
               <option name="schema">
                 <list>
                   <option value="Product" />
@@ -409,11 +298,7 @@
         <entry key="file://$PROJECT_DIR$/common/model/user.go">
           <value>
             <ScannedPath>
-<<<<<<< HEAD
-              <option name="lastModified" value="1742821449562" />
-=======
-              <option name="lastModified" value="1742617834049" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
+              <option name="lastModified" value="1742868295294" />
               <option name="schema">
                 <list>
                   <option value="User" />
@@ -425,7 +310,6 @@
         <entry key="file://$PROJECT_DIR$/common/pkg/aliPay.go">
           <value>
             <ScannedPath>
-<<<<<<< HEAD
               <option name="lastModified" value="1742789571990" />
             </ScannedPath>
           </value>
@@ -434,20 +318,13 @@
           <value>
             <ScannedPath>
               <option name="lastModified" value="1742789571991" />
-=======
-              <option name="lastModified" value="1742615778463" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/common/pkg/jwt.go">
           <value>
             <ScannedPath>
-<<<<<<< HEAD
               <option name="lastModified" value="1742789571991" />
-=======
-              <option name="lastModified" value="1742615778474" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
               <option name="schema">
                 <list>
                   <option value="CustomClaims" />
@@ -460,24 +337,10 @@
         <entry key="file://$PROJECT_DIR$/common/proto/product/product.pb.go">
           <value>
             <ScannedPath>
-<<<<<<< HEAD
-              <option name="lastModified" value="1742789571993" />
+              <option name="lastModified" value="1742868295295" />
               <option name="schema">
                 <list>
                   <option value="ProductDetailRequest" />
-                  <option value="ProductDetailResponse" />
-                  <option value="EsAddProductRequest" />
-                  <option value="EsAddProductResponse" />
-                  <option value="GetAllProductRequest" />
-                  <option value="GetAllProductResponse" />
-=======
-              <option name="lastModified" value="1742615778499" />
-              <option name="schema">
-                <list>
-                  <option value="ProductDetailReq" />
-                  <option value="ProductDetailResp" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
-                  <option value="x" />
                 </list>
               </option>
             </ScannedPath>
@@ -486,11 +349,7 @@
         <entry key="file://$PROJECT_DIR$/common/proto/product/product_grpc.pb.go">
           <value>
             <ScannedPath>
-<<<<<<< HEAD
-              <option name="lastModified" value="1742789571994" />
-=======
-              <option name="lastModified" value="1742615778521" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
+              <option name="lastModified" value="1742868295296" />
               <option name="schema">
                 <list>
                   <option value="productClient" />
@@ -500,45 +359,55 @@
             </ScannedPath>
           </value>
         </entry>
-<<<<<<< HEAD
         <entry key="file://$PROJECT_DIR$/common/proto/user/user.pb.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742816957882" />
-=======
-        <entry key="file://$PROJECT_DIR$/common/proto/user/user/user.pb.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1742616240146" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
+              <option name="lastModified" value="1742817733184" />
               <option name="schema">
                 <list>
                   <option value="LoginRequest" />
                   <option value="LoginResponse" />
-<<<<<<< HEAD
                   <option value="RegisterRequest" />
                   <option value="RegisterResponse" />
                   <option value="UpdateRequest" />
                   <option value="UpdateResponse" />
-=======
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
                   <option value="x" />
                 </list>
               </option>
             </ScannedPath>
           </value>
         </entry>
-<<<<<<< HEAD
-        <entry key="file://$PROJECT_DIR$/common/proto/user/user_grpc.pb.go">
+        <entry key="file://$PROJECT_DIR$/common/proto/user/user/user.pb.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742816957882" />
-=======
+              <option name="lastModified" value="1742868295297" />
+              <option name="schema">
+                <list>
+                  <option value="LoginRequest" />
+                  <option value="LoginResponse" />
+                  <option value="x" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/common/proto/user/user/user_grpc.pb.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742616240146" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
+              <option name="lastModified" value="1742868295298" />
+              <option name="schema">
+                <list>
+                  <option value="userClient" />
+                  <option value="UnimplementedUserServer" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/common/proto/user/user_grpc.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742817733184" />
               <option name="schema">
                 <list>
                   <option value="userClient" />
@@ -551,40 +420,27 @@
         <entry key="file://$PROJECT_DIR$/common/utils/md5.go">
           <value>
             <ScannedPath>
-<<<<<<< HEAD
               <option name="lastModified" value="1742789571996" />
-=======
-              <option name="lastModified" value="1742615778559" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/docs/api_start.go">
           <value>
             <ScannedPath>
-<<<<<<< HEAD
-              <option name="lastModified" value="1742821278245" />
-=======
-              <option name="lastModified" value="1742615778578" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
+              <option name="lastModified" value="1742868295299" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/docs/service_start.go">
           <value>
             <ScannedPath>
-<<<<<<< HEAD
-              <option name="lastModified" value="1742817442247" />
-=======
-              <option name="lastModified" value="1742615778589" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
+              <option name="lastModified" value="1742868295299" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/service/order_service/order.go">
           <value>
             <ScannedPath>
-<<<<<<< HEAD
               <option name="lastModified" value="1742789571998" />
             </ScannedPath>
           </value>
@@ -600,27 +456,20 @@
           <value>
             <ScannedPath>
               <option name="lastModified" value="1742789571999" />
-=======
-              <option name="lastModified" value="1742615778632" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/service/product_service/product.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742615778651" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
+              <option name="lastModified" value="1742868295299" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/service/product_service/product_detail.go">
           <value>
             <ScannedPath>
-<<<<<<< HEAD
-              <option name="lastModified" value="1742789571999" />
-=======
-              <option name="lastModified" value="1742615778660" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
+              <option name="lastModified" value="1742868295300" />
               <option name="schema">
                 <list>
                   <option value="ServerProduct" />
@@ -632,25 +481,14 @@
         <entry key="file://$PROJECT_DIR$/service/register/register.go">
           <value>
             <ScannedPath>
-<<<<<<< HEAD
-              <option name="lastModified" value="1742789572000" />
-            </ScannedPath>
-          </value>
-        </entry>
-        <entry key="file://$PROJECT_DIR$/service/user_service/user_login.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1742789572000" />
-=======
-              <option name="lastModified" value="1742617599944" />
+              <option name="lastModified" value="1742868295300" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/service/user_service/user.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742617599842" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
+              <option name="lastModified" value="1742868295302" />
               <option name="schema">
                 <list>
                   <option value="ServerUser" />
@@ -659,7 +497,18 @@
             </ScannedPath>
           </value>
         </entry>
-<<<<<<< HEAD
+        <entry key="file://$PROJECT_DIR$/service/user_service/user_login.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742789572000" />
+              <option name="schema">
+                <list>
+                  <option value="ServerUser" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/service/user_service/user_register.go">
           <value>
             <ScannedPath>
@@ -674,40 +523,24 @@
             </ScannedPath>
           </value>
         </entry>
-=======
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
       </map>
     </option>
     <option name="tableStructMapping">
       <map>
         <entry key="config" value="Config" />
         <entry key="custom_claims" value="CustomClaims" />
-<<<<<<< HEAD
-        <entry key="es_add_product_request" value="EsAddProductRequest" />
-        <entry key="es_add_product_response" value="EsAddProductResponse" />
-        <entry key="get_all_product_request" value="GetAllProductRequest" />
-        <entry key="get_all_product_response" value="GetAllProductResponse" />
-=======
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
         <entry key="jwt" value="JWT" />
         <entry key="login_request" value="LoginRequest" />
         <entry key="login_response" value="LoginResponse" />
         <entry key="product" value="Product" />
         <entry key="product_client" value="productClient" />
-<<<<<<< HEAD
         <entry key="product_detail_request" value="ProductDetailRequest" />
-        <entry key="product_detail_response" value="ProductDetailResponse" />
         <entry key="register_request" value="RegisterRequest" />
         <entry key="register_response" value="RegisterResponse" />
-=======
-        <entry key="product_detail_req" value="ProductDetailReq" />
-        <entry key="product_detail_resp" value="ProductDetailResp" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
         <entry key="server_product" value="ServerProduct" />
         <entry key="server_user" value="ServerUser" />
         <entry key="unimplemented_product_server" value="UnimplementedProductServer" />
         <entry key="unimplemented_user_server" value="UnimplementedUserServer" />
-<<<<<<< HEAD
         <entry key="update" value="Update" />
         <entry key="update_request" value="UpdateRequest" />
         <entry key="update_response" value="UpdateResponse" />
@@ -718,14 +551,6 @@
         <entry key="x" value="x" />
       </map>
     </option>
-    <option name="lastTimeChecked" value="1742817478427" />
-=======
-        <entry key="user" value="User" />
-        <entry key="user_client" value="userClient" />
-        <entry key="x" value="x" />
-      </map>
-    </option>
-    <option name="lastTimeChecked" value="1742728513953" />
->>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
+    <option name="lastTimeChecked" value="1742868643766" />
   </component>
 </project>

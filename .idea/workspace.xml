@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe4dbae9-a541-4d91-beb6-52f33aa9b13f" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/GOHCache.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GOHCache.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shopping.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/client/user_client.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/client/user_client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/handler/routers/routers.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/handler/routers/routers.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/handler/routers/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/handler/routers/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/request/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/request/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/model/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/proto/user/user.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/user/user.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/proto/user/user.proto" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/user/user.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/proto/user/user_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/user/user_grpc.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,32 +20,32 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2ulJy321uoOO027nB5Ea5eMwahV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Go 构建.go build miaosha-jjl/docs (1).executor": "Run",
-    "Go 构建.go build miaosha-jjl/docs.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "git-widget-placeholder": "main",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/Users/17029",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Go 构建.go build miaosha-jjl/docs (1).executor&quot;: &quot;Run&quot;,
+    &quot;Go 构建.go build miaosha-jjl/docs.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;jj&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/17029&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Go 构建.go build miaosha-jjl/docs (1)">
     <configuration name="go build miaosha-jjl/docs (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="miaosha" />
