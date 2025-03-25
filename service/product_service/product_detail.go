@@ -7,11 +7,14 @@ import (
 	"miaosha-jjl/common/proto/product"
 )
 
+<<<<<<< HEAD
 type ServerProduct struct {
 	product.UnimplementedProductServer
 }
 
 <<<<<<< HEAD
+=======
+>>>>>>> f7cd67524df94e75b5a629c18176469208cedc32
 func (p *ServerProduct) ProductDetail(ctx context.Context, in *product.ProductDetailRequest) (*product.ProductDetailResponse, error) {
 	productDetail := model.Product{}
 	err := productDetail.ProductDetailReq(in.ProductId)

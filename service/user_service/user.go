@@ -1,14 +1,19 @@
 package user_service
 
+<<<<<<< HEAD
 import (
 	"context"
 	"miaosha-jjl/common/model"
 	"miaosha-jjl/common/proto/user/user"
 )
+=======
+import "miaosha-jjl/common/proto/user"
+>>>>>>> f7cd67524df94e75b5a629c18176469208cedc32
 
 type ServerUser struct {
 	user.UnimplementedUserServer
 }
+<<<<<<< HEAD
 
 func (s ServerUser) Login(ctx context.Context, in *user.LoginRequest) (*user.LoginResponse, error) {
 	var users model.User
@@ -24,3 +29,5 @@ func (s ServerUser) Login(ctx context.Context, in *user.LoginRequest) (*user.Log
 	}
 	return &user.LoginResponse{Result: "登录成功"}, err
 }
+=======
+>>>>>>> f7cd67524df94e75b5a629c18176469208cedc32
