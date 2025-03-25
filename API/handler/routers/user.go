@@ -52,3 +52,17 @@ func UserRegister(c *gin.Context) {
 	}
 	response.CurrencySuccessResponse(c, "用户注册成功", nil)
 }
+func Update(c *gin.Context) {
+	var data request.Update
+	err := c.ShouldBind(&data)
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	_, err = client.Update(c, &user.UpdateRequest{
+		Account:  data.Account,
+		Password: data.Password,
+	})
+	response.CurrencySuccessResponse(c, "用户密码修改成功", nil)
+
+}

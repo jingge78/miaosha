@@ -43,3 +43,16 @@ func UserRegister(ctx context.Context, in *user.RegisterRequest) (*user.Register
 	}
 	return client.(*user.RegisterResponse), nil
 }
+func Update(ctx context.Context, i *user.UpdateRequest) (*user.UpdateResponse, error) {
+	client, err := UserClient(ctx, func(ctx context.Context, client user.UserClient) (interface{}, error) {
+		login, err := client.Update(ctx, i)
+		if err != nil {
+			return nil, err
+		}
+		return login, nil
+	})
+	if err != nil {
+		return nil, err
+	}
+	return client.(*user.UpdateResponse), nil
+}

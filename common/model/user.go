@@ -22,9 +22,15 @@ type User struct {
 func (u *User) TableName() string {
 	return "user"
 }
+
 func (u *User) LoginUser(account string) error {
 	return global.DB.Where("account = ?", account).Limit(1).Find(&u).Error
 }
+
 func (u *User) Create() error {
 	return global.DB.Create(&u).Error
+}
+
+func (u *User) Update(account string, pwd string) error {
+	return global.DB.Model(&User{}).Where("account = ?", account).Update("pwd", pwd).Error
 }

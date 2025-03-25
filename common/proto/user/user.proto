@@ -17,7 +17,15 @@ message RegisterRequest{
 message RegisterResponse{
   bool success = 1;
 }
+message UpdateRequest{
+  string account = 1;
+  string password = 2;
+}
+message UpdateResponse{
+  bool success = 1;
+}
 service User {
   rpc Login(LoginRequest) returns(LoginResponse);
   rpc Register(RegisterRequest) returns(RegisterResponse);
+  rpc Update(UpdateRequest) returns(UpdateResponse);
 }
