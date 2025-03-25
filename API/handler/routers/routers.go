@@ -14,5 +14,6 @@ func LoadRouters(r *gin.Engine) {
 		product.GET("/detail", ProductDetail)
 		product.GET("/list", ProductList)
 		product.POST("/sync/es", ProductSyncEs)
+		product.POST("/price", PriceFind)
 	}
 }

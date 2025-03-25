@@ -56,3 +56,16 @@ func GetAllProduct(ctx context.Context, in *product.GetAllProductRequest) (*prod
 	}
 	return client.(*product.GetAllProductResponse), nil
 }
+func PriceFind(ctx context.Context, i *product.PriceFindRequest) (*product.PriceFindResponse, error) {
+	client, err := ProductClient(ctx, func(ctx context.Context, client product.ProductClient) (interface{}, error) {
+		find, err := client.PriceFind(ctx, i)
+		if err != nil {
+			return nil, err
+		}
+		return find, err
+	})
+	if err != nil {
+		return nil, err
+	}
+	return client.(*product.PriceFindResponse), err
+}

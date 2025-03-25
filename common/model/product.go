@@ -31,3 +31,9 @@ func (p *Product) GetAllProduct() ([]Product, error) {
 	err := global.DB.Find(&allProduct).Error
 	return allProduct, err
 }
+
+// 价格查找//jj
+func (p *Product) PriceFind(price float64) (Pro []*Product, err error) {
+	err = global.DB.Where("price = ?", price).Find(&Pro).Error
+	return Pro, err
+}

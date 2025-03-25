@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package user;
 option go_package=".;user";
-
+//账号登录//jj
 message LoginRequest {
   string account = 1;
   string password = 2;
@@ -25,7 +25,7 @@ message UpdateResponse{
   bool success = 1;
 }
 service User {
-  rpc Login(LoginRequest) returns(LoginResponse);
+  rpc Login(LoginRequest) returns(LoginResponse);//账号登录//jj
   rpc Register(RegisterRequest) returns(RegisterResponse);
   rpc Update(UpdateRequest) returns(UpdateResponse);
 }

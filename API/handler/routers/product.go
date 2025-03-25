@@ -45,3 +45,19 @@ func ProductSyncEs(c *gin.Context) {
 	}
 	response.CurrencySuccessResponse(c, "同步成功", nil)
 }
+func PriceFind(c *gin.Context) {
+	var data request.ProductPriceFind
+	err := c.ShouldBind(&data)
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	find, err := client.PriceFind(c, &product.PriceFindRequest{
+		Price: float32(data.Price),
+	})
+	if err != nil {
+		response.CurrencyErrorResponse(c, "查找失败")
+		return
+	}
+	response.CurrencySuccessResponse(c, "成功", map[string]interface{}{"price_find": find.List})
+}
