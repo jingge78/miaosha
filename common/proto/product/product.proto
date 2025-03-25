@@ -27,14 +27,14 @@ message GetAllProductRequest{}
 message GetAllProductResponse{
   repeated ProductDetailResponse AllProductResponse = 1;
 }
-<<<<<<< HEAD
+
 message EsSearchByKeyWordRequest{
   string KeyWord = 1;
 }
 message EsSearchByKeyWordResponse{
   repeated ProductDetailResponse EsSearchByKeyWordResponse = 1;
 }
-=======
+
 
 
 //商品表的价格查找//jj
@@ -56,14 +56,11 @@ message PriceInfo{
   int64  Browse = 9; //浏览量
 }
 
->>>>>>> 191b45c85ebaaf39781b1967de285d914c6581a1
+
 service Product {
   rpc ProductDetail(ProductDetailRequest) returns (ProductDetailResponse);
   rpc EsAddProduct(EsAddProductRequest) returns (EsAddProductResponse);
   rpc GetAllProduct(GetAllProductRequest) returns (GetAllProductResponse);
-<<<<<<< HEAD
   rpc EsSearchByKeyWord(EsSearchByKeyWordRequest) returns (EsSearchByKeyWordResponse);
-=======
   rpc PriceFind(PriceFindRequest)returns(PriceFindResponse);//价格查找//jj
->>>>>>> 191b45c85ebaaf39781b1967de285d914c6581a1
 }

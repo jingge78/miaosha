@@ -19,17 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-<<<<<<< HEAD
 	Product_ProductDetail_FullMethodName     = "/product.Product/ProductDetail"
 	Product_EsAddProduct_FullMethodName      = "/product.Product/EsAddProduct"
 	Product_GetAllProduct_FullMethodName     = "/product.Product/GetAllProduct"
 	Product_EsSearchByKeyWord_FullMethodName = "/product.Product/EsSearchByKeyWord"
-=======
-	Product_ProductDetail_FullMethodName = "/product.Product/ProductDetail"
-	Product_EsAddProduct_FullMethodName  = "/product.Product/EsAddProduct"
-	Product_GetAllProduct_FullMethodName = "/product.Product/GetAllProduct"
-	Product_PriceFind_FullMethodName     = "/product.Product/PriceFind"
->>>>>>> 191b45c85ebaaf39781b1967de285d914c6581a1
+	Product_PriceFind_FullMethodName         = "/product.Product/PriceFind"
 )
 
 // ProductClient is the client API for Product service.
@@ -39,11 +33,8 @@ type ProductClient interface {
 	ProductDetail(ctx context.Context, in *ProductDetailRequest, opts ...grpc.CallOption) (*ProductDetailResponse, error)
 	EsAddProduct(ctx context.Context, in *EsAddProductRequest, opts ...grpc.CallOption) (*EsAddProductResponse, error)
 	GetAllProduct(ctx context.Context, in *GetAllProductRequest, opts ...grpc.CallOption) (*GetAllProductResponse, error)
-<<<<<<< HEAD
 	EsSearchByKeyWord(ctx context.Context, in *EsSearchByKeyWordRequest, opts ...grpc.CallOption) (*EsSearchByKeyWordResponse, error)
-=======
 	PriceFind(ctx context.Context, in *PriceFindRequest, opts ...grpc.CallOption) (*PriceFindResponse, error)
->>>>>>> 191b45c85ebaaf39781b1967de285d914c6581a1
 }
 
 type productClient struct {
@@ -84,17 +75,20 @@ func (c *productClient) GetAllProduct(ctx context.Context, in *GetAllProductRequ
 	return out, nil
 }
 
-<<<<<<< HEAD
 func (c *productClient) EsSearchByKeyWord(ctx context.Context, in *EsSearchByKeyWordRequest, opts ...grpc.CallOption) (*EsSearchByKeyWordResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(EsSearchByKeyWordResponse)
 	err := c.cc.Invoke(ctx, Product_EsSearchByKeyWord_FullMethodName, in, out, cOpts...)
-=======
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *productClient) PriceFind(ctx context.Context, in *PriceFindRequest, opts ...grpc.CallOption) (*PriceFindResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(PriceFindResponse)
 	err := c.cc.Invoke(ctx, Product_PriceFind_FullMethodName, in, out, cOpts...)
->>>>>>> 191b45c85ebaaf39781b1967de285d914c6581a1
 	if err != nil {
 		return nil, err
 	}
@@ -108,11 +102,8 @@ type ProductServer interface {
 	ProductDetail(context.Context, *ProductDetailRequest) (*ProductDetailResponse, error)
 	EsAddProduct(context.Context, *EsAddProductRequest) (*EsAddProductResponse, error)
 	GetAllProduct(context.Context, *GetAllProductRequest) (*GetAllProductResponse, error)
-<<<<<<< HEAD
 	EsSearchByKeyWord(context.Context, *EsSearchByKeyWordRequest) (*EsSearchByKeyWordResponse, error)
-=======
 	PriceFind(context.Context, *PriceFindRequest) (*PriceFindResponse, error)
->>>>>>> 191b45c85ebaaf39781b1967de285d914c6581a1
 	mustEmbedUnimplementedProductServer()
 }
 
@@ -132,13 +123,11 @@ func (UnimplementedProductServer) EsAddProduct(context.Context, *EsAddProductReq
 func (UnimplementedProductServer) GetAllProduct(context.Context, *GetAllProductRequest) (*GetAllProductResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllProduct not implemented")
 }
-<<<<<<< HEAD
 func (UnimplementedProductServer) EsSearchByKeyWord(context.Context, *EsSearchByKeyWordRequest) (*EsSearchByKeyWordResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method EsSearchByKeyWord not implemented")
-=======
+}
 func (UnimplementedProductServer) PriceFind(context.Context, *PriceFindRequest) (*PriceFindResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PriceFind not implemented")
->>>>>>> 191b45c85ebaaf39781b1967de285d914c6581a1
 }
 func (UnimplementedProductServer) mustEmbedUnimplementedProductServer() {}
 func (UnimplementedProductServer) testEmbeddedByValue()                 {}
@@ -215,18 +204,12 @@ func _Product_GetAllProduct_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-<<<<<<< HEAD
 func _Product_EsSearchByKeyWord_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(EsSearchByKeyWordRequest)
-=======
-func _Product_PriceFind_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PriceFindRequest)
->>>>>>> 191b45c85ebaaf39781b1967de285d914c6581a1
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-<<<<<<< HEAD
 		return srv.(ProductServer).EsSearchByKeyWord(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
@@ -235,7 +218,16 @@ func _Product_PriceFind_Handler(srv interface{}, ctx context.Context, dec func(i
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ProductServer).EsSearchByKeyWord(ctx, req.(*EsSearchByKeyWordRequest))
-=======
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Product_PriceFind_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PriceFindRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
 		return srv.(ProductServer).PriceFind(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
@@ -244,7 +236,6 @@ func _Product_PriceFind_Handler(srv interface{}, ctx context.Context, dec func(i
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ProductServer).PriceFind(ctx, req.(*PriceFindRequest))
->>>>>>> 191b45c85ebaaf39781b1967de285d914c6581a1
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -269,13 +260,12 @@ var Product_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Product_GetAllProduct_Handler,
 		},
 		{
-<<<<<<< HEAD
 			MethodName: "EsSearchByKeyWord",
 			Handler:    _Product_EsSearchByKeyWord_Handler,
-=======
+		},
+		{
 			MethodName: "PriceFind",
 			Handler:    _Product_PriceFind_Handler,
->>>>>>> 191b45c85ebaaf39781b1967de285d914c6581a1
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
