@@ -6,6 +6,7 @@ import (
 	"miaosha-jjl/API/request"
 	"miaosha-jjl/API/response"
 	"miaosha-jjl/common/proto/product"
+	"strconv"
 )
 
 func ProductDetail(c *gin.Context) {
@@ -88,4 +89,18 @@ func GetCollectProduct(c *gin.Context) {
 		return
 	}
 	response.CurrencySuccessResponse(c, "查询成功", map[string]interface{}{"collectProduct": collectProduct.GetCollectProductResponse})
+}
+
+func ProductCategory(c *gin.Context) {
+
+	parentId, _ := strconv.Atoi(c.Query("parent_id"))
+	find, err := client.GetProductCategory(c, &product.ProductCategoryRequest{
+		ParentId: int32(parentId),
+	})
+	if err != nil {
+		response.CurrencyErrorResponse(c, "展示失败")
+		return
+	}
+	response.CurrencySuccessResponse(c, "分类展示成功", map[string]interface{}{"product_category": find})
+
 }

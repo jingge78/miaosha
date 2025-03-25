@@ -22,6 +22,6 @@ func (s *ServerUser) PasswordRecovery(ctx context.Context, in *user.PasswordReco
 	if users.Uid == 0 {
 		return nil, errors.New("用户不存在，请前往注册")
 	}
-
-	return &user.PasswordRecoveryResponse{Password: users.Pwd}, nil
+	decrypt := utils.Decrypt(users.Pwd)
+	return &user.PasswordRecoveryResponse{Password: decrypt}, nil
 }

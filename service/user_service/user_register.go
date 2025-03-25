@@ -19,7 +19,7 @@ func (s *ServerUser) Register(ctx context.Context, in *user.RegisterRequest) (*u
 	}
 	userAdd := model.User{
 		Account: in.Account,
-		Pwd:     utils.Md5(in.Password),
+		Pwd:     utils.Encryption(in.Password),
 	}
 	err = userAdd.Create()
 	if err != nil {

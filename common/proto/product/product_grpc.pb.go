@@ -25,6 +25,7 @@ const (
 	Product_EsSearchByKeyWord_FullMethodName = "/product.Product/EsSearchByKeyWord"
 	Product_PriceFind_FullMethodName         = "/product.Product/PriceFind"
 	Product_GetCollectProduct_FullMethodName = "/product.Product/GetCollectProduct"
+	Product_ProductCategory_FullMethodName   = "/product.Product/ProductCategory"
 )
 
 // ProductClient is the client API for Product service.
@@ -37,6 +38,7 @@ type ProductClient interface {
 	EsSearchByKeyWord(ctx context.Context, in *EsSearchByKeyWordRequest, opts ...grpc.CallOption) (*EsSearchByKeyWordResponse, error)
 	PriceFind(ctx context.Context, in *PriceFindRequest, opts ...grpc.CallOption) (*PriceFindResponse, error)
 	GetCollectProduct(ctx context.Context, in *GetCollectProductRequest, opts ...grpc.CallOption) (*GetCollectProductResponse, error)
+	ProductCategory(ctx context.Context, in *ProductCategoryRequest, opts ...grpc.CallOption) (*ProductCategoryResponse, error)
 }
 
 type productClient struct {
@@ -107,6 +109,16 @@ func (c *productClient) GetCollectProduct(ctx context.Context, in *GetCollectPro
 	return out, nil
 }
 
+func (c *productClient) ProductCategory(ctx context.Context, in *ProductCategoryRequest, opts ...grpc.CallOption) (*ProductCategoryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ProductCategoryResponse)
+	err := c.cc.Invoke(ctx, Product_ProductCategory_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ProductServer is the server API for Product service.
 // All implementations must embed UnimplementedProductServer
 // for forward compatibility
@@ -117,6 +129,7 @@ type ProductServer interface {
 	EsSearchByKeyWord(context.Context, *EsSearchByKeyWordRequest) (*EsSearchByKeyWordResponse, error)
 	PriceFind(context.Context, *PriceFindRequest) (*PriceFindResponse, error)
 	GetCollectProduct(context.Context, *GetCollectProductRequest) (*GetCollectProductResponse, error)
+	ProductCategory(context.Context, *ProductCategoryRequest) (*ProductCategoryResponse, error)
 	mustEmbedUnimplementedProductServer()
 }
 
@@ -141,6 +154,9 @@ func (UnimplementedProductServer) PriceFind(context.Context, *PriceFindRequest) 
 }
 func (UnimplementedProductServer) GetCollectProduct(context.Context, *GetCollectProductRequest) (*GetCollectProductResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCollectProduct not implemented")
+}
+func (UnimplementedProductServer) ProductCategory(context.Context, *ProductCategoryRequest) (*ProductCategoryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ProductCategory not implemented")
 }
 func (UnimplementedProductServer) mustEmbedUnimplementedProductServer() {}
 
@@ -263,6 +279,24 @@ func _Product_GetCollectProduct_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Product_ProductCategory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ProductCategoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProductServer).ProductCategory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Product_ProductCategory_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProductServer).ProductCategory(ctx, req.(*ProductCategoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Product_ServiceDesc is the grpc.ServiceDesc for Product service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -293,6 +327,10 @@ var Product_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetCollectProduct",
 			Handler:    _Product_GetCollectProduct_Handler,
+		},
+		{
+			MethodName: "ProductCategory",
+			Handler:    _Product_ProductCategory_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

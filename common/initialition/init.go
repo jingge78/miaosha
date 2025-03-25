@@ -32,7 +32,7 @@ func InitZap() {
 	zap.ReplaceGlobals(build)
 }
 func InitConfig() {
-	viper.SetConfigFile("common/config/dev.yaml")
+	viper.SetConfigFile("../common/config/dev.yaml")
 	err := viper.ReadInConfig()
 	if err != nil {
 		panic(err)
