@@ -11,4 +11,8 @@ redis:
   password: "redis_ZGcTkz"
 
 es:
+<<<<<<< HEAD
   address: "http://14.103.137.85:9200"
+=======
+  address: "http://117.27.231.169:9200"
+>>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f

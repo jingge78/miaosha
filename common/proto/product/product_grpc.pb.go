@@ -20,17 +20,24 @@ const _ = grpc.SupportPackageIsVersion8
 
 const (
 	Product_ProductDetail_FullMethodName = "/product.Product/ProductDetail"
+<<<<<<< HEAD
 	Product_EsAddProduct_FullMethodName  = "/product.Product/EsAddProduct"
 	Product_GetAllProduct_FullMethodName = "/product.Product/GetAllProduct"
+=======
+>>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
 )
 
 // ProductClient is the client API for Product service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ProductClient interface {
+<<<<<<< HEAD
 	ProductDetail(ctx context.Context, in *ProductDetailRequest, opts ...grpc.CallOption) (*ProductDetailResponse, error)
 	EsAddProduct(ctx context.Context, in *EsAddProductRequest, opts ...grpc.CallOption) (*EsAddProductResponse, error)
 	GetAllProduct(ctx context.Context, in *GetAllProductRequest, opts ...grpc.CallOption) (*GetAllProductResponse, error)
+=======
+	ProductDetail(ctx context.Context, in *ProductDetailReq, opts ...grpc.CallOption) (*ProductDetailResp, error)
+>>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
 }
 
 type productClient struct {
@@ -41,9 +48,15 @@ func NewProductClient(cc grpc.ClientConnInterface) ProductClient {
 	return &productClient{cc}
 }
 
+<<<<<<< HEAD
 func (c *productClient) ProductDetail(ctx context.Context, in *ProductDetailRequest, opts ...grpc.CallOption) (*ProductDetailResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ProductDetailResponse)
+=======
+func (c *productClient) ProductDetail(ctx context.Context, in *ProductDetailReq, opts ...grpc.CallOption) (*ProductDetailResp, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ProductDetailResp)
+>>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
 	err := c.cc.Invoke(ctx, Product_ProductDetail_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -51,6 +64,7 @@ func (c *productClient) ProductDetail(ctx context.Context, in *ProductDetailRequ
 	return out, nil
 }
 
+<<<<<<< HEAD
 func (c *productClient) EsAddProduct(ctx context.Context, in *EsAddProductRequest, opts ...grpc.CallOption) (*EsAddProductResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(EsAddProductResponse)
@@ -71,13 +85,19 @@ func (c *productClient) GetAllProduct(ctx context.Context, in *GetAllProductRequ
 	return out, nil
 }
 
+=======
+>>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
 // ProductServer is the server API for Product service.
 // All implementations must embed UnimplementedProductServer
 // for forward compatibility
 type ProductServer interface {
+<<<<<<< HEAD
 	ProductDetail(context.Context, *ProductDetailRequest) (*ProductDetailResponse, error)
 	EsAddProduct(context.Context, *EsAddProductRequest) (*EsAddProductResponse, error)
 	GetAllProduct(context.Context, *GetAllProductRequest) (*GetAllProductResponse, error)
+=======
+	ProductDetail(context.Context, *ProductDetailReq) (*ProductDetailResp, error)
+>>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
 	mustEmbedUnimplementedProductServer()
 }
 
@@ -85,6 +105,7 @@ type ProductServer interface {
 type UnimplementedProductServer struct {
 }
 
+<<<<<<< HEAD
 func (UnimplementedProductServer) ProductDetail(context.Context, *ProductDetailRequest) (*ProductDetailResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ProductDetail not implemented")
 }
@@ -94,6 +115,11 @@ func (UnimplementedProductServer) EsAddProduct(context.Context, *EsAddProductReq
 func (UnimplementedProductServer) GetAllProduct(context.Context, *GetAllProductRequest) (*GetAllProductResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllProduct not implemented")
 }
+=======
+func (UnimplementedProductServer) ProductDetail(context.Context, *ProductDetailReq) (*ProductDetailResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ProductDetail not implemented")
+}
+>>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
 func (UnimplementedProductServer) mustEmbedUnimplementedProductServer() {}
 
 // UnsafeProductServer may be embedded to opt out of forward compatibility for this service.
@@ -108,7 +134,11 @@ func RegisterProductServer(s grpc.ServiceRegistrar, srv ProductServer) {
 }
 
 func _Product_ProductDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+<<<<<<< HEAD
 	in := new(ProductDetailRequest)
+=======
+	in := new(ProductDetailReq)
+>>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -120,6 +150,7 @@ func _Product_ProductDetail_Handler(srv interface{}, ctx context.Context, dec fu
 		FullMethod: Product_ProductDetail_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+<<<<<<< HEAD
 		return srv.(ProductServer).ProductDetail(ctx, req.(*ProductDetailRequest))
 	}
 	return interceptor(ctx, in, info, handler)
@@ -157,6 +188,9 @@ func _Product_GetAllProduct_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ProductServer).GetAllProduct(ctx, req.(*GetAllProductRequest))
+=======
+		return srv.(ProductServer).ProductDetail(ctx, req.(*ProductDetailReq))
+>>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -172,6 +206,7 @@ var Product_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "ProductDetail",
 			Handler:    _Product_ProductDetail_Handler,
 		},
+<<<<<<< HEAD
 		{
 			MethodName: "EsAddProduct",
 			Handler:    _Product_EsAddProduct_Handler,
@@ -180,6 +215,8 @@ var Product_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "GetAllProduct",
 			Handler:    _Product_GetAllProduct_Handler,
 		},
+=======
+>>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
 	},
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "product.proto",

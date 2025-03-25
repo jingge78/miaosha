@@ -1,4 +1,5 @@
 package routers
+<<<<<<< HEAD
 
 import (
 	"github.com/gin-gonic/gin"
@@ -66,3 +67,5 @@ func Update(c *gin.Context) {
 	response.CurrencySuccessResponse(c, "用户密码修改成功", nil)
 
 }
+=======
+>>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f

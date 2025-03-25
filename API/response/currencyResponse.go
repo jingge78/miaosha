@@ -1,4 +1,5 @@
 package response
+<<<<<<< HEAD
 
 import "github.com/gin-gonic/gin"
 
@@ -16,3 +17,5 @@ func CurrencyErrorResponse(c *gin.Context, msg string) {
 		"data": nil,
 	})
 }
+=======
+>>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f

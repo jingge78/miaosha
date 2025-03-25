@@ -8,7 +8,10 @@ import (
 	"go.uber.org/zap"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
+<<<<<<< HEAD
 	"gorm.io/gorm/logger"
+=======
+>>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
 	"log"
 	"miaosha-jjl/common/global"
 	"os"
@@ -44,9 +47,13 @@ func InitDB() {
 	var err error
 	config := global.GlobalConfig.Mysql
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=True", config.User, config.Password, config.Host, config.Port, config.Database)
+<<<<<<< HEAD
 	global.DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Info),
 	})
+=======
+	global.DB, err = gorm.Open(mysql.Open(dsn))
+>>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
 	if err != nil {
 		panic(err)
 	}

@@ -20,6 +20,7 @@ type Product struct {
 	Browse    uint64  `gorm:"column:browse;type:int;comment:浏览量;default:0;" json:"browse"`                                              // 浏览量
 }
 
+<<<<<<< HEAD
 func (p *Product) TableName() string {
 	return "product"
 }
@@ -30,4 +31,8 @@ func (p *Product) GetAllProduct() ([]Product, error) {
 	var allProduct []Product
 	err := global.DB.Find(&allProduct).Error
 	return allProduct, err
+=======
+func (p *Product) ProductDetailReq(productId uint64) error {
+	return global.DB.Debug().Table("product").Where("id = ?", productId).Limit(1).Find(&p).Error
+>>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
 }

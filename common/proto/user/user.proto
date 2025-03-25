@@ -1,12 +1,17 @@
 syntax = "proto3";
 
 package user;
+<<<<<<< HEAD
 option go_package=".;user";
+=======
+option go_package="./user";
+>>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
 
 message LoginRequest {
   string account = 1;
   string password = 2;
 }
+<<<<<<< HEAD
 message LoginResponse {
   int64 userId = 1;
 }
@@ -28,4 +33,13 @@ service User {
   rpc Login(LoginRequest) returns(LoginResponse);
   rpc Register(RegisterRequest) returns(RegisterResponse);
   rpc Update(UpdateRequest) returns(UpdateResponse);
+=======
+
+message LoginResponse {
+  string result = 1;
+}
+
+service User {
+  rpc Login(LoginRequest) returns(LoginResponse);
+>>>>>>> 48fbf0b70a09b7d084435cde89b1029c8e82fc3f
 }
