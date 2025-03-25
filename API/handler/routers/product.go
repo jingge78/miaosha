@@ -60,3 +60,14 @@ func EsSearchByKeyWord(c *gin.Context) {
 	}
 	response.CurrencySuccessResponse(c, "查询成功", map[string]interface{}{"res": res.EsSearchByKeyWordResponse})
 }
+func GetCollectProduct(c *gin.Context) {
+	userId := c.GetUint("userId")
+	collectProduct, err := client.GetCollectProduct(c, &product.GetCollectProductRequest{
+		UserId: int64(userId),
+	})
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	response.CurrencySuccessResponse(c, "查询成功", map[string]interface{}{"collectProduct": collectProduct.GetCollectProductResponse})
+}

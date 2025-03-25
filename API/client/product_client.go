@@ -69,3 +69,17 @@ func EsSearchByKeyWord(ctx context.Context, in *product.EsSearchByKeyWordRequest
 	}
 	return client.(*product.EsSearchByKeyWordResponse), nil
 }
+
+func GetCollectProduct(ctx context.Context, in *product.GetCollectProductRequest) (*product.GetCollectProductResponse, error) {
+	client, err := ProductClient(ctx, func(ctx context.Context, client product.ProductClient) (interface{}, error) {
+		detail, err := client.GetCollectProduct(ctx, in)
+		if err != nil {
+			return nil, err
+		}
+		return detail, nil
+	})
+	if err != nil {
+		return nil, err
+	}
+	return client.(*product.GetCollectProductResponse), nil
+}

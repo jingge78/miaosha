@@ -23,6 +23,7 @@ const (
 	Product_EsAddProduct_FullMethodName      = "/product.Product/EsAddProduct"
 	Product_GetAllProduct_FullMethodName     = "/product.Product/GetAllProduct"
 	Product_EsSearchByKeyWord_FullMethodName = "/product.Product/EsSearchByKeyWord"
+	Product_GetCollectProduct_FullMethodName = "/product.Product/GetCollectProduct"
 )
 
 // ProductClient is the client API for Product service.
@@ -33,6 +34,7 @@ type ProductClient interface {
 	EsAddProduct(ctx context.Context, in *EsAddProductRequest, opts ...grpc.CallOption) (*EsAddProductResponse, error)
 	GetAllProduct(ctx context.Context, in *GetAllProductRequest, opts ...grpc.CallOption) (*GetAllProductResponse, error)
 	EsSearchByKeyWord(ctx context.Context, in *EsSearchByKeyWordRequest, opts ...grpc.CallOption) (*EsSearchByKeyWordResponse, error)
+	GetCollectProduct(ctx context.Context, in *GetCollectProductRequest, opts ...grpc.CallOption) (*GetCollectProductResponse, error)
 }
 
 type productClient struct {
@@ -83,6 +85,16 @@ func (c *productClient) EsSearchByKeyWord(ctx context.Context, in *EsSearchByKey
 	return out, nil
 }
 
+func (c *productClient) GetCollectProduct(ctx context.Context, in *GetCollectProductRequest, opts ...grpc.CallOption) (*GetCollectProductResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetCollectProductResponse)
+	err := c.cc.Invoke(ctx, Product_GetCollectProduct_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ProductServer is the server API for Product service.
 // All implementations must embed UnimplementedProductServer
 // for forward compatibility
@@ -91,6 +103,7 @@ type ProductServer interface {
 	EsAddProduct(context.Context, *EsAddProductRequest) (*EsAddProductResponse, error)
 	GetAllProduct(context.Context, *GetAllProductRequest) (*GetAllProductResponse, error)
 	EsSearchByKeyWord(context.Context, *EsSearchByKeyWordRequest) (*EsSearchByKeyWordResponse, error)
+	GetCollectProduct(context.Context, *GetCollectProductRequest) (*GetCollectProductResponse, error)
 	mustEmbedUnimplementedProductServer()
 }
 
@@ -109,6 +122,9 @@ func (UnimplementedProductServer) GetAllProduct(context.Context, *GetAllProductR
 }
 func (UnimplementedProductServer) EsSearchByKeyWord(context.Context, *EsSearchByKeyWordRequest) (*EsSearchByKeyWordResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method EsSearchByKeyWord not implemented")
+}
+func (UnimplementedProductServer) GetCollectProduct(context.Context, *GetCollectProductRequest) (*GetCollectProductResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCollectProduct not implemented")
 }
 func (UnimplementedProductServer) mustEmbedUnimplementedProductServer() {}
 
@@ -195,6 +211,24 @@ func _Product_EsSearchByKeyWord_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Product_GetCollectProduct_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCollectProductRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProductServer).GetCollectProduct(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Product_GetCollectProduct_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProductServer).GetCollectProduct(ctx, req.(*GetCollectProductRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Product_ServiceDesc is the grpc.ServiceDesc for Product service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -217,6 +251,10 @@ var Product_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "EsSearchByKeyWord",
 			Handler:    _Product_EsSearchByKeyWord_Handler,
+		},
+		{
+			MethodName: "GetCollectProduct",
+			Handler:    _Product_GetCollectProduct_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

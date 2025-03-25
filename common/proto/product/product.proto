@@ -33,9 +33,22 @@ message EsSearchByKeyWordRequest{
 message EsSearchByKeyWordResponse{
   repeated ProductDetailResponse EsSearchByKeyWordResponse = 1;
 }
+message GetCollectProductRequest{
+  int64 UserId = 1;
+}
+message CollectProduct{
+   int64  ProductId = 1;
+  string  Type = 2;
+  string Category = 3;
+  int64   AddTime = 4;
+}
+message GetCollectProductResponse{
+  repeated CollectProduct GetCollectProductResponse = 1;
+}
 service Product {
   rpc ProductDetail(ProductDetailRequest) returns (ProductDetailResponse);
   rpc EsAddProduct(EsAddProductRequest) returns (EsAddProductResponse);
   rpc GetAllProduct(GetAllProductRequest) returns (GetAllProductResponse);
   rpc EsSearchByKeyWord(EsSearchByKeyWordRequest) returns (EsSearchByKeyWordResponse);
+  rpc GetCollectProduct(GetCollectProductRequest) returns (GetCollectProductResponse);
 }
