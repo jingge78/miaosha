@@ -3,7 +3,7 @@ package initialition
 import (
 	"fmt"
 	"github.com/elastic/go-elasticsearch/v7"
-	"github.com/go-redis/redis"
+	"github.com/go-redis/redis/v8"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
 	"gorm.io/driver/mysql"
@@ -56,12 +56,15 @@ func InitRdb() {
 	config := global.GlobalConfig.Redis
 	global.Rdb = redis.NewClient(&redis.Options{
 		Addr:     config.Host,
-		Password: config.Password,
+		Password: config.Password, // no password set
+		DB:       0,               // use default DB
 	})
-	err := global.Rdb.Ping().Err()
+
+	pong, err := global.Rdb.Ping(global.CTX).Result()
 	if err != nil {
 		panic(err)
 	}
+	fmt.Println(pong, err)
 	log.Println("Redis connect successful!!")
 }
 func InitEs() {

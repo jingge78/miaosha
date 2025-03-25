@@ -241,6 +241,13 @@
     </option>
     <option name="scannedPathMapping">
       <map>
+        <entry key="file://$PROJECT_DIR$/../../../../../GoWork/zg5/common/initialize/redis/redis.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742901185418" />
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/API/client/product_client.go">
           <value>
             <ScannedPath>
@@ -321,14 +328,14 @@
         <entry key="file://$PROJECT_DIR$/common/global/global.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742889039397" />
+              <option name="lastModified" value="1742901408429" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/common/initialition/init.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742889039398" />
+              <option name="lastModified" value="1742901418395" />
             </ScannedPath>
           </value>
         </entry>
@@ -464,6 +471,13 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/common/utils/user_redis.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742902101180" />
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/service/order_service/order.go">
           <value>
             <ScannedPath>
@@ -552,7 +566,7 @@
         <entry key="file://$PROJECT_DIR$/service/user_service/user_password_recovery.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742897898467" />
+              <option name="lastModified" value="1742902164984" />
             </ScannedPath>
           </value>
         </entry>
@@ -566,7 +580,7 @@
         <entry key="file://$PROJECT_DIR$/service/user_service/user_sendsms.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742894570639" />
+              <option name="lastModified" value="1742902223572" />
             </ScannedPath>
           </value>
         </entry>

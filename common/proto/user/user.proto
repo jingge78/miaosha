@@ -26,13 +26,14 @@ message UpdateResponse{
 }
 message PasswordRecoveryRequest{
   string account = 1;
+  string mobile = 2;
+  string sendSms = 3;
 }
 message PasswordRecoveryResponse{
   string password = 2;
 }
 message SendSmsRequest{
   string mobile = 1;
-  string source = 2;
 }
 message SendSmsResponse{
   bool success = 1;

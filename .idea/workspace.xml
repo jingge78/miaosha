@@ -5,26 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="270bd093-53c3-4014-959c-f9b239f04893" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/common/model/product_reply.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/model/store_category.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/model/store_order.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/model/user_enter.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/proto/order/order.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/proto/order/order.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/proto/order/order_grpc.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/proto/user_enter/user_enter.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/proto/user_enter/user_enter.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/proto/user_enter/user_enter_grpc.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/user_service/user_password_recovery.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/user_service/user_sendsms.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/utils/user_redis.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/GOHCache.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GOHCache.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/handler/routers/routers.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/handler/routers/routers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/global/global.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/global/global.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/initialition/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/initialition/init.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/proto/user/user.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/user/user.pb.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/proto/user/user.proto" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/user/user.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/proto/user/user_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/user/user_grpc.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/utils/md5.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/utils/md5.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/user_service/user_login.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/user_service/user_login.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/user_service/user_password_recovery.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/user_service/user_password_recovery.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/user_service/user_sendsms.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/user_service/user_sendsms.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
