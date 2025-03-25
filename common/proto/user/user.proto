@@ -24,8 +24,23 @@ message UpdateRequest{
 message UpdateResponse{
   bool success = 1;
 }
+message PasswordRecoveryRequest{
+  string account = 1;
+}
+message PasswordRecoveryResponse{
+  string password = 2;
+}
+message SendSmsRequest{
+  string mobile = 1;
+  string source = 2;
+}
+message SendSmsResponse{
+  bool success = 1;
+}
 service User {
   rpc Login(LoginRequest) returns(LoginResponse);//账号登录//jj
   rpc Register(RegisterRequest) returns(RegisterResponse);
   rpc Update(UpdateRequest) returns(UpdateResponse);
+  rpc SendSms(SendSmsRequest) returns(SendSmsResponse);
+  rpc PasswordRecovery(PasswordRecoveryRequest) returns(PasswordRecoveryResponse);
 }

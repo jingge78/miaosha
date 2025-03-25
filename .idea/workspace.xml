@@ -5,23 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="270bd093-53c3-4014-959c-f9b239f04893" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/model/product_reply.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/model/store_category.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/model/store_order.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/model/user_enter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/proto/order/order.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/proto/order/order.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/proto/order/order_grpc.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/proto/user_enter/user_enter.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/proto/user_enter/user_enter.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/proto/user_enter/user_enter_grpc.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/user_service/user_password_recovery.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/user_service/user_sendsms.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/GOHCache.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GOHCache.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/miaosha-main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/client/product_client.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/client/product_client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/handler/routers/product.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/handler/routers/product.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/request/product.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/request/product.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/proto/product/product.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/proto/product/product.proto" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/product/product.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/proto/product/product_grpc.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/handler/routers/routers.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/handler/routers/routers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/proto/user/user.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/user/user.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/proto/user/user.proto" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/user/user.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/proto/user/user_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/user/user_grpc.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/utils/md5.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/utils/md5.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/user_service/user_login.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/user_service/user_login.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="GOROOT" url="file://$APPLICATION_HOME_DIR$/gocode/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.windows-amd64" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../../GoWork/go1.23.6" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -38,20 +55,34 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "gqr",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/Users/17029",
+    "last_opened_file_path": "D:/Users/鬼谷纵横/Desktop/123/miaosha/common",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\common" />
+      <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha" />
+      <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\common\proto" />
+      <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\common\model" />
+      <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\common" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
