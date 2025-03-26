@@ -19,6 +19,7 @@ func LoadRouters(r *gin.Engine) {
 		product.POST("/sync/es", ProductSyncEs)
 		product.GET("/search/es", EsSearchByKeyWord)
 		product.Use(pkg.JWTAuth("2209A"))
+		//收藏商品展示
 		product.POST("/collect/list", GetCollectProduct)
 	}
 }
