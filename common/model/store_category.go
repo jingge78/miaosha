@@ -54,3 +54,25 @@ func (s *StoreCategory) GetCateWithChild(pid int) (StoreCategory, error) {
 
 	return cate, nil
 }
+
+// 分页
+// PageSizeListByCategory 按分类分页查询
+func (s *StoreCategory) PageSizeListByCategory(parentID int64, page int, pageSize int) ([]StoreCategory, error) {
+	var storeCategory []StoreCategory
+	if page < 1 {
+		page = 1
+	}
+	if pageSize < 1 {
+		pageSize = 10
+	} else if pageSize > 100 {
+		pageSize = 100
+	}
+	offset := (page - 1) * pageSize
+
+	query := global.DB.Model(&StoreCategory{}).Where("pid = ?", parentID)
+	err := query.Offset(offset).Limit(pageSize).Find(&storeCategory).Error
+	if err != nil {
+		return nil, err
+	}
+	return storeCategory, nil
+}

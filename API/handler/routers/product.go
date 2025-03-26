@@ -104,3 +104,32 @@ func ProductCategory(c *gin.Context) {
 	response.CurrencySuccessResponse(c, "分类展示成功", map[string]interface{}{"product_category": find})
 
 }
+func WebsiteProductList(c *gin.Context) {
+	var data request.WebsiteProductReq
+	err := c.ShouldBind(&data)
+	if err != nil {
+		response.CurrencyErrorResponse(c, "参数请求出错")
+		return
+	}
+	list, err := client.WebsiteProductList(c, &product.WebsiteProductListRequest{
+		CategoryId: int32(data.CategoryId),
+		Page:       int32(data.Page),
+		PageSize:   int32(data.PageSize),
+	})
+	if err != nil {
+		response.CurrencyErrorResponse(c, "展示失败")
+		return
+	}
+	response.CurrencySuccessResponse(c, "分类展示成功", map[string]interface{}{"website_product_list": list})
+}
+func ProductSort(c *gin.Context) {
+	IsShow, _ := strconv.Atoi(c.Query("is_show"))
+	list, err := client.ProductSort(c, &product.ProductSortRequest{
+		IsShow: int64(IsShow),
+	})
+	if err != nil {
+		response.CurrencyErrorResponse(c, "展示失败")
+		return
+	}
+	response.CurrencySuccessResponse(c, "分类展示成功", map[string]interface{}{"product_sort": list})
+}

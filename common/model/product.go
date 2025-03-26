@@ -37,3 +37,14 @@ func (p *Product) PriceFind(price float64) (Pro []*Product, err error) {
 	err = global.DB.Where("price = ?", price).Find(&Pro).Error
 	return Pro, err
 }
+
+// 按价格和上架状态排序
+func (p *Product) ProductSortByIsShowOrPrice(isShow int) ([]Product, error) {
+
+	var product []Product
+	err := global.DB.Order("price DESC").Where("is_show = ?", isShow).Find(&product).Error
+	if err != nil {
+		return nil, err
+	}
+	return product, nil
+}

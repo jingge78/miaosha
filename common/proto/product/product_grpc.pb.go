@@ -19,13 +19,15 @@ import (
 const _ = grpc.SupportPackageIsVersion8
 
 const (
-	Product_ProductDetail_FullMethodName     = "/product.Product/ProductDetail"
-	Product_EsAddProduct_FullMethodName      = "/product.Product/EsAddProduct"
-	Product_GetAllProduct_FullMethodName     = "/product.Product/GetAllProduct"
-	Product_EsSearchByKeyWord_FullMethodName = "/product.Product/EsSearchByKeyWord"
-	Product_PriceFind_FullMethodName         = "/product.Product/PriceFind"
-	Product_GetCollectProduct_FullMethodName = "/product.Product/GetCollectProduct"
-	Product_ProductCategory_FullMethodName   = "/product.Product/ProductCategory"
+	Product_ProductDetail_FullMethodName      = "/product.Product/ProductDetail"
+	Product_EsAddProduct_FullMethodName       = "/product.Product/EsAddProduct"
+	Product_GetAllProduct_FullMethodName      = "/product.Product/GetAllProduct"
+	Product_EsSearchByKeyWord_FullMethodName  = "/product.Product/EsSearchByKeyWord"
+	Product_PriceFind_FullMethodName          = "/product.Product/PriceFind"
+	Product_GetCollectProduct_FullMethodName  = "/product.Product/GetCollectProduct"
+	Product_ProductCategory_FullMethodName    = "/product.Product/ProductCategory"
+	Product_WebsiteProductList_FullMethodName = "/product.Product/WebsiteProductList"
+	Product_ProductSort_FullMethodName        = "/product.Product/ProductSort"
 )
 
 // ProductClient is the client API for Product service.
@@ -39,6 +41,8 @@ type ProductClient interface {
 	PriceFind(ctx context.Context, in *PriceFindRequest, opts ...grpc.CallOption) (*PriceFindResponse, error)
 	GetCollectProduct(ctx context.Context, in *GetCollectProductRequest, opts ...grpc.CallOption) (*GetCollectProductResponse, error)
 	ProductCategory(ctx context.Context, in *ProductCategoryRequest, opts ...grpc.CallOption) (*ProductCategoryResponse, error)
+	WebsiteProductList(ctx context.Context, in *WebsiteProductListRequest, opts ...grpc.CallOption) (*WebsiteProductListResponse, error)
+	ProductSort(ctx context.Context, in *ProductSortRequest, opts ...grpc.CallOption) (*ProductSortResponse, error)
 }
 
 type productClient struct {
@@ -119,6 +123,26 @@ func (c *productClient) ProductCategory(ctx context.Context, in *ProductCategory
 	return out, nil
 }
 
+func (c *productClient) WebsiteProductList(ctx context.Context, in *WebsiteProductListRequest, opts ...grpc.CallOption) (*WebsiteProductListResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(WebsiteProductListResponse)
+	err := c.cc.Invoke(ctx, Product_WebsiteProductList_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *productClient) ProductSort(ctx context.Context, in *ProductSortRequest, opts ...grpc.CallOption) (*ProductSortResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ProductSortResponse)
+	err := c.cc.Invoke(ctx, Product_ProductSort_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ProductServer is the server API for Product service.
 // All implementations must embed UnimplementedProductServer
 // for forward compatibility
@@ -130,6 +154,8 @@ type ProductServer interface {
 	PriceFind(context.Context, *PriceFindRequest) (*PriceFindResponse, error)
 	GetCollectProduct(context.Context, *GetCollectProductRequest) (*GetCollectProductResponse, error)
 	ProductCategory(context.Context, *ProductCategoryRequest) (*ProductCategoryResponse, error)
+	WebsiteProductList(context.Context, *WebsiteProductListRequest) (*WebsiteProductListResponse, error)
+	ProductSort(context.Context, *ProductSortRequest) (*ProductSortResponse, error)
 	mustEmbedUnimplementedProductServer()
 }
 
@@ -157,6 +183,12 @@ func (UnimplementedProductServer) GetCollectProduct(context.Context, *GetCollect
 }
 func (UnimplementedProductServer) ProductCategory(context.Context, *ProductCategoryRequest) (*ProductCategoryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ProductCategory not implemented")
+}
+func (UnimplementedProductServer) WebsiteProductList(context.Context, *WebsiteProductListRequest) (*WebsiteProductListResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method WebsiteProductList not implemented")
+}
+func (UnimplementedProductServer) ProductSort(context.Context, *ProductSortRequest) (*ProductSortResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ProductSort not implemented")
 }
 func (UnimplementedProductServer) mustEmbedUnimplementedProductServer() {}
 
@@ -297,6 +329,42 @@ func _Product_ProductCategory_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Product_WebsiteProductList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(WebsiteProductListRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProductServer).WebsiteProductList(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Product_WebsiteProductList_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProductServer).WebsiteProductList(ctx, req.(*WebsiteProductListRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Product_ProductSort_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ProductSortRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProductServer).ProductSort(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Product_ProductSort_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProductServer).ProductSort(ctx, req.(*ProductSortRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Product_ServiceDesc is the grpc.ServiceDesc for Product service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -331,6 +399,14 @@ var Product_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ProductCategory",
 			Handler:    _Product_ProductCategory_Handler,
+		},
+		{
+			MethodName: "WebsiteProductList",
+			Handler:    _Product_WebsiteProductList_Handler,
+		},
+		{
+			MethodName: "ProductSort",
+			Handler:    _Product_ProductSort_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

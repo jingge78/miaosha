@@ -110,5 +110,34 @@ func GetProductCategory(ctx context.Context, i *product.ProductCategoryRequest) 
 	}
 
 	return client.(*product.ProductCategoryResponse), err
+}
+func WebsiteProductList(ctx context.Context, in *product.WebsiteProductListRequest) (*product.WebsiteProductListResponse, error) {
 
+	client, err := ProductClient(ctx, func(ctx context.Context, client product.ProductClient) (interface{}, error) {
+		find, err := client.WebsiteProductList(ctx, in)
+		if err != nil {
+			return nil, err
+		}
+		return find, err
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return client.(*product.WebsiteProductListResponse), err
+}
+func ProductSort(ctx context.Context, in *product.ProductSortRequest) (*product.ProductSortResponse, error) {
+
+	client, err := ProductClient(ctx, func(ctx context.Context, client product.ProductClient) (interface{}, error) {
+		find, err := client.ProductSort(ctx, in)
+		if err != nil {
+			return nil, err
+		}
+		return find, err
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return client.(*product.ProductSortResponse), err
 }

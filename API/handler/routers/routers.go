@@ -20,18 +20,15 @@ func LoadRouters(r *gin.Engine) {
 		product.GET("/list", ProductList)
 		product.POST("/sync/es", ProductSyncEs)
 		product.GET("/search/es", EsSearchByKeyWord)
-<<<<<<< HEAD
 		product.POST("/price", PriceFind)
-<<<<<<< HEAD
-=======
+
+		product.GET("/website/product", WebsiteProductList) //网站商品展示
+		product.GET("/sort", ProductSort)                   //网站商品展示
 		product.Use(pkg.JWTAuth("2209A"))
 		//收藏商品展示
 		product.POST("/collect/list", GetCollectProduct)
->>>>>>> jjl
-=======
 
 		product.GET("/category", ProductCategory)
 
->>>>>>> origin/main
 	}
 }
