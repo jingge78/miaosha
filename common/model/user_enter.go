@@ -23,5 +23,9 @@ type UserEnter struct {
 }
 
 func (e *UserEnter) AddUserEnter() error {
-	return global.DB.Create(&e).Error
+	return global.DB.Debug().Table("user_enter").Create(&e).Error
+}
+
+func (e *UserEnter) GetUserEnterId(uid uint64) error {
+	return global.DB.Debug().Table("user_enter").Where("uid = ?", uid).Limit(1).Find(&e).Error
 }

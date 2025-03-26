@@ -33,4 +33,16 @@ func LoadRouters(r *gin.Engine) {
 
 >>>>>>> origin/main
 	}
+
+	userEnter := r.Group("/user_enter")
+	{
+		userEnter.Use(pkg.JWTAuth("2209AGroup3"))
+		userEnter.POST("/add", AddUserEnter)
+	}
+
+	storeCart := r.Group("/store_cart")
+	{
+		storeCart.Use(pkg.JWTAuth("2209AGroup3"))
+		storeCart.POST("/add", AddStoreCart)
+	}
 }
