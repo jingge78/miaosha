@@ -25,6 +25,7 @@ func LoadRouters(r *gin.Engine) {
 <<<<<<< HEAD
 =======
 		product.Use(pkg.JWTAuth("2209A"))
+		//收藏商品展示
 		product.POST("/collect/list", GetCollectProduct)
 >>>>>>> jjl
 =======
