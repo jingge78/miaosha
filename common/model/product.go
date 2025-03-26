@@ -41,6 +41,10 @@ func (p *Product) PriceFind(price float64) (Pro []*Product, err error) {
 // 按价格和上架状态排序
 func (p *Product) ProductSortByIsShowOrPrice(isShow int) ([]Product, error) {
 
+	//商品价格排序
+	//商品状态  0 下架 1 上架
+	//原型商品可以根据销量，价格，评价，和最新上架来进行商品排序
+
 	var product []Product
 	err := global.DB.Order("price DESC").Where("is_show = ?", isShow).Find(&product).Error
 	if err != nil {

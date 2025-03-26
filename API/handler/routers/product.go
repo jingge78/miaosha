@@ -123,6 +123,8 @@ func WebsiteProductList(c *gin.Context) {
 	response.CurrencySuccessResponse(c, "分类展示成功", map[string]interface{}{"website_product_list": list})
 }
 func ProductSort(c *gin.Context) {
+
+	//IsShow是商品状态  0下架 1上架
 	IsShow, _ := strconv.Atoi(c.Query("is_show"))
 	list, err := client.ProductSort(c, &product.ProductSortRequest{
 		IsShow: int64(IsShow),

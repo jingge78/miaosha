@@ -23,7 +23,7 @@ func LoadRouters(r *gin.Engine) {
 		product.POST("/price", PriceFind)
 
 		product.GET("/website/product", WebsiteProductList) //网站商品展示
-		product.GET("/sort", ProductSort)                   //网站商品展示
+		product.GET("/sort", ProductSort)                   //网站商品排序
 		product.Use(pkg.JWTAuth("2209A"))
 		//收藏商品展示
 		product.POST("/collect/list", GetCollectProduct)
