@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c319c51c-17a7-42e1-85c6-13dbd2b90307" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/API/client/order_client.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/handler/routers/order.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/request/order.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/model/EbStoreCombination.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/product_service/GroupByProductList.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/product_service/product_sort.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/product_service/website_product_list.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/GOHCache.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GOHCache.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/client/product_client.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/client/product_client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/handler/routers/product.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/handler/routers/product.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/handler/routers/routers.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/handler/routers/routers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/request/product.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/request/product.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/initialition/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/initialition/init.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/model/eb_store_product_relation.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/model/eb_store_product_relation.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/model/product.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/model/product.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/model/store_category.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/model/store_category.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/model/store_order.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/model/store_order.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pkg/aliPay.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/pkg/aliPay.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pkg/jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/pkg/jwt.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/proto/order/order.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/order/order.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/proto/order/order.proto" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/order/order.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/proto/order/order_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/order/order_grpc.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/proto/product/product.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/product/product.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/proto/product/product.proto" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/product/product.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/proto/product/product_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/product/product_grpc.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/order_service/order.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/order_service/order.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/product_service/GetCollectProduct.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/product_service/GetCollectProduct.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/register/register.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/register/register.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../../GoWork/go1.23.6" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2ur5shEhxHmCv2JopvYpSfyNqDE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "正在合并 main",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "C:/Users/鬼谷纵横",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-gosdk-2946fb9b3188-155fe4b6e3a0-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-233.14475.38" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>

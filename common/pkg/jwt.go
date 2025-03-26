@@ -37,8 +37,8 @@ func JWTAuth(secretKey string) gin.HandlerFunc {
 		// parseToken 解析token包含的信息
 		claims, err := j.ParseToken(token)
 		if err != nil {
-			if err == TokenExpired {
-				if err == TokenExpired {
+			if errors.Is(err, TokenExpired) {
+				if errors.Is(err, TokenExpired) {
 					c.JSON(http.StatusUnauthorized, map[string]string{
 						"code": "10002",
 						"msg":  "授权已过期",

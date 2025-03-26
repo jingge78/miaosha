@@ -3,14 +3,25 @@ syntax = "proto3";
 package order;
 option go_package = ".;order";
 
-message AddOrderReq {
-  string name = 1;
+message CreateOrderReq {
+  string Title = 2;
+  int64 Uid = 3;
+  string RealName = 4;
+  string UserPhone = 5;
+  string UserAddress = 6;
+  string CartId = 7;
+  float FreightPrice = 8;
+  int64 TotalNum = 9;
+  float TotalPrice = 10;
+  float TotalPostage = 11;
+  float PayPrice = 12;
+  float PayPostage = 13;
 }
 
-message AddOrderResp {
-  string greet = 1;
+message CreateOrderResp {
+  string result = 1;
 }
 
 service Order {
-  rpc AddOrder(AddOrderReq) returns (AddOrderResp);
+  rpc CreateOrder(CreateOrderReq) returns (CreateOrderResp);
 }
