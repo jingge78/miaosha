@@ -13,8 +13,11 @@ func LoadRouters(r *gin.Engine) {
 		user.POST("/update", Update)
 		user.POST("/send", SendSms)
 		user.POST("/recovery", PassWordRecovery)
-		user.Use(pkg.JWTAuth("2209AGroup3"))
-		user.POST("/orderCreate", OrderCreate)
+	}
+	order := r.Group("/order")
+	{
+		order.Use(pkg.JWTAuth("2209AGroup3"))
+		order.POST("/orderCreate", OrderCreate)
 	}
 	product := r.Group("/product")
 	{
