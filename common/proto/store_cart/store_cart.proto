@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package store_cart;
+option go_package = ".;store_cart";
+
+message AddStoreCartRequest {
+  uint64 Uid = 1;
+  string Type = 2;
+  uint64 ProductId = 3;
+  string ProductAttrUnique = 4;
+  uint64 CartNum = 5;
+}
+
+message AddStoreCartResponse {
+  uint64 StoreCartId = 1;
+}
+
+service StoreCart {
+  rpc AddStoreCart(AddStoreCartRequest) returns (AddStoreCartResponse);
+}

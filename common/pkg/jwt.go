@@ -27,7 +27,8 @@ func JWTAuth(secretKey string) gin.HandlerFunc {
 		token := c.Request.Header.Get("x-token")
 		if token == "" {
 			c.JSON(http.StatusUnauthorized, map[string]string{
-				"msg": "请登录",
+				"code": "10001",
+				"msg":  "请登录",
 			})
 			c.Abort()
 			return
@@ -39,14 +40,18 @@ func JWTAuth(secretKey string) gin.HandlerFunc {
 			if err == TokenExpired {
 				if err == TokenExpired {
 					c.JSON(http.StatusUnauthorized, map[string]string{
-						"msg": "授权已过期",
+						"code": "10002",
+						"msg":  "授权已过期",
 					})
 					c.Abort()
 					return
 				}
 			}
 
-			c.JSON(http.StatusUnauthorized, "未登陆")
+			c.JSON(http.StatusUnauthorized, map[string]string{
+				"code": "10003",
+				"msg":  "未登陆",
+			})
 			c.Abort()
 			return
 		}

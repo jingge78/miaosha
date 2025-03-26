@@ -26,7 +26,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type UserEnterClient interface {
-	AddUserEnter(ctx context.Context, in *AddUserEnterReq, opts ...grpc.CallOption) (*AddUserEnterResp, error)
+	AddUserEnter(ctx context.Context, in *AddUserEnterRequest, opts ...grpc.CallOption) (*AddUserEnterResponse, error)
 }
 
 type userEnterClient struct {
@@ -37,9 +37,9 @@ func NewUserEnterClient(cc grpc.ClientConnInterface) UserEnterClient {
 	return &userEnterClient{cc}
 }
 
-func (c *userEnterClient) AddUserEnter(ctx context.Context, in *AddUserEnterReq, opts ...grpc.CallOption) (*AddUserEnterResp, error) {
+func (c *userEnterClient) AddUserEnter(ctx context.Context, in *AddUserEnterRequest, opts ...grpc.CallOption) (*AddUserEnterResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(AddUserEnterResp)
+	out := new(AddUserEnterResponse)
 	err := c.cc.Invoke(ctx, UserEnter_AddUserEnter_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (c *userEnterClient) AddUserEnter(ctx context.Context, in *AddUserEnterReq,
 // All implementations must embed UnimplementedUserEnterServer
 // for forward compatibility
 type UserEnterServer interface {
-	AddUserEnter(context.Context, *AddUserEnterReq) (*AddUserEnterResp, error)
+	AddUserEnter(context.Context, *AddUserEnterRequest) (*AddUserEnterResponse, error)
 	mustEmbedUnimplementedUserEnterServer()
 }
 
@@ -59,7 +59,7 @@ type UserEnterServer interface {
 type UnimplementedUserEnterServer struct {
 }
 
-func (UnimplementedUserEnterServer) AddUserEnter(context.Context, *AddUserEnterReq) (*AddUserEnterResp, error) {
+func (UnimplementedUserEnterServer) AddUserEnter(context.Context, *AddUserEnterRequest) (*AddUserEnterResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddUserEnter not implemented")
 }
 func (UnimplementedUserEnterServer) mustEmbedUnimplementedUserEnterServer() {}
@@ -76,7 +76,7 @@ func RegisterUserEnterServer(s grpc.ServiceRegistrar, srv UserEnterServer) {
 }
 
 func _UserEnter_AddUserEnter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AddUserEnterReq)
+	in := new(AddUserEnterRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -88,7 +88,7 @@ func _UserEnter_AddUserEnter_Handler(srv interface{}, ctx context.Context, dec f
 		FullMethod: UserEnter_AddUserEnter_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserEnterServer).AddUserEnter(ctx, req.(*AddUserEnterReq))
+		return srv.(UserEnterServer).AddUserEnter(ctx, req.(*AddUserEnterRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

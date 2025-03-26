@@ -1,6 +1,9 @@
 package routers
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+	"miaosha-jjl/common/pkg"
+)
 
 func LoadRouters(r *gin.Engine) {
 	user := r.Group("/user")
@@ -18,5 +21,17 @@ func LoadRouters(r *gin.Engine) {
 		product.POST("/sync/es", ProductSyncEs)
 		product.GET("/search/es", EsSearchByKeyWord)
 		product.POST("/price", PriceFind)
+	}
+
+	userEnter := r.Group("/user_enter")
+	{
+		userEnter.Use(pkg.JWTAuth("2209AGroup3"))
+		userEnter.POST("/add", AddUserEnter)
+	}
+
+	storeCart := r.Group("/store_cart")
+	{
+		storeCart.Use(pkg.JWTAuth("2209AGroup3"))
+		storeCart.POST("/add", AddStoreCart)
 	}
 }

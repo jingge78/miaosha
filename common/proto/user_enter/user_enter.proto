@@ -3,20 +3,21 @@ syntax = "proto3";
 package user_enter;
 option go_package = ".;user_enter";
 
-message AddUserEnterReq {
+message AddUserEnterRequest {
   uint64 Uid = 1;
   string Province = 2;
   string City = 3;
   string District = 4;
   string Address = 5;
-  string LinkTel = 6;
-  string Charter = 7;
+  string MerchantName = 6;
+  string LinkTel = 7;
+  string Charter = 8;
 }
 
-message AddUserEnterResp {
+message AddUserEnterResponse {
   uint64 UserEnterId = 1;
 }
 
 service UserEnter {
-  rpc AddUserEnter(AddUserEnterReq) returns (AddUserEnterResp);
+  rpc AddUserEnter(AddUserEnterRequest) returns (AddUserEnterResponse);
 }

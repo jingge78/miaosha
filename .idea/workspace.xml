@@ -5,18 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="270bd093-53c3-4014-959c-f9b239f04893" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/common/utils/encryption.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/client/store_cart_client.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/client/user_enter_client.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/handler/routers/store_cart.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/handler/routers/user_enter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/request/store_cart.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/request/user_enter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README-ms.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/model/store_cart.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/proto/store_cart/store_cart.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/store_cart_service/add_store_cart.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/GOHCache.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GOHCache.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/client/user_client.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/client/user_client.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/handler/routers/routers.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/handler/routers/routers.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/handler/routers/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/handler/routers/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/request/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/request/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/response/currencyResponse.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/response/currencyResponse.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/model/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/user_service/user_login.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/user_service/user_login.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/user_service/user_password_recovery.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/user_service/user_password_recovery.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/user_service/user_register.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/user_service/user_register.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/model/user_enter.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/model/user_enter.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pkg/jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/pkg/jwt.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/proto/user_enter/user_enter.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/user_enter/user_enter.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/proto/user_enter/user_enter.proto" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/user_enter/user_enter.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/proto/user_enter/user_enter_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/user_enter/user_enter_grpc.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/register/register.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/register/register.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/user_enter_service/add_user_enter.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/user_enter_service/add_user_enter.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/user_enter_service/user_enter.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +38,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Proto Template" />
         <option value="Go File" />
       </list>
     </option>
@@ -45,26 +58,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultGoTemplateProperty": "Go File",
-    "Go 构建.go build miaosha-jjl/docs (1).executor": "Run",
-    "Go 构建.go build miaosha-jjl/docs.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "git-widget-placeholder": "gqr",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "D:/Users/鬼谷纵横/Desktop/123/miaosha/common",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;DefaultProtoTemplateProperty&quot;: &quot;Proto Template&quot;,
+    &quot;Go 构建.go build miaosha-jjl/docs (1).executor&quot;: &quot;Run&quot;,
+    &quot;Go 构建.go build miaosha-jjl/docs.executor&quot;: &quot;Run&quot;,
+    &quot;Go 构建.go build miaosha-jjl/docs/docs (1).executor&quot;: &quot;Run&quot;,
+    &quot;Go 构建.go build miaosha-jjl/docs/docs.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;gqr&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Users/鬼谷纵横/Desktop/123/miaosha/common&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\common" />
@@ -75,9 +91,10 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\common" />
+      <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha" />
     </key>
   </component>
-  <component name="RunManager" selected="Go 构建.go build miaosha-jjl/docs (1)">
+  <component name="RunManager" selected="Go 构建.go build miaosha-jjl/docs/docs (1)">
     <configuration name="go build miaosha-jjl/docs (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="miaosha" />
       <working_directory value="$PROJECT_DIR$" />
@@ -96,8 +113,28 @@
       <filePath value="$PROJECT_DIR$/docs/service_start.go" />
       <method v="2" />
     </configuration>
+    <configuration name="go build miaosha-jjl/docs/docs (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="miaosha" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="miaosha-jjl/docs/docs" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/docs/docs/api_start.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build miaosha-jjl/docs/docs" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="miaosha" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="miaosha-jjl/docs/docs" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/docs/docs/service_start.go" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go 构建.go build miaosha-jjl/docs/docs (1)" />
+        <item itemvalue="Go 构建.go build miaosha-jjl/docs/docs" />
         <item itemvalue="Go 构建.go build miaosha-jjl/docs (1)" />
         <item itemvalue="Go 构建.go build miaosha-jjl/docs" />
       </list>
