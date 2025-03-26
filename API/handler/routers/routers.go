@@ -26,6 +26,7 @@ func LoadRouters(r *gin.Engine) {
 		product.Use(pkg.JWTAuth("2209A"))
 		//收藏商品展示（jjl）
 		product.POST("/collect/list", GetCollectProduct)
+		//分类展示（LiBang）
 		product.GET("/category", ProductCategory)
 	}
 }
