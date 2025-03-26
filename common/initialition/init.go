@@ -32,7 +32,7 @@ func InitZap() {
 	zap.ReplaceGlobals(build)
 }
 func InitConfig() {
-	viper.SetConfigFile("../common/config/dev.yaml")
+	viper.SetConfigFile("./common/config/dev.yaml")
 	err := viper.ReadInConfig()
 	if err != nil {
 		panic(err)
@@ -43,7 +43,7 @@ func InitConfig() {
 func InitDB() {
 	var err error
 	config := global.GlobalConfig.Mysql
-	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=True", config.User, config.Password, config.Host, config.Port, config.Database)
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local", config.User, config.Password, config.Host, config.Port, config.Database)
 	global.DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Info),
 	})

@@ -17,6 +17,13 @@
             </set>
           </value>
         </entry>
+        <entry key="EbStoreCombination">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/common/model/EbStoreCombination.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="EbStoreProductRelation">
           <value>
             <set>
@@ -328,7 +335,7 @@
         <entry key="file://$PROJECT_DIR$/API/client/product_client.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742977723452" />
+              <option name="lastModified" value="1742979540063" />
             </ScannedPath>
           </value>
         </entry>
@@ -342,14 +349,14 @@
         <entry key="file://$PROJECT_DIR$/API/handler/routers/product.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742977723453" />
+              <option name="lastModified" value="1742979540339" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/API/handler/routers/routers.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742977806118" />
+              <option name="lastModified" value="1742980104889" />
             </ScannedPath>
           </value>
         </entry>
@@ -414,7 +421,7 @@
         <entry key="file://$PROJECT_DIR$/common/initialition/init.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742977723460" />
+              <option name="lastModified" value="1742980653357" />
             </ScannedPath>
           </value>
         </entry>
@@ -425,10 +432,22 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/common/model/EbStoreCombination.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742979540701" />
+              <option name="schema">
+                <list>
+                  <option value="EbStoreCombination" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/common/model/eb_store_product_relation.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742977723461" />
+              <option name="lastModified" value="1742980395222" />
               <option name="schema">
                 <list>
                   <option value="EbStoreProductRelation" />
@@ -478,7 +497,7 @@
         <entry key="file://$PROJECT_DIR$/common/pkg/jwt.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742977723465" />
+              <option name="lastModified" value="1742980104898" />
               <option name="schema">
                 <list>
                   <option value="CustomClaims" />
@@ -596,7 +615,14 @@
         <entry key="file://$PROJECT_DIR$/service/product_service/GetCollectProduct.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742977723475" />
+              <option name="lastModified" value="1742980588638" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/product_service/GroupByProductList.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742980761220" />
             </ScannedPath>
           </value>
         </entry>
@@ -658,6 +684,7 @@
       <map>
         <entry key="collect_product" value="CollectProduct" />
         <entry key="custom_claims" value="CustomClaims" />
+        <entry key="eb_store_combination" value="EbStoreCombination" />
         <entry key="eb_store_product_relation" value="EbStoreProductRelation" />
         <entry key="es_add_product_request" value="EsAddProductRequest" />
         <entry key="es_add_product_response" value="EsAddProductResponse" />

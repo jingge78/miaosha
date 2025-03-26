@@ -21,12 +21,14 @@ func LoadRouters(r *gin.Engine) {
 		product.POST("/sync/es", ProductSyncEs)
 		//Es搜索（jjl）
 		product.GET("/search/es", EsSearchByKeyWord)
-		product.POST("/price", PriceFind)
-		//使用中间件
-		product.Use(pkg.JWTAuth("2209A"))
-		//收藏商品展示（jjl）
-		product.POST("/collect/list", GetCollectProduct)
 		//分类展示（LiBang）
 		product.GET("/category", ProductCategory)
+		product.POST("/price", PriceFind)
+		product.GET("group/list", GroupByProductList)
+		//使用中间件
+		product.Use(pkg.JWTAuth("2209AGroup3"))
+		//收藏商品展示（jjl）
+		product.GET("/collect/list", GetCollectProduct)
+
 	}
 }
