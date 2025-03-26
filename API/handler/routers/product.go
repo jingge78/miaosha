@@ -92,7 +92,6 @@ func GetCollectProduct(c *gin.Context) {
 }
 
 func ProductCategory(c *gin.Context) {
-
 	parentId, _ := strconv.Atoi(c.Query("parent_id"))
 	find, err := client.GetProductCategory(c, &product.ProductCategoryRequest{
 		ParentId: int32(parentId),
@@ -134,4 +133,12 @@ func ProductSort(c *gin.Context) {
 		return
 	}
 	response.CurrencySuccessResponse(c, "分类展示成功", map[string]interface{}{"product_sort": list})
+}
+func GroupByProductList(c *gin.Context) {
+	list, err := client.GroupByProductList(c, &product.GroupByProductListRequest{})
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	response.CurrencySuccessResponse(c, "团购商品查询成功", map[string]interface{}{"group_list": list.GroupByProductListResponse})
 }

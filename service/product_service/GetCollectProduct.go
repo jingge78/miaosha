@@ -13,7 +13,7 @@ func (p *ServerProduct) GetCollectProduct(ctx context.Context, req *product.GetC
 	if err != nil {
 		return nil, err
 	}
-	if getCollectProduct == nil {
+	if len(getCollectProduct) == 0 {
 		return nil, errors.New("您没有收藏商品")
 	}
 	var collectProductList []*product.CollectProduct
@@ -22,7 +22,7 @@ func (p *ServerProduct) GetCollectProduct(ctx context.Context, req *product.GetC
 			ProductId: int64(collectProductOne.ProductId),
 			Type:      collectProduct.Type,
 			Category:  collectProductOne.Category,
-			AddTime:   int64(collectProduct.AddTime),
+			AddTime:   collectProduct.AddTime.Format("2006-01-02"),
 		})
 	}
 	return &product.GetCollectProductResponse{
