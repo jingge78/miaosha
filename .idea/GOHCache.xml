@@ -3,20 +3,6 @@
   <component name="GoORMHelperCache">
     <option name="schemaMapping">
       <map>
-        <entry key="AddOrderReq">
-          <value>
-            <set>
-              <option value="file://$PROJECT_DIR$/common/proto/order/order.pb.go" />
-            </set>
-          </value>
-        </entry>
-        <entry key="AddOrderResp">
-          <value>
-            <set>
-              <option value="file://$PROJECT_DIR$/common/proto/order/order.pb.go" />
-            </set>
-          </value>
-        </entry>
         <entry key="AddUserEnterReq">
           <value>
             <set>
@@ -31,10 +17,38 @@
             </set>
           </value>
         </entry>
+        <entry key="Alipay">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/common/pkg/aliPay.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="CollectProduct">
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/common/proto/product/product.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Config">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/common/config/config.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CreateOrderReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/common/proto/order/order.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CreateOrderResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/common/proto/order/order.pb.go" />
             </set>
           </value>
         </entry>
@@ -109,6 +123,27 @@
             </set>
           </value>
         </entry>
+        <entry key="GroupByProduct">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/common/proto/product/product.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GroupByProductListRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/common/proto/product/product.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GroupByProductListResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/common/proto/product/product.pb.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="JWT">
           <value>
             <set>
@@ -127,6 +162,13 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/common/proto/user/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="OrderReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/API/request/order.go" />
             </set>
           </value>
         </entry>
@@ -254,6 +296,13 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/common/proto/user/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ServerOrder">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/service/order_service/order.go" />
             </set>
           </value>
         </entry>
@@ -411,17 +460,17 @@
     </option>
     <option name="scannedPathMapping">
       <map>
-        <entry key="file://$PROJECT_DIR$/../../../../../GoWork/zg5/common/initialize/redis/redis.go">
+        <entry key="file://$PROJECT_DIR$/API/client/order_client.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742901185418" />
+              <option name="lastModified" value="1742989070106" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/API/client/product_client.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742954404187" />
+              <option name="lastModified" value="1742989111484" />
             </ScannedPath>
           </value>
         </entry>
@@ -432,24 +481,43 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/API/handler/routers/order.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742989070110" />
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/API/handler/routers/product.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742954404189" />
+              <option name="lastModified" value="1742989111484" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/API/handler/routers/routers.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742954464133" />
+              <option name="lastModified" value="1742989326237" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/API/handler/routers/user.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742954404190" />
+              <option name="lastModified" value="1742988970864" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/API/request/order.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742989070111" />
+              <option name="schema">
+                <list>
+                  <option value="OrderReq" />
+                </list>
+              </option>
             </ScannedPath>
           </value>
         </entry>
@@ -497,6 +565,18 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/common/config/config.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742868260000" />
+              <option name="schema">
+                <list>
+                  <option value="Config" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/common/global/global.go">
           <value>
             <ScannedPath>
@@ -507,7 +587,7 @@
         <entry key="file://$PROJECT_DIR$/common/initialition/init.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742954404193" />
+              <option name="lastModified" value="1742989326247" />
             </ScannedPath>
           </value>
         </entry>
@@ -521,7 +601,7 @@
         <entry key="file://$PROJECT_DIR$/common/model/eb_store_product_relation.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742954404194" />
+              <option name="lastModified" value="1742989111487" />
               <option name="schema">
                 <list>
                   <option value="EbStoreProductRelation" />
@@ -564,7 +644,7 @@
         <entry key="file://$PROJECT_DIR$/common/model/store_order.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742954404196" />
+              <option name="lastModified" value="1742989070112" />
               <option name="schema">
                 <list>
                   <option value="StoreOrder" />
@@ -600,7 +680,12 @@
         <entry key="file://$PROJECT_DIR$/common/pkg/aliPay.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742954404197" />
+              <option name="lastModified" value="1742989070113" />
+              <option name="schema">
+                <list>
+                  <option value="Alipay" />
+                </list>
+              </option>
             </ScannedPath>
           </value>
         </entry>
@@ -614,7 +699,7 @@
         <entry key="file://$PROJECT_DIR$/common/pkg/jwt.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742954404197" />
+              <option name="lastModified" value="1742989111487" />
               <option name="schema">
                 <list>
                   <option value="CustomClaims" />
@@ -627,11 +712,11 @@
         <entry key="file://$PROJECT_DIR$/common/proto/order/order.pb.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742954404199" />
+              <option name="lastModified" value="1742989070113" />
               <option name="schema">
                 <list>
-                  <option value="AddOrderReq" />
-                  <option value="AddOrderResp" />
+                  <option value="CreateOrderReq" />
+                  <option value="CreateOrderResp" />
                   <option value="x" />
                 </list>
               </option>
@@ -641,7 +726,7 @@
         <entry key="file://$PROJECT_DIR$/common/proto/order/order_grpc.pb.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742954404200" />
+              <option name="lastModified" value="1742989070114" />
               <option name="schema">
                 <list>
                   <option value="orderClient" />
@@ -654,7 +739,7 @@
         <entry key="file://$PROJECT_DIR$/common/proto/product/product.pb.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742954404200" />
+              <option name="lastModified" value="1742989111488" />
               <option name="schema">
                 <list>
                   <option value="ProductDetailRequest" />
@@ -673,6 +758,9 @@
                   <option value="GetCollectProductResponse" />
                   <option value="ProductCategoryRequest" />
                   <option value="ProductCategoryResponse" />
+                  <option value="GroupByProduct" />
+                  <option value="GroupByProductListRequest" />
+                  <option value="GroupByProductListResponse" />
                   <option value="ProductCategoryResponse_Category" />
                   <option value="x" />
                 </list>
@@ -683,7 +771,7 @@
         <entry key="file://$PROJECT_DIR$/common/proto/product/product_grpc.pb.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742954404201" />
+              <option name="lastModified" value="1742989111489" />
               <option name="schema">
                 <list>
                   <option value="productClient" />
@@ -776,10 +864,29 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/docs/api_start.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742872372199" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/docs/service_start.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742868826195" />
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/service/order_service/order.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742954404206" />
+              <option name="lastModified" value="1742989070116" />
+              <option name="schema">
+                <list>
+                  <option value="ServerOrder" />
+                </list>
+              </option>
             </ScannedPath>
           </value>
         </entry>
@@ -800,7 +907,7 @@
         <entry key="file://$PROJECT_DIR$/service/product_service/GetCollectProduct.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742954404207" />
+              <option name="lastModified" value="1742989111490" />
             </ScannedPath>
           </value>
         </entry>
@@ -840,7 +947,7 @@
         <entry key="file://$PROJECT_DIR$/service/register/register.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742954404209" />
+              <option name="lastModified" value="1742989070117" />
             </ScannedPath>
           </value>
         </entry>
@@ -907,11 +1014,13 @@
     </option>
     <option name="tableStructMapping">
       <map>
-        <entry key="add_order_req" value="AddOrderReq" />
-        <entry key="add_order_resp" value="AddOrderResp" />
         <entry key="add_user_enter_req" value="AddUserEnterReq" />
         <entry key="add_user_enter_resp" value="AddUserEnterResp" />
+        <entry key="alipay" value="Alipay" />
         <entry key="collect_product" value="CollectProduct" />
+        <entry key="config" value="Config" />
+        <entry key="create_order_req" value="CreateOrderReq" />
+        <entry key="create_order_resp" value="CreateOrderResp" />
         <entry key="custom_claims" value="CustomClaims" />
         <entry key="eb_store_product_relation" value="EbStoreProductRelation" />
         <entry key="es_add_product_request" value="EsAddProductRequest" />
@@ -922,10 +1031,14 @@
         <entry key="get_all_product_response" value="GetAllProductResponse" />
         <entry key="get_collect_product_request" value="GetCollectProductRequest" />
         <entry key="get_collect_product_response" value="GetCollectProductResponse" />
+        <entry key="group_by_product" value="GroupByProduct" />
+        <entry key="group_by_product_list_request" value="GroupByProductListRequest" />
+        <entry key="group_by_product_list_response" value="GroupByProductListResponse" />
         <entry key="jwt" value="JWT" />
         <entry key="login_request" value="LoginRequest" />
         <entry key="login_response" value="LoginResponse" />
         <entry key="order_client" value="orderClient" />
+        <entry key="order_req" value="OrderReq" />
         <entry key="pass_word_recovery" value="PassWordRecovery" />
         <entry key="password_recovery_request" value="PasswordRecoveryRequest" />
         <entry key="password_recovery_response" value="PasswordRecoveryResponse" />
@@ -945,6 +1058,7 @@
         <entry key="send_sms" value="SendSms" />
         <entry key="send_sms_request" value="SendSmsRequest" />
         <entry key="send_sms_response" value="SendSmsResponse" />
+        <entry key="server_order" value="ServerOrder" />
         <entry key="server_product" value="ServerProduct" />
         <entry key="server_user" value="ServerUser" />
         <entry key="server_user_enter" value="ServerUserEnter" />
@@ -966,6 +1080,6 @@
         <entry key="x" value="x" />
       </map>
     </option>
-    <option name="lastTimeChecked" value="1742887694153" />
+    <option name="lastTimeChecked" value="1742989144131" />
   </component>
 </project>
