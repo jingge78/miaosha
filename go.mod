@@ -6,10 +6,12 @@ require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/elastic/go-elasticsearch/v7 v7.17.10
 	github.com/gin-gonic/gin v1.9.1
-	github.com/go-redis/redis v6.15.9+incompatible
 	github.com/go-redis/redis/v8 v8.11.5
+	github.com/google/uuid v1.6.0
+	github.com/smartwalle/alipay/v3 v3.2.25
 	github.com/spf13/viper v1.20.0
 	go.uber.org/zap v1.27.0
+	golang.org/x/crypto v0.36.0
 	google.golang.org/grpc v1.67.3
 	google.golang.org/protobuf v1.36.6
 	gorm.io/driver/mysql v1.5.7
@@ -42,6 +44,9 @@ require (
 	github.com/onsi/gomega v1.36.3 // indirect
 	github.com/pelletier/go-toml/v2 v2.2.3 // indirect
 	github.com/sagikazarmark/locafero v0.7.0 // indirect
+	github.com/smartwalle/ncrypto v1.0.4 // indirect
+	github.com/smartwalle/ngx v1.0.9 // indirect
+	github.com/smartwalle/nsign v1.0.9 // indirect
 	github.com/sourcegraph/conc v0.3.0 // indirect
 	github.com/spf13/afero v1.12.0 // indirect
 	github.com/spf13/cast v1.7.1 // indirect
@@ -51,7 +56,6 @@ require (
 	github.com/ugorji/go/codec v1.2.11 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/arch v0.3.0 // indirect
-	golang.org/x/crypto v0.36.0 // indirect
 	golang.org/x/net v0.37.0 // indirect
 	golang.org/x/sys v0.31.0 // indirect
 	golang.org/x/text v0.23.0 // indirect
