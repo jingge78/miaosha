@@ -31,3 +31,8 @@ func (s *StoreOrder) TableName() string {
 func (s *StoreOrder) CreateOrder() error {
 	return global.DB.Create(&s).Error
 }
+
+func (s *StoreOrder) OrderList(name string) (ord []*StoreOrder, err error) {
+	err = global.DB.Where("real_name = ?", name).Find(&ord).Error
+	return ord, err
+}
