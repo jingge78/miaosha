@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="aa76e7a1-4013-4fa3-8b3f-93fbe8aa3f5b" name="更改" comment="">
       <change afterPath="$PROJECT_DIR$/API/client/shipping_address_client.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/API/handler/routers/shipping_address.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/API/request/shipping_address.go" afterDir="false" />
+=======
+    <list default="true" id="270bd093-53c3-4014-959c-f9b239f04893" name="更改" comment="">
+>>>>>>> 71b6c693c168092acfc9c6c2f9bd092ce51d2348
       <change afterPath="$PROJECT_DIR$/common/consul/consul.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/common/model/shipping_address.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/common/proto/shipping_address/shipping_address.pb.go" afterDir="false" />
@@ -19,7 +23,10 @@
       <change afterPath="$PROJECT_DIR$/service/shipping_address_service/shipping_address.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/GOHCache.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GOHCache.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/API/handler/routers/routers.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/handler/routers/routers.go" afterDir="false" />
+=======
+>>>>>>> 71b6c693c168092acfc9c6c2f9bd092ce51d2348
       <change beforePath="$PROJECT_DIR$/common/global/global.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/global/global.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/initialition/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/initialition/init.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/register/register.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/register/register.go" afterDir="false" />
@@ -47,25 +54,53 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+<<<<<<< HEAD
+=======
+    "DefaultGoTemplateProperty": "Go File",
+    "DefaultProtoTemplateProperty": "Proto Template",
+    "Go 构建.go build miaosha-jjl/docs (1).executor": "Run",
+    "Go 构建.go build miaosha-jjl/docs.executor": "Run",
+    "Go 构建.go build miaosha-jjl/docs/docs (1).executor": "Run",
+    "Go 构建.go build miaosha-jjl/docs/docs.executor": "Run",
+>>>>>>> 71b6c693c168092acfc9c6c2f9bd092ce51d2348
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
     "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+<<<<<<< HEAD
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
     "last_opened_file_path": "D:/Users/鬼谷纵横/Desktop/123/miaosha/service",
+=======
+    "git-widget-placeholder": "gqr",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "D:/Users/鬼谷纵横/Desktop/123/miaosha/common/utils",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+>>>>>>> 71b6c693c168092acfc9c6c2f9bd092ce51d2348
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+<<<<<<< HEAD
       <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\service" />
       <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\common\utils" />
       <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\common\proto" />
       <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\common\model" />
+=======
+      <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\common\utils" />
+      <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\common\proto" />
+      <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\common\model" />
+      <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\common" />
+      <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+>>>>>>> 71b6c693c168092acfc9c6c2f9bd092ce51d2348
       <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\common" />
     </key>
   </component>
