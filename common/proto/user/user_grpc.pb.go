@@ -24,6 +24,7 @@ const (
 	User_Update_FullMethodName           = "/user.User/Update"
 	User_SendSms_FullMethodName          = "/user.User/SendSms"
 	User_PasswordRecovery_FullMethodName = "/user.User/PasswordRecovery"
+	User_SignIn_FullMethodName           = "/user.User/SignIn"
 )
 
 // UserClient is the client API for User service.
@@ -35,6 +36,7 @@ type UserClient interface {
 	Update(ctx context.Context, in *UpdateRequest, opts ...grpc.CallOption) (*UpdateResponse, error)
 	SendSms(ctx context.Context, in *SendSmsRequest, opts ...grpc.CallOption) (*SendSmsResponse, error)
 	PasswordRecovery(ctx context.Context, in *PasswordRecoveryRequest, opts ...grpc.CallOption) (*PasswordRecoveryResponse, error)
+	SignIn(ctx context.Context, in *SignInRequest, opts ...grpc.CallOption) (*SignInResponse, error)
 }
 
 type userClient struct {
@@ -95,6 +97,16 @@ func (c *userClient) PasswordRecovery(ctx context.Context, in *PasswordRecoveryR
 	return out, nil
 }
 
+func (c *userClient) SignIn(ctx context.Context, in *SignInRequest, opts ...grpc.CallOption) (*SignInResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SignInResponse)
+	err := c.cc.Invoke(ctx, User_SignIn_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UserServer is the server API for User service.
 // All implementations must embed UnimplementedUserServer
 // for forward compatibility
@@ -104,6 +116,7 @@ type UserServer interface {
 	Update(context.Context, *UpdateRequest) (*UpdateResponse, error)
 	SendSms(context.Context, *SendSmsRequest) (*SendSmsResponse, error)
 	PasswordRecovery(context.Context, *PasswordRecoveryRequest) (*PasswordRecoveryResponse, error)
+	SignIn(context.Context, *SignInRequest) (*SignInResponse, error)
 	mustEmbedUnimplementedUserServer()
 }
 
@@ -125,6 +138,9 @@ func (UnimplementedUserServer) SendSms(context.Context, *SendSmsRequest) (*SendS
 }
 func (UnimplementedUserServer) PasswordRecovery(context.Context, *PasswordRecoveryRequest) (*PasswordRecoveryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PasswordRecovery not implemented")
+}
+func (UnimplementedUserServer) SignIn(context.Context, *SignInRequest) (*SignInResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SignIn not implemented")
 }
 func (UnimplementedUserServer) mustEmbedUnimplementedUserServer() {}
 
@@ -229,6 +245,24 @@ func _User_PasswordRecovery_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _User_SignIn_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SignInRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServer).SignIn(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: User_SignIn_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServer).SignIn(ctx, req.(*SignInRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // User_ServiceDesc is the grpc.ServiceDesc for User service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -255,6 +289,10 @@ var User_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "PasswordRecovery",
 			Handler:    _User_PasswordRecovery_Handler,
+		},
+		{
+			MethodName: "SignIn",
+			Handler:    _User_SignIn_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

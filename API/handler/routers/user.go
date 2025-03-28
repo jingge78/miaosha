@@ -7,6 +7,7 @@ import (
 	"miaosha-jjl/API/response"
 	"miaosha-jjl/common/pkg"
 	"miaosha-jjl/common/proto/user"
+	"strconv"
 )
 
 func UserLogin(c *gin.Context) {
@@ -117,4 +118,18 @@ func PassWordRecovery(c *gin.Context) {
 		return
 	}
 	response.CurrencySuccessResponse(c, "用户密码找回成功", map[string]interface{}{"user_recovery": recovery})
+}
+func UserSignIn(c *gin.Context) {
+	userId, _ := strconv.Atoi(c.Query("user_id"))
+	SignDate := c.Query("sign_date") //测试时间日期(如:2025-03-28)
+	in, err := client.UserSignIn(c, &user.SignInRequest{
+		UserId:   int32(userId),
+		SignDate: SignDate,
+	})
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	response.CurrencySuccessResponse(c, "用户签到成功", map[string]interface{}{"user_sign in": in})
+
 }
