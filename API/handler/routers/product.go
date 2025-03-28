@@ -20,7 +20,7 @@ func ProductDetail(c *gin.Context) {
 		response.CurrencyErrorResponse(c, err.Error())
 		return
 	}
-	response.CurrencySuccessResponse(c, "查询成功", map[string]interface{}{"product_detail": detail})
+	response.CurrencySuccessResponse(c, "商品详情展示成功", map[string]interface{}{"product_detail": detail})
 }
 func ProductList(c *gin.Context) {
 	allProduct, err := client.GetAllProduct(c, &product.GetAllProductRequest{})

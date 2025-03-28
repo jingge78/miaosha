@@ -74,9 +74,17 @@ func SendSms(c *gin.Context) {
 		response.CurrencyErrorResponse(c, err.Error())
 		return
 	}
-	sms, _ := client.SendSms(c, &user.SendSmsRequest{
+	sms, err := client.SendSms(c, &user.SendSmsRequest{
 		Mobile: data.Mobile,
 	})
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	if sms == nil {
+		response.CurrencyErrorResponse(c, "用户密码找回失败")
+		return
+	}
 	response.CurrencySuccessResponse(c, "验证码发送成功成功", map[string]interface{}{"user_sms": sms})
 }
 
@@ -87,10 +95,18 @@ func PassWordRecovery(c *gin.Context) {
 		response.CurrencyErrorResponse(c, err.Error())
 		return
 	}
-	recovery, _ := client.PasswordRecovery(c, &user.PasswordRecoveryRequest{
+	recovery, err := client.PasswordRecovery(c, &user.PasswordRecoveryRequest{
 		Account: data.Account,
 		Mobile:  data.Mobile,
 		SendSms: data.SendSms,
 	})
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	if recovery == nil {
+		response.CurrencyErrorResponse(c, "用户密码找回失败")
+		return
+	}
 	response.CurrencySuccessResponse(c, "用户密码找回成功", map[string]interface{}{"user_recovery": recovery})
 }

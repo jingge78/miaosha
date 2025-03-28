@@ -2,7 +2,7 @@ package model
 
 import "miaosha-jjl/common/global"
 
-type EbStoreCombination struct {
+type StoreCombination struct {
 	Id            uint32  `gorm:"column:id;type:int UNSIGNED;primaryKey;not null;" json:"id"`
 	ProductId     uint32  `gorm:"column:product_id;type:int UNSIGNED;comment:商品id;not null;" json:"product_id"`       // 商品id
 	MerId         uint32  `gorm:"column:mer_id;type:int UNSIGNED;comment:商户id;default:0;" json:"mer_id"`              // 商户id
@@ -38,11 +38,11 @@ type EbStoreCombination struct {
 	QuotaShow     int32   `gorm:"column:quota_show;type:int;comment:限量总数显示;not null;default:0;" json:"quota_show"`           // 限量总数显示
 }
 
-func (e *EbStoreCombination) TableName() string {
-	return "eb_store_combination"
+func (e *StoreCombination) TableName() string {
+	return "store_combination"
 }
-func (e *EbStoreCombination) GroupByProductList() ([]EbStoreCombination, error) {
-	var GroupByProduct []EbStoreCombination
+func (e *StoreCombination) GroupByProductList() ([]*StoreCombination, error) {
+	var GroupByProduct []*StoreCombination
 	err := global.DB.Find(&GroupByProduct).Error
 	if err != nil {
 		return nil, err

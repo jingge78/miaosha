@@ -26,7 +26,7 @@ func (u *User) TableName() string {
 // 账号登录//jj
 
 func (u *User) LoginUser(account string) error {
-	return global.DB.Table("user").Where("account = ?", account).Limit(1).Find(&u).Error
+	return global.DB.Debug().Table("user").Where("account = ?", account).Limit(1).Find(&u).Error
 }
 func (u *User) Create() error {
 	return global.DB.Create(&u).Error

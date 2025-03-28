@@ -43,9 +43,9 @@ func UserRegister(ctx context.Context, in *user.RegisterRequest) (*user.Register
 	}
 	return client.(*user.RegisterResponse), nil
 }
-func Update(ctx context.Context, i *user.UpdateRequest) (*user.UpdateResponse, error) {
+func Update(ctx context.Context, in *user.UpdateRequest) (*user.UpdateResponse, error) {
 	client, err := UserClient(ctx, func(ctx context.Context, client user.UserClient) (interface{}, error) {
-		login, err := client.Update(ctx, i)
+		login, err := client.Update(ctx, in)
 		if err != nil {
 			return nil, err
 		}
@@ -57,9 +57,9 @@ func Update(ctx context.Context, i *user.UpdateRequest) (*user.UpdateResponse, e
 	return client.(*user.UpdateResponse), nil
 }
 
-func SendSms(ctx context.Context, i *user.SendSmsRequest) (*user.SendSmsResponse, error) {
+func SendSms(ctx context.Context, in *user.SendSmsRequest) (*user.SendSmsResponse, error) {
 	client, err := UserClient(ctx, func(ctx context.Context, client user.UserClient) (interface{}, error) {
-		login, err := client.SendSms(ctx, i)
+		login, err := client.SendSms(ctx, in)
 		if err != nil {
 			return nil, err
 		}
@@ -71,13 +71,13 @@ func SendSms(ctx context.Context, i *user.SendSmsRequest) (*user.SendSmsResponse
 	return client.(*user.SendSmsResponse), nil
 }
 
-func PasswordRecovery(ctx context.Context, i *user.PasswordRecoveryRequest) (*user.PasswordRecoveryResponse, error) {
+func PasswordRecovery(ctx context.Context, in *user.PasswordRecoveryRequest) (*user.PasswordRecoveryResponse, error) {
 	client, err := UserClient(ctx, func(ctx context.Context, client user.UserClient) (interface{}, error) {
-		login, err := client.PasswordRecovery(ctx, i)
+		pass, err := client.PasswordRecovery(ctx, in)
 		if err != nil {
 			return nil, err
 		}
-		return login, nil
+		return pass, nil
 	})
 	if err != nil {
 		return nil, err

@@ -9,7 +9,7 @@ import (
 )
 
 func (p *ServerProduct) GroupByProductList(ctx context.Context, req *product.GroupByProductListRequest) (*product.GroupByProductListResponse, error) {
-	var groupProduct model.EbStoreCombination
+	var groupProduct model.StoreCombination
 	list, err := groupProduct.GroupByProductList()
 	if err != nil {
 		return nil, err
