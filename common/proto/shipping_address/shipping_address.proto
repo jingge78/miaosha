@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package shipping_address;
+option go_package = ".;shipping_address";
+
+message AddShippingAddressRequest {
+  uint64 UserId = 1;
+  string Recipient_Name = 2;
+  string PhoneNumber = 3;
+  string Province = 4;
+  string City = 5;
+  string District = 6;
+  string DetailedAddress = 7;
+  uint64 IsDefault = 8;
+}
+
+message AddShippingAddressResponse {
+  uint64 ShippingAddressId = 1;
+}
+
+service ShippingAddress {
+  rpc AddShippingAddress(AddShippingAddressRequest) returns (AddShippingAddressResponse);
+}

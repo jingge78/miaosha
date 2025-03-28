@@ -10,7 +10,7 @@ import (
 // 修改密码//jj
 func (s *ServerUser) Update(ctx context.Context, in *user.UpdateRequest) (*user.UpdateResponse, error) {
 	var users model.User
-	err := users.Update(in.Account, utils.Md5(in.Password))
+	err := users.Update(in.Account, utils.Encryption(in.Password))
 	if err != nil {
 		return nil, err
 	}
