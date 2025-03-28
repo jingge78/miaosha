@@ -148,8 +148,6 @@ func InitNaCos() {
 	if err != nil {
 		log.Println("配置文件解析失败")
 	}
-	fmt.Println(content)
-	fmt.Println(global.NaCos.Mysql)
 }
 
 func InitConsul() {

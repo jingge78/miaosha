@@ -142,3 +142,12 @@ func GroupByProductList(c *gin.Context) {
 	}
 	response.CurrencySuccessResponse(c, "团购商品查询成功", map[string]interface{}{"group_list": list.GroupByProductListResponse})
 }
+
+func ProductRanking(c *gin.Context) {
+	_, err := client.ProductRanking(c, &product.ProductRankingRequest{})
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	response.CurrencySuccessResponse(c, "排行榜成功", nil)
+}

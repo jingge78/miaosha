@@ -13,3 +13,7 @@ type OrderReq struct {
 	PayPrice     float64 `json:"pay_price" binding:"required"`
 	PayPostage   float64 `json:"pay_postage" binding:"required"`
 }
+
+type OrderList struct {
+	RealName string `json:"real_name" binding:"required"`
+}

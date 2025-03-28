@@ -149,6 +149,11 @@ message GroupByProductListRequest{}
 message GroupByProductListResponse{
   repeated GroupByProduct GroupByProductListResponse = 1;
 }
+
+message ProductRankingRequest{}
+message ProductRankingResponse{
+  string result = 1;
+}
 service Product {
   rpc ProductDetail(ProductDetailRequest) returns (ProductDetailResponse);
   rpc EsAddProduct(EsAddProductRequest) returns (EsAddProductResponse);
@@ -161,4 +166,5 @@ service Product {
   rpc WebsiteProductList(WebsiteProductListRequest)returns(WebsiteProductListResponse);//网站商品展示(liBang)
   rpc ProductSort(ProductSortRequest)returns(ProductSortResponse);//商品排序(liBang)
   rpc GroupByProductList(GroupByProductListRequest)returns(GroupByProductListResponse);
+  rpc ProductRanking(ProductRankingRequest)returns(ProductRankingResponse);
 }

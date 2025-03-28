@@ -59,10 +59,18 @@ func Update(c *gin.Context) {
 		response.CurrencyErrorResponse(c, err.Error())
 		return
 	}
-	_, err = client.Update(c, &user.UpdateRequest{
+	update, err := client.Update(c, &user.UpdateRequest{
 		Account:  data.Account,
 		Password: data.Password,
 	})
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	if update.Success == false {
+		response.CurrencyErrorResponse(c, "失败")
+		return
+	}
 	response.CurrencySuccessResponse(c, "用户密码修改成功", nil)
 
 }

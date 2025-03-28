@@ -10,20 +10,23 @@ func LoadRouters(r *gin.Engine) {
 	{
 		user.POST("/login", UserLogin)
 		user.POST("/register", UserRegister)
-		user.POST("/update", Update)
 		user.POST("/send", SendSms)
 		user.POST("/recovery", PassWordRecovery)
+		user.Use(pkg.JWTAuth("2209AGroup3"))
+		user.POST("/update", Update)
 	}
 	order := r.Group("/order")
 	{
 		order.Use(pkg.JWTAuth("2209AGroup3"))
 		order.POST("/orderCreate", OrderCreate)
+		order.POST("/orderList", OrderList)
 	}
 	product := r.Group("/product")
 	{
 		product.GET("/detail", ProductDetail)
 		product.GET("/list", ProductList)
 		product.POST("/sync/es", ProductSyncEs)
+		product.POST("/productRanking", ProductRanking)
 		//Es搜索（jjl）
 		product.GET("/search/es", EsSearchByKeyWord)
 		product.POST("/price", PriceFind)
