@@ -4,39 +4,26 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c319c51c-17a7-42e1-85c6-13dbd2b90307" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/API/client/order_client.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API/handler/routers/order.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API/request/order.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/model/EbStoreCombination.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/product_service/GroupByProductList.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/product_service/product_sort.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/product_service/website_product_list.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="aa76e7a1-4013-4fa3-8b3f-93fbe8aa3f5b" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/API/client/shipping_address_client.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/handler/routers/shipping_address.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/request/shipping_address.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/consul/consul.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/model/shipping_address.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/proto/shipping_address/shipping_address.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/proto/shipping_address/shipping_address.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/proto/shipping_address/shipping_address_grpc.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/utils/validate_email.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/utils/verify_phone_number.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/shipping_address_service/add_shipping_address.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/shipping_address_service/shipping_address.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/GOHCache.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GOHCache.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/client/product_client.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/client/product_client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/handler/routers/product.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/handler/routers/product.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/handler/routers/routers.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/handler/routers/routers.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/request/product.go" beforeDir="false" afterPath="$PROJECT_DIR$/API/request/product.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/global/global.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/global/global.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/initialition/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/initialition/init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/model/eb_store_product_relation.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/model/eb_store_product_relation.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/model/product.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/model/product.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/model/store_category.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/model/store_category.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/model/store_order.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/model/store_order.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pkg/aliPay.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/pkg/aliPay.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pkg/jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/pkg/jwt.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/proto/order/order.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/order/order.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/proto/order/order.proto" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/order/order.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/proto/order/order_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/order/order_grpc.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/proto/product/product.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/product/product.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/proto/product/product.proto" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/product/product.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/proto/product/product_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/proto/product/product_grpc.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/order_service/order.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/order_service/order.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/product_service/GetCollectProduct.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/product_service/GetCollectProduct.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/register/register.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/register/register.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/user_service/user_update.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/user_service/user_update.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +40,7 @@
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 2
 }]]></component>
-  <component name="ProjectId" id="2ur5shEhxHmCv2JopvYpSfyNqDE" />
+  <component name="ProjectId" id="2uvKvK00jGwBwWEHdQKFABFeqVU" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -66,13 +53,22 @@
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
     "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "git-widget-placeholder": "正在合并 main",
+    "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/Users/鬼谷纵横",
+    "last_opened_file_path": "D:/Users/鬼谷纵横/Desktop/123/miaosha/service",
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\service" />
+      <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\common\utils" />
+      <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\common\proto" />
+      <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\common\model" />
+      <recent name="D:\Users\鬼谷纵横\Desktop\123\miaosha\common" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

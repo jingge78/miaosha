@@ -51,4 +51,10 @@ func LoadRouters(r *gin.Engine) {
 		storeCart.Use(pkg.JWTAuth("2209AGroup3"))
 		storeCart.POST("/add", AddStoreCart)
 	}
+
+	shippingAddress := r.Group("/shipping_address")
+	{
+		shippingAddress.Use(pkg.JWTAuth("2209AGroup3"))
+		shippingAddress.POST("/add", AddShippingAddress)
+	}
 }
