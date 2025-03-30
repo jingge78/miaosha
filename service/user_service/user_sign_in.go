@@ -36,7 +36,6 @@ func (s *ServerUser) SignIn(ctx context.Context, req *user.SignInRequest) (resp 
 	} else {
 		signDate = time.Now() // 默认使用当前日期
 	}
-
 	today := signDate.Format("2006-01-02")
 	//1.检查今天是否已经签到
 	todaykey := fmt.Sprintf("sign:user:%d:%s", req.UserId, today)
@@ -48,7 +47,6 @@ func (s *ServerUser) SignIn(ctx context.Context, req *user.SignInRequest) (resp 
 	if bit == 1 {
 		return nil, fmt.Errorf("今天签到了")
 	}
-
 	//2.检查昨天是否已经签到，计算连续签到天数
 	consecutiveDays := 1 // 默认连续1天
 	yesterday := signDate.AddDate(0, 0, -1).Format("2006-01-02")
@@ -110,7 +108,6 @@ func (s *ServerUser) SignIn(ctx context.Context, req *user.SignInRequest) (resp 
 			return nil, fmt.Errorf("更新积分失败")
 		}
 	}
-
 	// 6. 创建积分流水记录
 	integralLog := model.UserIntegralLog{
 		ID:            uuid.New().String(),
@@ -135,12 +132,10 @@ func (s *ServerUser) SignIn(ctx context.Context, req *user.SignInRequest) (resp 
 		tx.Rollback()
 		return nil, fmt.Errorf("更新签到状态失败")
 	}
-
 	// 8. 提交事务
 	if err := tx.Commit().Error; err != nil {
 		return nil, fmt.Errorf("提交事务失败")
 	}
-
 	return &user.SignInResponse{
 		Message: fmt.Sprintf("签到成功，连续签到%d天", consecutiveDays),
 		Points:  int32(points),

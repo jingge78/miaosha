@@ -14,6 +14,7 @@ func LoadRouters(r *gin.Engine) {
 		user.POST("/recovery", PassWordRecovery)
 		user.Use(pkg.JWTAuth("2209AGroup3"))
 		user.POST("/sign", UserSignIn)
+		user.POST("/makeupSignIn", MakeupSignIn)
 		user.POST("/update", Update)
 	}
 	order := r.Group("/order")
@@ -36,6 +37,7 @@ func LoadRouters(r *gin.Engine) {
 		product.GET("/sort", ProductSort)                   //网站商品排序
 		//分类展示（LiBang）
 		product.GET("/category", ProductCategory)
+		product.GET("/filter", ProductFilter)
 		product.GET("group/list", GroupByProductList)
 		//使用中间件
 		product.Use(pkg.JWTAuth("2209AGroup3"))

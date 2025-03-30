@@ -163,3 +163,17 @@ func ProductRanking(ctx context.Context, in *product.ProductRankingRequest) (*pr
 	}
 	return client.(*product.ProductRankingResponse), err
 }
+func ProductFilter(ctx context.Context, in *product.ProductFilterRequest) (*product.ProductFilterResponse, error) {
+
+	client, err := ProductClient(ctx, func(ctx context.Context, client product.ProductClient) (interface{}, error) {
+		find, err := client.ProductFilter(ctx, in)
+		if err != nil {
+			return nil, err
+		}
+		return find, err
+	})
+	if err != nil {
+		return nil, err
+	}
+	return client.(*product.ProductFilterResponse), err
+}

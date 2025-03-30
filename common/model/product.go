@@ -1,6 +1,9 @@
 package model
 
-import "miaosha-jjl/common/global"
+import (
+	"miaosha-jjl/common/global"
+	"miaosha-jjl/common/utils"
+)
 
 type Product struct {
 	Id        uint64  `gorm:"column:id;type:mediumint;comment:商品id;primaryKey;not null;" json:"id"`                                     // 商品id
@@ -51,4 +54,43 @@ func (p *Product) ProductSortByIsShowOrPrice(isShow int) ([]Product, error) {
 		return nil, err
 	}
 	return product, nil
+}
+
+func (p *Product) ProductFilter(minPrice, maxPrice float32, name string, isPostage, page, pageSize int64) (product []Product, pagination utils.Pagination, err error) {
+
+	var products []Product
+
+	query := global.DB.Model(&Product{}).Where("is_del = ?", 0) //是否删除
+
+	//筛选条件
+	if minPrice > 0 {
+		query = query.Where("price >=?", minPrice)
+	}
+	if maxPrice > 0 {
+		query = query.Where("price <=?", maxPrice)
+	}
+	if name != "" {
+		query = query.Where("store_name LIKE ?", "%"+name+"%")
+	}
+	if isPostage >= 0 {
+		query = query.Where("is_postage = ?", isPostage)
+	}
+
+	pagination = utils.Pagination{
+		Page:     int(page),
+		PageSize: int(pageSize),
+	}
+	pagination.Validate() // 验证分页参数
+	// 先获取总数
+	var total int64
+	if err = query.Count(&total).Error; err != nil {
+		return nil, pagination, err
+	}
+	pagination.SetTotal(total)
+	err = query.Offset(pagination.Offset()).Limit(pagination.Limit()).Find(&products).Error
+	if err != nil {
+		return nil, pagination, err
+	}
+
+	return products, pagination, nil
 }

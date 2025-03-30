@@ -133,3 +133,17 @@ func UserSignIn(c *gin.Context) {
 	response.CurrencySuccessResponse(c, "用户签到成功", map[string]interface{}{"user_sign in": in})
 
 }
+func MakeupSignIn(c *gin.Context) {
+	userId, _ := strconv.Atoi(c.Query("user_id"))
+	SignDate := c.Query("sign_date") //测试时间日期(如:2025-03-28)
+	in, err := client.MakeupSignIn(c, &user.MakeupSignInRequest{
+		UserId:   int32(userId),
+		SignDate: SignDate,
+	})
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	response.CurrencySuccessResponse(c, "用户补签成功", map[string]interface{}{"makeup_Sign_In": in})
+
+}

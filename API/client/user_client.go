@@ -97,3 +97,16 @@ func UserSignIn(ctx context.Context, in *user.SignInRequest) (*user.SignInRespon
 	}
 	return client.(*user.SignInResponse), nil
 }
+func MakeupSignIn(ctx context.Context, in *user.MakeupSignInRequest) (*user.MakeupSignInResponse, error) {
+	client, err := UserClient(ctx, func(ctx context.Context, client user.UserClient) (interface{}, error) {
+		pass, err := client.MakeupSignIn(ctx, in)
+		if err != nil {
+			return nil, err
+		}
+		return pass, nil
+	})
+	if err != nil {
+		return nil, err
+	}
+	return client.(*user.MakeupSignInResponse), nil
+}
