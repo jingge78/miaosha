@@ -48,13 +48,25 @@ message SignInResponse {
   string message = 1;
   int32 points = 2; // 积分
 }
-
+message UserDetailRequest{
+  uint64 Uid = 1;
+}
+message UserDetailResponse{
+  string Account = 1;
+  uint64 Birthday = 2;
+  string Nickname = 3;
+  string Avatar = 4;
+  string Phone = 5;
+  string Address = 6;
+}
 service User {
   rpc Login(LoginRequest) returns(LoginResponse);//账号登录//jj
   rpc Register(RegisterRequest) returns(RegisterResponse);
   rpc Update(UpdateRequest) returns(UpdateResponse);
   rpc SendSms(SendSmsRequest) returns(SendSmsResponse);
   rpc PasswordRecovery(PasswordRecoveryRequest) returns(PasswordRecoveryResponse);
-
   rpc SignIn(SignInRequest) returns(SignInResponse); // 用户签到功能
+  rpc UserDetail(UserDetailRequest) returns(UserDetailResponse);
+
 }
+

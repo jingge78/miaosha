@@ -131,5 +131,19 @@ func UserSignIn(c *gin.Context) {
 		return
 	}
 	response.CurrencySuccessResponse(c, "用户签到成功", map[string]interface{}{"user_sign in": in})
-
+}
+func UserDetail(c *gin.Context) {
+	Uid := c.GetUint("userId")
+	users, err := client.UserDetail(c, &user.UserDetailRequest{
+		Uid: uint64(Uid),
+	})
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	if users == nil {
+		response.CurrencyErrorResponse(c, "用户详情展示失败")
+		return
+	}
+	response.CurrencySuccessResponse(c, "用户详情展示成功", map[string]interface{}{"users": users})
 }

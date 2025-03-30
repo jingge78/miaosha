@@ -84,6 +84,7 @@ func PasswordRecovery(ctx context.Context, in *user.PasswordRecoveryRequest) (*u
 	}
 	return client.(*user.PasswordRecoveryResponse), nil
 }
+
 func UserSignIn(ctx context.Context, in *user.SignInRequest) (*user.SignInResponse, error) {
 	client, err := UserClient(ctx, func(ctx context.Context, client user.UserClient) (interface{}, error) {
 		pass, err := client.SignIn(ctx, in)
@@ -96,4 +97,18 @@ func UserSignIn(ctx context.Context, in *user.SignInRequest) (*user.SignInRespon
 		return nil, err
 	}
 	return client.(*user.SignInResponse), nil
+}
+
+func UserDetail(ctx context.Context, in *user.UserDetailRequest) (*user.UserDetailResponse, error) {
+	client, err := UserClient(ctx, func(ctx context.Context, client user.UserClient) (interface{}, error) {
+		detail, err := client.UserDetail(ctx, in)
+		if err != nil {
+			return nil, err
+		}
+		return detail, nil
+	})
+	if err != nil {
+		return nil, err
+	}
+	return client.(*user.UserDetailResponse), nil
 }
