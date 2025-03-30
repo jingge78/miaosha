@@ -84,3 +84,17 @@ func PasswordRecovery(ctx context.Context, in *user.PasswordRecoveryRequest) (*u
 	}
 	return client.(*user.PasswordRecoveryResponse), nil
 }
+
+func UserDetail(ctx context.Context, in *user.UserDetailRequest) (*user.UserDetailResponse, error) {
+	client, err := UserClient(ctx, func(ctx context.Context, client user.UserClient) (interface{}, error) {
+		detail, err := client.UserDetail(ctx, in)
+		if err != nil {
+			return nil, err
+		}
+		return detail, nil
+	})
+	if err != nil {
+		return nil, err
+	}
+	return client.(*user.UserDetailResponse), nil
+}

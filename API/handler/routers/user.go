@@ -110,3 +110,19 @@ func PassWordRecovery(c *gin.Context) {
 	}
 	response.CurrencySuccessResponse(c, "用户密码找回成功", map[string]interface{}{"user_recovery": recovery})
 }
+
+func UserDetail(c *gin.Context) {
+	Uid := c.GetUint("userId")
+	users, err := client.UserDetail(c, &user.UserDetailRequest{
+		Uid: uint64(Uid),
+	})
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	if users == nil {
+		response.CurrencyErrorResponse(c, "用户详情展示失败")
+		return
+	}
+	response.CurrencySuccessResponse(c, "用户详情展示成功", map[string]interface{}{"users": users})
+}
