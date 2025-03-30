@@ -151,3 +151,30 @@ func ProductRanking(c *gin.Context) {
 	}
 	response.CurrencySuccessResponse(c, "排行榜成功", nil)
 }
+
+// 商品属性筛选
+func ProductFilter(c *gin.Context) {
+
+	minPrice, _ := strconv.ParseFloat(c.Query("min_price"), 32)
+	maxPrice, _ := strconv.ParseFloat(c.Query("max_price"), 32)
+	storeName := c.Query("store_name")
+	isPostage, _ := strconv.ParseInt(c.Query("is_postage"), 10, 64)
+	page, _ := strconv.ParseInt(c.Query("page"), 10, 64)
+	pageSize, _ := strconv.ParseInt(c.Query("page_size"), 10, 64)
+
+	req := &product.ProductFilterRequest{
+		MinPrice:  float32(minPrice),
+		MaxPrice:  float32(maxPrice),
+		StoreName: storeName,
+		IsPostage: isPostage,
+		Page:      page,
+		PageSize:  pageSize,
+	}
+
+	filter, err := client.ProductFilter(c, req)
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	response.CurrencySuccessResponse(c, "商品展示成功", map[string]interface{}{"product_filter_list": filter})
+}
