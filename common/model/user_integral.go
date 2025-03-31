@@ -31,6 +31,18 @@ func (UserIntegralLog) TableName() string {
 	return "user_integral_log"
 }
 
+// 补签卡表
+type UserMakeupCard struct {
+	ID         int32     `json:"id" gorm:"primaryKey"`
+	UserID     int       `gorm:"column:user_id;not null;comment:用户ID" json:"userId"` // 用户id
+	CardCount  int       `gorm:"column:cardCount;default:0;comment:补签卡" json:"cardCount"`
+	UpdateTime time.Time `gorm:"column:update_time;autoUpdateTime;comment:修改时间" json:"updateTime"` // 修改时间
+}
+
+func (UserMakeupCard) TableName() string {
+	return "user_makeup_card"
+}
+
 // 积分类型常量
 const (
 	IntegralTypeSignIn     = 1 // 签到
