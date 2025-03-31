@@ -50,3 +50,17 @@ func OrderList(c *gin.Context) {
 	}
 	response.CurrencySuccessResponse(c, "展示成功", map[string]interface{}{"list": list})
 }
+func OrderListAll(c *gin.Context) {
+	var data request.OrderListAll
+	err := c.ShouldBind(&data)
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	list, err := client.OrderListAll(c, &order.OrderListAllReq{})
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	response.CurrencySuccessResponse(c, "展示成功", map[string]interface{}{"list": list})
+}

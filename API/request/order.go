@@ -17,3 +17,4 @@ type OrderReq struct {
 type OrderList struct {
 	RealName string `json:"real_name" binding:"required"`
 }
+type OrderListAll struct{}

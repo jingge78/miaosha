@@ -22,6 +22,7 @@ func LoadRouters(r *gin.Engine) {
 		order.Use(pkg.JWTAuth("2209AGroup3"))
 		order.POST("/orderCreate", OrderCreate)
 		order.POST("/orderList", OrderList)
+		order.POST("/orderListAll", OrderListAll)
 	}
 	product := r.Group("/product")
 	{

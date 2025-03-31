@@ -44,8 +44,11 @@ message OrderInfo{
   float PayPrice = 12;
   float PayPostage = 13;
 }
+message OrderListAllReq {
+}
 
 service Order {
   rpc CreateOrder(CreateOrderReq) returns (CreateOrderResp);
   rpc OrderList(OrderListReq) returns (OrderListResp);
+  rpc OrderListAll(OrderListAllReq) returns (OrderListResp);
 }
