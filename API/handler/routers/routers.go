@@ -70,4 +70,9 @@ func LoadRouters(r *gin.Engine) {
 	{
 		productReply.GET("/list", ProductReplyList)
 	}
+
+	coupon := r.Group("/coupon")
+	{
+		coupon.POST("/add", AddCoupon)
+	}
 }

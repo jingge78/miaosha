@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package coupon;
+option go_package = ".;coupon";
+
+message AddCouponRequest {
+  string Title = 1;
+  uint64 Integral = 2;
+  float  CouponPrice = 3;
+  float  UseMinPrice = 4;
+  uint64 CouponTime = 5;
+  string ProductId = 6;
+  uint64 CategoryId = 7;
+  uint64 Type = 8;
+}
+
+message AddCouponResponse {
+  uint64 CouponId = 1;
+}
+
+service Coupon {
+  rpc AddCoupon(AddCouponRequest) returns (AddCouponResponse);
+}

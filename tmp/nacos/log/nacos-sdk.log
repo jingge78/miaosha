@@ -55,3 +55,6 @@
 2025-03-30T19:53:39.288+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
 2025-03-30T19:57:11.772+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
 >>>>>>> gqr
+2025-03-31T10:34:03.262+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-31T19:39:20.708+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-31T19:46:58.342+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
