@@ -145,5 +145,4 @@ func MakeupSignIn(c *gin.Context) {
 		return
 	}
 	response.CurrencySuccessResponse(c, "用户补签成功", map[string]interface{}{"makeup_Sign_In": in})
-
 }
