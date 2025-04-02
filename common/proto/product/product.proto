@@ -177,6 +177,19 @@ message ProductFilterResponse{
   Pagination pagination = 2;
 }
 
+message AddSpikeProductReq{
+  int64 ProductId = 1;
+  string ProductName = 2;
+  float ProductPrice = 3;
+  float SpikePrice = 4;
+  int64 SpikeNum = 5;
+  string StartTime = 6;
+  string EndTime = 7;
+}
+
+message AddSpikeProductResp {
+  string Success = 1;
+}
 
 service Product {
   rpc ProductDetail(ProductDetailRequest) returns (ProductDetailResponse);
@@ -193,4 +206,6 @@ service Product {
   rpc ProductRanking(ProductRankingRequest)returns(ProductRankingResponse);
 
   rpc ProductFilter(ProductFilterRequest) returns (ProductFilterResponse);//商品属性筛选
+  rpc AddSpikeProduct(AddSpikeProductReq) returns (AddSpikeProductResp);
+
 }

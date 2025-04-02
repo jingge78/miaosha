@@ -55,3 +55,12 @@
 2025-03-30T19:53:39.288+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
 2025-03-30T19:57:11.772+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
 >>>>>>> gqr
+2025-03-31T10:26:41.144+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-31T20:49:36.089+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-31T20:57:09.317+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-31T20:59:07.232+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-31T21:01:22.637+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-31T21:06:30.113+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-31T21:09:25.530+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-31T21:12:28.065+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-04-02T21:27:41.705+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>

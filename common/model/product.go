@@ -94,3 +94,11 @@ func (p *Product) ProductFilter(minPrice, maxPrice float32, name string, isPosta
 
 	return products, pagination, nil
 }
+func (p *Product) FindProduct(id int) (result *Product, err error) {
+	err = global.DB.Where("id = ?", id).Limit(1).Find(&result).Error
+	return
+}
+
+func (p *Product) UpdateProductNum(id int, num int) error {
+	return global.DB.Model(&Product{}).Where("id = ?", id).Update("stock", num).Error
+}

@@ -178,3 +178,37 @@ func ProductFilter(c *gin.Context) {
 	}
 	response.CurrencySuccessResponse(c, "商品展示成功", map[string]interface{}{"product_filter_list": filter})
 }
+func SpikeProduct(c *gin.Context) {
+	var data request.AddSpikeProductReq
+	err := c.ShouldBind(&data)
+	if err != nil {
+		c.JSON(200, gin.H{
+			"Msg":  err.Error(),
+			"Code": 500,
+			"Data": nil,
+		})
+		return
+	}
+	products, err := client.AddSpikeProduct(c, &product.AddSpikeProductReq{
+		ProductId:    int64(data.ProductId),
+		ProductName:  data.ProductName,
+		ProductPrice: float32(data.ProductPrice),
+		SpikePrice:   float32(data.SpikePrice),
+		SpikeNum:     data.SpikeNum,
+		StartTime:    data.StartTime,
+		EndTime:      data.EndTime,
+	})
+	if err != nil {
+		c.JSON(200, gin.H{
+			"Msg":  "商品预热失败",
+			"Code": 500,
+			"Data": nil,
+		})
+		return
+	}
+	c.JSON(200, gin.H{
+		"Msg":  "商品预热成功",
+		"Code": 200,
+		"Data": products,
+	})
+}

@@ -31,6 +31,7 @@ func LoadRouters(r *gin.Engine) {
 		product.GET("/list", ProductList)
 		product.POST("/sync/es", ProductSyncEs)
 		product.POST("/productRanking", ProductRanking)
+		product.POST("/spikeProduct", SpikeProduct)
 		//Es搜索（jjl）
 		product.GET("/search/es", EsSearchByKeyWord)
 		product.POST("/price", PriceFind)

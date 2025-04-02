@@ -177,3 +177,17 @@ func ProductFilter(ctx context.Context, in *product.ProductFilterRequest) (*prod
 	}
 	return client.(*product.ProductFilterResponse), err
 }
+func AddSpikeProduct(ctx context.Context, in *product.AddSpikeProductReq) (*product.AddSpikeProductResp, error) {
+
+	client, err := ProductClient(ctx, func(ctx context.Context, client product.ProductClient) (interface{}, error) {
+		find, err := client.AddSpikeProduct(ctx, in)
+		if err != nil {
+			return nil, err
+		}
+		return find, err
+	})
+	if err != nil {
+		return nil, err
+	}
+	return client.(*product.AddSpikeProductResp), err
+}
