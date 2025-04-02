@@ -57,7 +57,9 @@ message UserDetailResponse{
   string Nickname = 3;
   string Avatar = 4;
   string Phone = 5;
-  string Address = 6;}
+  string Address = 6;
+}
+
 message MakeupSignInRequest {
   int32 user_id = 1; //是谁补签
   string sign_date = 2; //补签日期
@@ -68,6 +70,19 @@ message MakeupSignInResponse {
   string message = 2;
   int32 points = 3; // 积分
 }
+
+message UserImproveInformationRequest {
+  string Nickname = 1;
+  string Avatar = 2;
+  uint64 Birthday = 3;
+  string Address = 4;
+  uint64 Uid = 5;
+}
+
+message UserImproveInformationResponse {
+  bool Success= 1;
+}
+
 service User {
   rpc Login(LoginRequest) returns(LoginResponse);//账号登录//jj
   rpc Register(RegisterRequest) returns(RegisterResponse);
@@ -76,6 +91,7 @@ service User {
   rpc PasswordRecovery(PasswordRecoveryRequest) returns(PasswordRecoveryResponse);
   rpc SignIn(SignInRequest) returns(SignInResponse); // 用户签到功能
   rpc UserDetail(UserDetailRequest) returns(UserDetailResponse);
+  rpc UserImproveInformation(UserImproveInformationRequest) returns(UserImproveInformationResponse);
 
   rpc MakeupSignIn(MakeupSignInRequest) returns(MakeupSignInResponse); // 用户补签
 }

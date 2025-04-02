@@ -22,3 +22,10 @@ type PassWordRecovery struct {
 	Mobile  string `form:"mobile" binding:"required"`
 	SendSms string `form:"sendSms" binding:"required"`
 }
+
+type UserImproveInformation struct {
+	Nickname string `json:"nickname" form:"nickname" binding:"required"`
+	Avatar   string `json:"avatar" form:"avatar" binding:"required"`
+	Birthday uint64 `json:"birthday" form:"birthday" binding:"required"`
+	Address  string `json:"address" form:"address" binding:"required"`
+}

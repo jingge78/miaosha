@@ -41,3 +41,7 @@ func (u *User) Update(account string, pwd string) error {
 func (u *User) GetUserUid(uid uint64) error {
 	return global.DB.Debug().Table("user").Where("uid = ?", uid).Limit(1).Find(&u).Error
 }
+
+func (u *User) UserImproveInformation(uid uint64) error {
+	return global.DB.Model(&User{}).Table("user").Where("uid = ?", uid).Updates(&u).Error
+}

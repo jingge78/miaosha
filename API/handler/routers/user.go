@@ -161,3 +161,25 @@ func MakeupSignIn(c *gin.Context) {
 	response.CurrencySuccessResponse(c, "用户补签成功", map[string]interface{}{"makeup_Sign_In": in})
 
 }
+
+func UserImproveInformation(c *gin.Context) {
+	var data request.UserImproveInformation
+	if err := c.ShouldBind(&data); err != nil {
+		response.CurrencyErrorResponse(c, "参数错误")
+		return
+	}
+	Uid := c.GetUint("userId")
+	improve, err := client.UserImproveInformation(c, &user.UserImproveInformationRequest{
+		Nickname: data.Nickname,
+		Avatar:   data.Avatar,
+		Birthday: data.Birthday,
+		Address:  data.Address,
+		Uid:      uint64(Uid),
+	})
+	if err != nil {
+		response.CurrencyErrorResponse(c, "用户完善信息失败")
+		return
+	}
+	response.CurrencySuccessResponse(c, "用户完善信息成功", map[string]interface{}{"user_improve_information": improve})
+
+}
