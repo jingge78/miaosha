@@ -34,3 +34,29 @@ func AddCoupon(c *gin.Context) {
 	}
 	response.CurrencySuccessResponse(c, "平台优惠券添加成功", map[string]interface{}{"coupon": coupons})
 }
+
+func GrantCouponUser(c *gin.Context) {
+	var data request.GrantCouponUser
+	if err := c.ShouldBind(&data); err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	coupons, err := client.GrantCouponUser(c, &coupon.GrantCouponUserRequest{
+		Uid:         data.AddTime,
+		CouponTitle: data.CouponTitle,
+		CouponPrice: float32(data.CouponPrice),
+		UseMinPrice: float32(data.UseMinPrice),
+		AddTime:     data.AddTime,
+		EndTime:     data.EndTime,
+		Type:        data.Type,
+	})
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	if coupons.Success == false {
+		response.CurrencyErrorResponse(c, "用户获取平台发放优惠券失败")
+		return
+	}
+	response.CurrencySuccessResponse(c, "用户获取平台发放优惠券成功", map[string]interface{}{"coupon_user": coupons})
+}

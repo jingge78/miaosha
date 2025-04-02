@@ -31,3 +31,17 @@ func AddCoupon(ctx context.Context, in *coupon.AddCouponRequest) (*coupon.AddCou
 	}
 	return client.(*coupon.AddCouponResponse), err
 }
+
+func GrantCouponUser(ctx context.Context, in *coupon.GrantCouponUserRequest) (*coupon.GrantCouponUserResponse, error) {
+	client, err := CouponClient(ctx, func(ctx context.Context, client coupon.CouponClient) (interface{}, error) {
+		createOrder, err := client.GrantCouponUser(ctx, in)
+		if err != nil {
+			return nil, err
+		}
+		return createOrder, err
+	})
+	if err != nil {
+		return nil, err
+	}
+	return client.(*coupon.GrantCouponUserResponse), err
+}

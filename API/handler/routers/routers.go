@@ -16,6 +16,7 @@ func LoadRouters(r *gin.Engine) {
 		user.POST("/sign", UserSignIn)
 		user.POST("/makeupSignIn", MakeupSignIn)
 		user.POST("/update", Update)
+		user.PUT("/improve", UserImproveInformation)
 		user.GET("/detail", UserDetail)
 	}
 	order := r.Group("/order")
@@ -74,5 +75,6 @@ func LoadRouters(r *gin.Engine) {
 	coupon := r.Group("/coupon")
 	{
 		coupon.POST("/add", AddCoupon)
+		coupon.POST("/grant", GrantCouponUser)
 	}
 }

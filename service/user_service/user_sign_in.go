@@ -37,6 +37,7 @@ func (s *ServerUser) SignIn(ctx context.Context, req *user.SignInRequest) (resp 
 		signDate = time.Now() // 默认使用当前日期
 	}
 	today := signDate.Format("2006-01-02")
+
 	//1.检查今天是否已经签到
 	todaykey := fmt.Sprintf("sign:user:%d:%s", req.UserId, today)
 	offset := signDate.Day() - 1 // 位图的偏移量从0开始
@@ -133,7 +134,7 @@ func (s *ServerUser) SignIn(ctx context.Context, req *user.SignInRequest) (resp 
 		return nil, fmt.Errorf("更新签到状态失败")
 	}
 	// 8. 提交事务
-	if err := tx.Commit().Error; err != nil {
+	if err = tx.Commit().Error; err != nil {
 		return nil, fmt.Errorf("提交事务失败")
 	}
 	return &user.SignInResponse{

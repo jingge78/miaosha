@@ -19,14 +19,15 @@ import (
 const _ = grpc.SupportPackageIsVersion8
 
 const (
-	User_Login_FullMethodName            = "/user.User/Login"
-	User_Register_FullMethodName         = "/user.User/Register"
-	User_Update_FullMethodName           = "/user.User/Update"
-	User_SendSms_FullMethodName          = "/user.User/SendSms"
-	User_PasswordRecovery_FullMethodName = "/user.User/PasswordRecovery"
-	User_SignIn_FullMethodName           = "/user.User/SignIn"
-	User_UserDetail_FullMethodName       = "/user.User/UserDetail"
-	User_MakeupSignIn_FullMethodName     = "/user.User/MakeupSignIn"
+	User_Login_FullMethodName                  = "/user.User/Login"
+	User_Register_FullMethodName               = "/user.User/Register"
+	User_Update_FullMethodName                 = "/user.User/Update"
+	User_SendSms_FullMethodName                = "/user.User/SendSms"
+	User_PasswordRecovery_FullMethodName       = "/user.User/PasswordRecovery"
+	User_SignIn_FullMethodName                 = "/user.User/SignIn"
+	User_UserDetail_FullMethodName             = "/user.User/UserDetail"
+	User_UserImproveInformation_FullMethodName = "/user.User/UserImproveInformation"
+	User_MakeupSignIn_FullMethodName           = "/user.User/MakeupSignIn"
 )
 
 // UserClient is the client API for User service.
@@ -40,6 +41,7 @@ type UserClient interface {
 	PasswordRecovery(ctx context.Context, in *PasswordRecoveryRequest, opts ...grpc.CallOption) (*PasswordRecoveryResponse, error)
 	SignIn(ctx context.Context, in *SignInRequest, opts ...grpc.CallOption) (*SignInResponse, error)
 	UserDetail(ctx context.Context, in *UserDetailRequest, opts ...grpc.CallOption) (*UserDetailResponse, error)
+	UserImproveInformation(ctx context.Context, in *UserImproveInformationRequest, opts ...grpc.CallOption) (*UserImproveInformationResponse, error)
 	MakeupSignIn(ctx context.Context, in *MakeupSignInRequest, opts ...grpc.CallOption) (*MakeupSignInResponse, error)
 }
 
@@ -121,6 +123,16 @@ func (c *userClient) UserDetail(ctx context.Context, in *UserDetailRequest, opts
 	return out, nil
 }
 
+func (c *userClient) UserImproveInformation(ctx context.Context, in *UserImproveInformationRequest, opts ...grpc.CallOption) (*UserImproveInformationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UserImproveInformationResponse)
+	err := c.cc.Invoke(ctx, User_UserImproveInformation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *userClient) MakeupSignIn(ctx context.Context, in *MakeupSignInRequest, opts ...grpc.CallOption) (*MakeupSignInResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(MakeupSignInResponse)
@@ -142,6 +154,7 @@ type UserServer interface {
 	PasswordRecovery(context.Context, *PasswordRecoveryRequest) (*PasswordRecoveryResponse, error)
 	SignIn(context.Context, *SignInRequest) (*SignInResponse, error)
 	UserDetail(context.Context, *UserDetailRequest) (*UserDetailResponse, error)
+	UserImproveInformation(context.Context, *UserImproveInformationRequest) (*UserImproveInformationResponse, error)
 	MakeupSignIn(context.Context, *MakeupSignInRequest) (*MakeupSignInResponse, error)
 	mustEmbedUnimplementedUserServer()
 }
@@ -170,6 +183,9 @@ func (UnimplementedUserServer) SignIn(context.Context, *SignInRequest) (*SignInR
 }
 func (UnimplementedUserServer) UserDetail(context.Context, *UserDetailRequest) (*UserDetailResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UserDetail not implemented")
+}
+func (UnimplementedUserServer) UserImproveInformation(context.Context, *UserImproveInformationRequest) (*UserImproveInformationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UserImproveInformation not implemented")
 }
 func (UnimplementedUserServer) MakeupSignIn(context.Context, *MakeupSignInRequest) (*MakeupSignInResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MakeupSignIn not implemented")
@@ -313,6 +329,24 @@ func _User_UserDetail_Handler(srv interface{}, ctx context.Context, dec func(int
 	return interceptor(ctx, in, info, handler)
 }
 
+func _User_UserImproveInformation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserImproveInformationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServer).UserImproveInformation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: User_UserImproveInformation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServer).UserImproveInformation(ctx, req.(*UserImproveInformationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _User_MakeupSignIn_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MakeupSignInRequest)
 	if err := dec(in); err != nil {
@@ -365,6 +399,10 @@ var User_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UserDetail",
 			Handler:    _User_UserDetail_Handler,
+		},
+		{
+			MethodName: "UserImproveInformation",
+			Handler:    _User_UserImproveInformation_Handler,
 		},
 		{
 			MethodName: "MakeupSignIn",

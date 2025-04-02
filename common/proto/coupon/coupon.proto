@@ -18,6 +18,21 @@ message AddCouponResponse {
   uint64 CouponId = 1;
 }
 
+message GrantCouponUserRequest {
+  uint64 Uid = 1;
+  string CouponTitle = 2;
+  float  CouponPrice = 3;
+  float  UseMinPrice = 4;
+  uint64 AddTime = 5;
+  uint64 EndTime = 6;
+  string Type = 7;
+}
+
+message GrantCouponUserResponse {
+  bool Success = 1;
+}
+
 service Coupon {
   rpc AddCoupon(AddCouponRequest) returns (AddCouponResponse);
+  rpc GrantCouponUser(GrantCouponUserRequest) returns (GrantCouponUserResponse);
 }

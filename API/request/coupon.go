@@ -10,3 +10,12 @@ type AddCoupon struct {
 	CategoryId  uint64  `json:"categoryId" form:"categoryId" binding:"required"`
 	Type        uint64  `json:"type" form:"type" binding:"required"`
 }
+
+type GrantCouponUser struct {
+	CouponTitle string  `json:"couponTitle" form:"couponTitle" binding:"required"`
+	CouponPrice float64 `json:"couponPrice" form:"couponPrice" binding:"required"`
+	UseMinPrice float64 `json:"useMinPrice" form:"useMinPrice" binding:"required"`
+	AddTime     uint64  `json:"addTime" form:"addTime" binding:"required"`
+	EndTime     uint64  `json:"endTime" form:"endTime" binding:"required"`
+	Type        string  `json:"type" form:"type" binding:"required"`
+}

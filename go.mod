@@ -8,12 +8,14 @@ require (
 	github.com/gin-gonic/gin v1.9.1
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/google/uuid v1.6.0
+	github.com/gorilla/websocket v1.5.3
 	github.com/hashicorp/consul/api v1.31.2
 	github.com/nacos-group/nacos-sdk-go v1.1.5
 	github.com/smartwalle/alipay/v3 v3.2.25
 	github.com/spf13/viper v1.20.0
 	go.uber.org/zap v1.27.0
 	golang.org/x/crypto v0.36.0
+	golang.org/x/net v0.37.0
 	google.golang.org/grpc v1.67.3
 	google.golang.org/protobuf v1.36.6
 	gorm.io/driver/mysql v1.5.7
@@ -77,7 +79,6 @@ require (
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/arch v0.3.0 // indirect
 	golang.org/x/exp v0.0.0-20250106191152-7588d65b2ba8 // indirect
-	golang.org/x/net v0.37.0 // indirect
 	golang.org/x/sync v0.12.0 // indirect
 	golang.org/x/sys v0.31.0 // indirect
 	golang.org/x/text v0.23.0 // indirect
