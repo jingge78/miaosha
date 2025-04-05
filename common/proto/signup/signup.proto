@@ -1,7 +1,8 @@
 syntax = "proto3";
 
-package user;
-option go_package=".;user";
+package signup;
+option go_package = ".;signup";
+
 //账号登录//jj
 message LoginRequest {
   string account = 1;
@@ -24,27 +25,40 @@ message UpdateRequest{
 message UpdateResponse{
   bool success = 1;
 }
-message PasswordRecoveryRequest{
+
+message PasswordSignupRequest{
   string account = 1;
   string mobile = 2;
   string sendSms = 3;
 }
-message PasswordRecoveryResponse{
+
+message PasswordSignupResponse{
   string password = 2;
 }
-
-
-
 message SendSmsRequest{
   string mobile = 1;
 }
 message SendSmsResponse{
   bool success = 1;
 }
-service User {
+
+
+message SignupRequest{
+ string email=1;
+ string password=2;
+
+}
+
+message SignupResponse{
+  int64 result=1;
+}
+
+service Signup {
   rpc Login(LoginRequest) returns(LoginResponse);//账号登录//jj
   rpc Register(RegisterRequest) returns(RegisterResponse);
   rpc Update(UpdateRequest) returns(UpdateResponse);
   rpc SendSms(SendSmsRequest) returns(SendSmsResponse);
-  rpc PasswordRecovery(PasswordRecoveryRequest) returns(PasswordRecoveryResponse);
+  rpc PasswordRecovery(PasswordSignupRequest) returns(PasswordSignupResponse);
+  rpc Send(SignupRequest) returns(SignupResponse);
 }
+

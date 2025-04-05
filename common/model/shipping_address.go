@@ -20,6 +20,11 @@ type ShippingAddress struct {
 	IsDefault       uint64    `gorm:"column:is_default;type:bigint UNSIGNED;comment:是否为默认地址，0 表示否，1 表示是;not null;" json:"is_default"` // 是否为默认地址，0 表示否，1 表示是
 }
 
+func (a *ShippingAddress) Error() string {
+	//TODO implement me
+	panic("implement me")
+}
+
 func (a *ShippingAddress) AddShippingAddress() error {
 	return global.DB.Debug().Table("shipping_address").Create(&a).Error
 }

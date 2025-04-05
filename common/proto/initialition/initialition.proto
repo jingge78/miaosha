@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package template;
+
+option go_package = ".;initialition";
+
+
+message IntegrationRequest{
+      string integral_type=1;
+      string integral=2;
+      string bak=3;
+      string operation_time=4;
+      string create_time=5;
+}
+
+message IntegrationResponse{
+    int64 bigint=1;
+}
+
+service Integrate{
+      rpc Integration(IntegrationRequest)returns(IntegrationRequest);
+}

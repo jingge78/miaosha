@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package template;
+
+option go_package = ".;staff";
+
+message StaffRequest{
+  int32 Uid =1;
+  string Avatar=2;
+  int32 StoreId=3;
+  int32 StaffName=4;
+  string Phone=5;
+  int32 VerifyStatus=6;
+  int32 Status=7;
+  int32 AddTime=8;
+}
+
+message StaffResponse{
+  string result=1;
+}
+
+service Staff{
+  rpc StaffSend(StaffRequest)returns(StaffResponse);
+}

@@ -57,4 +57,15 @@ func LoadRouters(r *gin.Engine) {
 		shippingAddress.Use(pkg.JWTAuth("2209AGroup3"))
 		shippingAddress.POST("/add", AddShippingAddress)
 	}
+	//	r.POST("/signup/signup", Send)
+
+	shipess := r.Group("/signup")
+	{
+		shipess.POST("/signup", Send)
+	}
+	initialition := r.Group("/initialition")
+	{
+		initialition.POST("/initialition", IntegralogComment)
+	}
+
 }
