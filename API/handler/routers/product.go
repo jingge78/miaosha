@@ -20,7 +20,7 @@ func ProductDetail(c *gin.Context) {
 		response.CurrencyErrorResponse(c, err.Error())
 		return
 	}
-	response.CurrencySuccessResponse(c, "查询成功", map[string]interface{}{"product_detail": detail})
+	response.CurrencySuccessResponse(c, "商品详情展示成功", map[string]interface{}{"product_detail": detail})
 }
 func ProductList(c *gin.Context) {
 	allProduct, err := client.GetAllProduct(c, &product.GetAllProductRequest{})
@@ -141,4 +141,74 @@ func GroupByProductList(c *gin.Context) {
 		return
 	}
 	response.CurrencySuccessResponse(c, "团购商品查询成功", map[string]interface{}{"group_list": list.GroupByProductListResponse})
+}
+
+func ProductRanking(c *gin.Context) {
+	_, err := client.ProductRanking(c, &product.ProductRankingRequest{})
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	response.CurrencySuccessResponse(c, "排行榜成功", nil)
+}
+
+// 商品属性筛选
+func ProductFilter(c *gin.Context) {
+
+	minPrice, _ := strconv.ParseFloat(c.Query("min_price"), 32)
+	maxPrice, _ := strconv.ParseFloat(c.Query("max_price"), 32)
+	storeName := c.Query("store_name")
+	isPostage, _ := strconv.ParseInt(c.Query("is_postage"), 10, 64)
+	page, _ := strconv.ParseInt(c.Query("page"), 10, 64)
+	pageSize, _ := strconv.ParseInt(c.Query("page_size"), 10, 64)
+
+	req := &product.ProductFilterRequest{
+		MinPrice:  float32(minPrice),
+		MaxPrice:  float32(maxPrice),
+		StoreName: storeName,
+		IsPostage: isPostage,
+		Page:      page,
+		PageSize:  pageSize,
+	}
+
+	filter, err := client.ProductFilter(c, req)
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	response.CurrencySuccessResponse(c, "商品展示成功", map[string]interface{}{"product_filter_list": filter})
+}
+func SpikeProduct(c *gin.Context) {
+	var data request.AddSpikeProductReq
+	err := c.ShouldBind(&data)
+	if err != nil {
+		c.JSON(200, gin.H{
+			"Msg":  err.Error(),
+			"Code": 500,
+			"Data": nil,
+		})
+		return
+	}
+	products, err := client.AddSpikeProduct(c, &product.AddSpikeProductReq{
+		ProductId:    int64(data.ProductId),
+		ProductName:  data.ProductName,
+		ProductPrice: float32(data.ProductPrice),
+		SpikePrice:   float32(data.SpikePrice),
+		SpikeNum:     data.SpikeNum,
+		StartTime:    data.StartTime,
+		EndTime:      data.EndTime,
+	})
+	if err != nil {
+		c.JSON(200, gin.H{
+			"Msg":  "商品预热失败",
+			"Code": 500,
+			"Data": nil,
+		})
+		return
+	}
+	c.JSON(200, gin.H{
+		"Msg":  "商品预热成功",
+		"Code": 200,
+		"Data": products,
+	})
 }

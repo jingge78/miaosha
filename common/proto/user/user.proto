@@ -41,10 +41,61 @@ message SendSmsRequest{
 message SendSmsResponse{
   bool success = 1;
 }
+
+message SignInRequest {
+  int32 user_id = 1; //是谁签到的
+  string sign_date = 2; //自定义的签到日期（如:2025-3-28）
+}
+
+message SignInResponse {
+  string message = 1;
+  int32 points = 2; // 积分
+}
+message UserDetailRequest{
+  uint64 Uid = 1;
+}
+message UserDetailResponse{
+  string Account = 1;
+  uint64 Birthday = 2;
+  string Nickname = 3;
+  string Avatar = 4;
+  string Phone = 5;
+  string Address = 6;
+}
+
+message MakeupSignInRequest {
+  int32 user_id = 1; //是谁补签
+  string sign_date = 2; //补签日期
+}
+
+message MakeupSignInResponse {
+  bool success=1;
+  string message = 2;
+  int32 points = 3; // 积分
+}
+
+message UserImproveInformationRequest {
+  string Nickname = 1;
+  string Avatar = 2;
+  uint64 Birthday = 3;
+  string Address = 4;
+  uint64 Uid = 5;
+}
+
+message UserImproveInformationResponse {
+  bool Success= 1;
+}
+
 service User {
   rpc Login(LoginRequest) returns(LoginResponse);//账号登录//jj
   rpc Register(RegisterRequest) returns(RegisterResponse);
   rpc Update(UpdateRequest) returns(UpdateResponse);
   rpc SendSms(SendSmsRequest) returns(SendSmsResponse);
   rpc PasswordRecovery(PasswordRecoveryRequest) returns(PasswordRecoveryResponse);
+  rpc SignIn(SignInRequest) returns(SignInResponse); // 用户签到功能
+  rpc UserDetail(UserDetailRequest) returns(UserDetailResponse);
+  rpc UserImproveInformation(UserImproveInformationRequest) returns(UserImproveInformationResponse);
+
+  rpc MakeupSignIn(MakeupSignInRequest) returns(MakeupSignInResponse); // 用户补签
 }
+

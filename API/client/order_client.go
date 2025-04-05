@@ -30,3 +30,29 @@ func CreateOrder(ctx context.Context, i *order.CreateOrderReq) (*order.CreateOrd
 	}
 	return client.(*order.CreateOrderResp), err
 }
+func OrderList(ctx context.Context, i *order.OrderListReq) (*order.OrderListResp, error) {
+	client, err := OrderClient(ctx, func(ctx context.Context, client order.OrderClient) (interface{}, error) {
+		list, err := client.OrderList(ctx, i)
+		if err != nil {
+			return nil, err
+		}
+		return list, err
+	})
+	if err != nil {
+		return nil, err
+	}
+	return client.(*order.OrderListResp), err
+}
+func OrderListAll(ctx context.Context, i *order.OrderListAllReq) (*order.OrderListResp, error) {
+	client, err := OrderClient(ctx, func(ctx context.Context, client order.OrderClient) (interface{}, error) {
+		list, err := client.OrderListAll(ctx, i)
+		if err != nil {
+			return nil, err
+		}
+		return list, err
+	})
+	if err != nil {
+		return nil, err
+	}
+	return client.(*order.OrderListResp), err
+}

@@ -22,6 +22,35 @@ message CreateOrderResp {
   string result = 1;
 }
 
+message OrderListReq {
+  string RealName = 1;
+}
+
+message OrderListResp {
+  repeated OrderInfo List = 1;
+}
+
+message OrderInfo{
+  string Title = 2;
+  int64 Uid = 3;
+  string RealName = 4;
+  string UserPhone = 5;
+  string UserAddress = 6;
+  string CartId = 7;
+  float FreightPrice = 8;
+  int64 TotalNum = 9;
+  float TotalPrice = 10;
+  float TotalPostage = 11;
+  float PayPrice = 12;
+  float PayPostage = 13;
+}
+message OrderListAllReq {
+}
+
+
+
 service Order {
   rpc CreateOrder(CreateOrderReq) returns (CreateOrderResp);
+  rpc OrderList(OrderListReq) returns (OrderListResp);
+  rpc OrderListAll(OrderListAllReq) returns (OrderListResp);
 }

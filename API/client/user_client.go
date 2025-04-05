@@ -43,9 +43,9 @@ func UserRegister(ctx context.Context, in *user.RegisterRequest) (*user.Register
 	}
 	return client.(*user.RegisterResponse), nil
 }
-func Update(ctx context.Context, i *user.UpdateRequest) (*user.UpdateResponse, error) {
+func Update(ctx context.Context, in *user.UpdateRequest) (*user.UpdateResponse, error) {
 	client, err := UserClient(ctx, func(ctx context.Context, client user.UserClient) (interface{}, error) {
-		login, err := client.Update(ctx, i)
+		login, err := client.Update(ctx, in)
 		if err != nil {
 			return nil, err
 		}
@@ -57,9 +57,9 @@ func Update(ctx context.Context, i *user.UpdateRequest) (*user.UpdateResponse, e
 	return client.(*user.UpdateResponse), nil
 }
 
-func SendSms(ctx context.Context, i *user.SendSmsRequest) (*user.SendSmsResponse, error) {
+func SendSms(ctx context.Context, in *user.SendSmsRequest) (*user.SendSmsResponse, error) {
 	client, err := UserClient(ctx, func(ctx context.Context, client user.UserClient) (interface{}, error) {
-		login, err := client.SendSms(ctx, i)
+		login, err := client.SendSms(ctx, in)
 		if err != nil {
 			return nil, err
 		}
@@ -71,16 +71,72 @@ func SendSms(ctx context.Context, i *user.SendSmsRequest) (*user.SendSmsResponse
 	return client.(*user.SendSmsResponse), nil
 }
 
-func PasswordRecovery(ctx context.Context, i *user.PasswordRecoveryRequest) (*user.PasswordRecoveryResponse, error) {
+func PasswordRecovery(ctx context.Context, in *user.PasswordRecoveryRequest) (*user.PasswordRecoveryResponse, error) {
 	client, err := UserClient(ctx, func(ctx context.Context, client user.UserClient) (interface{}, error) {
-		login, err := client.PasswordRecovery(ctx, i)
+		pass, err := client.PasswordRecovery(ctx, in)
 		if err != nil {
 			return nil, err
 		}
-		return login, nil
+		return pass, nil
 	})
 	if err != nil {
 		return nil, err
 	}
 	return client.(*user.PasswordRecoveryResponse), nil
+}
+
+func UserSignIn(ctx context.Context, in *user.SignInRequest) (*user.SignInResponse, error) {
+	client, err := UserClient(ctx, func(ctx context.Context, client user.UserClient) (interface{}, error) {
+		pass, err := client.SignIn(ctx, in)
+		if err != nil {
+			return nil, err
+		}
+		return pass, nil
+	})
+	if err != nil {
+		return nil, err
+	}
+	return client.(*user.SignInResponse), nil
+}
+
+func UserDetail(ctx context.Context, in *user.UserDetailRequest) (*user.UserDetailResponse, error) {
+	client, err := UserClient(ctx, func(ctx context.Context, client user.UserClient) (interface{}, error) {
+		detail, err := client.UserDetail(ctx, in)
+		if err != nil {
+			return nil, err
+		}
+		return detail, nil
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return client.(*user.UserDetailResponse), nil
+}
+func MakeupSignIn(ctx context.Context, in *user.MakeupSignInRequest) (*user.MakeupSignInResponse, error) {
+	client, err := UserClient(ctx, func(ctx context.Context, client user.UserClient) (interface{}, error) {
+		pass, err := client.MakeupSignIn(ctx, in)
+		if err != nil {
+			return nil, err
+		}
+		return pass, nil
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return client.(*user.MakeupSignInResponse), nil
+}
+func UserImproveInformation(ctx context.Context, in *user.UserImproveInformationRequest) (*user.UserImproveInformationResponse, error) {
+	client, err := UserClient(ctx, func(ctx context.Context, client user.UserClient) (interface{}, error) {
+		improve, err := client.UserImproveInformation(ctx, in)
+		if err != nil {
+			return nil, err
+		}
+		return improve, nil
+	})
+	if err != nil {
+		return nil, err
+	}
+	return client.(*user.UserImproveInformationResponse), nil
 }

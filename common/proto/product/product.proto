@@ -149,6 +149,48 @@ message GroupByProductListRequest{}
 message GroupByProductListResponse{
   repeated GroupByProduct GroupByProductListResponse = 1;
 }
+
+message ProductRankingRequest{}
+message ProductRankingResponse{
+  string result = 1;
+}
+
+
+message ProductFilterRequest{
+  float min_price=1;
+  float max_price=2;
+  string store_name=3;//商品名称
+  int64  is_postage=4; //是否包邮
+  int64 page=5;
+  int64 page_size=6;
+}
+
+message Pagination {
+  int32 page = 1;
+  int32 page_size = 2;
+  int32 total = 3;
+  int32 totalPage=4;
+}
+
+message ProductFilterResponse{
+  repeated ProductMsg products_list = 1;
+  Pagination pagination = 2;
+}
+
+message AddSpikeProductReq{
+  int64 ProductId = 1;
+  string ProductName = 2;
+  float ProductPrice = 3;
+  float SpikePrice = 4;
+  int64 SpikeNum = 5;
+  string StartTime = 6;
+  string EndTime = 7;
+}
+
+message AddSpikeProductResp {
+  string Success = 1;
+}
+
 service Product {
   rpc ProductDetail(ProductDetailRequest) returns (ProductDetailResponse);
   rpc EsAddProduct(EsAddProductRequest) returns (EsAddProductResponse);
@@ -161,4 +203,9 @@ service Product {
   rpc WebsiteProductList(WebsiteProductListRequest)returns(WebsiteProductListResponse);//网站商品展示(liBang)
   rpc ProductSort(ProductSortRequest)returns(ProductSortResponse);//商品排序(liBang)
   rpc GroupByProductList(GroupByProductListRequest)returns(GroupByProductListResponse);
+  rpc ProductRanking(ProductRankingRequest)returns(ProductRankingResponse);
+
+  rpc ProductFilter(ProductFilterRequest) returns (ProductFilterResponse);//商品属性筛选
+  rpc AddSpikeProduct(AddSpikeProductReq) returns (AddSpikeProductResp);
+
 }

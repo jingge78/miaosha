@@ -34,9 +34,33 @@ func OrderCreate(c *gin.Context) {
 		response.CurrencyErrorResponse(c, err.Error())
 		return
 	}
-	c.JSON(200, gin.H{
-		"Msg":  "添加成功",
-		"Code": 200,
-		"Data": orderClient,
-	})
+	response.CurrencySuccessResponse(c, "添加成功", map[string]interface{}{"list": orderClient})
+}
+func OrderList(c *gin.Context) {
+	var data request.OrderList
+	err := c.ShouldBind(&data)
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	list, err := client.OrderList(c, &order.OrderListReq{RealName: data.RealName})
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	response.CurrencySuccessResponse(c, "展示成功", map[string]interface{}{"list": list})
+}
+func OrderListAll(c *gin.Context) {
+	var data request.OrderListAll
+	err := c.ShouldBind(&data)
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	list, err := client.OrderListAll(c, &order.OrderListAllReq{})
+	if err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	response.CurrencySuccessResponse(c, "展示成功", map[string]interface{}{"list": list})
 }

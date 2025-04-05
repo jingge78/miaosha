@@ -43,10 +43,12 @@ func InitConfig() {
 	viper.SetConfigFile("./common/config/dev.yaml")
 	err := viper.ReadInConfig()
 	if err != nil {
+		panic("配置文件读取失败")
+	}
+	err = viper.Unmarshal(&global.ConfigData)
+	if err != nil {
 		panic(err)
 	}
-	viper.Unmarshal(&global.ConfigData)
-	fmt.Println("配置参数", global.ConfigData)
 }
 func InitDB() {
 	var err error
@@ -55,26 +57,18 @@ func InitDB() {
 	global.DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Info),
 	})
-
 	sqlDB, err := global.DB.DB()
-	// SetMaxIdleConns sets the maximum number of connections in the idle connection pool.
 	sqlDB.SetMaxIdleConns(10)
-	// SetMaxOpenConns sets the maximum number of open connections to the database.
 	sqlDB.SetMaxOpenConns(100)
-	// SetConnMaxLifetime sets the maximum amount of time a connection may be reused.
 	sqlDB.SetConnMaxLifetime(time.Hour)
-
 	if err != nil {
-		fmt.Println("mysql连接失败")
-		return
+		panic(err)
 	}
-	fmt.Println("mysql连接成功")
 	err = global.DB.AutoMigrate()
 	if err != nil {
-		fmt.Println("数据迁移失败")
-		return
+		panic(err)
 	}
-	fmt.Println("数据迁移成功")
+
 }
 func InitRdb() {
 	config := global.NaCos.Redis
@@ -89,7 +83,6 @@ func InitRdb() {
 		panic(err)
 	}
 	fmt.Println(pong, err)
-	log.Println("Redis connect successful!!")
 }
 
 func InitEs() {
@@ -104,14 +97,10 @@ func InitEs() {
 	if err != nil {
 		panic(err)
 	}
-	log.Println("elasticsearch connect successful!!")
 }
 
 func InitNaCos() {
 	Conf := global.ConfigData.NaCos
-	//create clientConfig
-	os.MkdirAll("./tmp/nacos/log", 0777)
-	os.MkdirAll("./tmp/nacos/cache", 0777)
 	clientConfig := constant.ClientConfig{
 		NamespaceId:         Conf.NameSpace,
 		TimeoutMs:           5000,
@@ -144,12 +133,11 @@ func InitNaCos() {
 	content, err := configClient.GetConfig(vo.ConfigParam{
 		DataId: Conf.DataId,
 		Group:  Conf.Group})
+	//fmt.Println(content)
 	err = json.Unmarshal([]byte(content), &global.NaCos)
 	if err != nil {
 		log.Println("配置文件解析失败")
 	}
-	fmt.Println(content)
-	fmt.Println(global.NaCos.Mysql)
 }
 
 func InitConsul() {

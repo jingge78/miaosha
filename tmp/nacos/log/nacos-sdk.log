@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2025-03-28T20:37:51.413+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
 2025-03-28T20:38:22.251+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
 2025-03-28T20:48:44.266+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
@@ -19,3 +20,80 @@
 2025-03-31T20:37:00.930+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
 2025-04-01T19:17:01.230+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
 2025-04-01T21:27:49.275+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+=======
+2025-03-28T14:13:06.132+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T14:23:17.065+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T14:30:12.175+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T14:35:32.008+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T14:39:35.090+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T14:44:55.121+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T14:45:48.287+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T14:50:47.720+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T14:52:56.407+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T14:54:28.037+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T14:57:39.195+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T14:58:10.645+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T14:58:59.758+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T15:39:29.227+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T15:53:20.591+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T15:57:01.364+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T15:58:13.052+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T15:58:52.854+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T16:00:24.535+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T16:02:36.682+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T16:04:13.202+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T16:06:45.903+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T16:07:30.282+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T16:08:05.666+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T16:30:12.854+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T16:39:18.360+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T16:45:13.809+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T16:53:14.055+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T16:59:44.490+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T15:05:07.984+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T15:05:53.129+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T15:27:53.729+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T15:32:12.484+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T16:23:59.444+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T16:29:54.689+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T17:04:48.418+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T17:05:58.777+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T17:08:33.717+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T17:09:08.192+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T17:09:45.358+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T17:11:03.881+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T17:12:15.738+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T17:14:43.718+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-28T17:15:05.312+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-29T12:18:38.421+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-29T12:35:27.584+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-30T19:08:26.654+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-30T19:10:08.557+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-30T19:18:13.228+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-30T19:28:01.164+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-30T19:48:08.961+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-30T19:50:32.849+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-30T19:51:21.059+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-30T19:53:39.288+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-30T19:57:11.772+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+>>>>>>> gqr
+<<<<<<< HEAD
+2025-03-31T10:26:41.144+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-31T20:49:36.089+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-31T20:57:09.317+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-31T20:59:07.232+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-31T21:01:22.637+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-31T21:06:30.113+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-31T21:09:25.530+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-31T21:12:28.065+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-04-02T21:27:41.705+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+=======
+2025-03-31T10:34:03.262+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-31T19:39:20.708+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-03-31T19:46:58.342+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-04-01T10:26:55.188+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-04-01T16:57:58.205+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+2025-04-02T10:34:59.096+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>
+>>>>>>> 9258535117f5dcf1aaec6ce53217484626a28464
+>>>>>>> e72f7e9d2bf23e0bc4df297104c0f7e7c61937d9
+2025-04-05T20:56:06.062+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<./tmp/nacos/log>   cacheDir:<./tmp/nacos/cache>

@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package product_reply;
+option go_package = ".;product_reply";
+
+message ProductReplyListRequest {
+  uint64 ProductId = 1;
+}
+
+message ProductReplyListResponse {
+  repeated ProductReplyList List = 1;
+}
+
+message ProductReplyList {
+  uint64 ReplyId = 1;
+  uint64 Uid = 2;
+  uint64 Oid = 3;
+  uint64 Unique = 4;
+  uint64 ProductId = 5;
+  string ReplyType = 6;
+  uint64 ProductScore = 7;
+  uint64 ServiceScore = 8;
+  string Comment = 9;
+  string Pics = 10;
+  string AddTime = 11;
+  string MerchantReplyContent = 12;
+  string MerchantReplyTime = 13;
+  string Nickname = 14;
+  string Avatar = 15;
+
+}
+
+service ProductReply {
+  rpc ProductReplyList(ProductReplyListRequest) returns (ProductReplyListResponse);
+}

@@ -69,11 +69,11 @@
 
 github:
 
-https://github.com/guyan0319/go-vue-admin
+https://github.com/jingge78/miaosha/tree/main
 
 1、clone项目源代码
 
-`git clone https://github.com/guyan0319/go-vue-admin`
+`git clone https://github.com/jingge78/miaosha/tree/main`
 
 2、新建数据库名（如：seckill_project_db） 、导入目录 ./common/config/dev.yaml
 
@@ -89,20 +89,20 @@ https://github.com/guyan0319/go-vue-admin
     
     # Mysql 配置示例
     mysql:
-    user: "root"
-    password: "mysql_nNP5wS"
-    host: "117.27.231.169"
-    port: "3306"
+    user: ""
+    password: ""
+    host: ""
+    port: ""
     database: "seckill_project_db"
     
     # Redis 配置示例
     redis:
-    host: "117.27.231.169:6379"
-    password: "redis_ZGcTkz"
+    host: ""
+    password: ""
     
     # Elasticsearch 配置示例
     es:
-    address: "http://117.27.231.169:9200"
+    address: ""
 ```
 
 
@@ -119,28 +119,5 @@ https://github.com/guyan0319/go-vue-admin
 - 日志：使用 [zap](https://github.com/uber-go/zap) 实现日志记录。
 
 
-
-## 4. 配置信息
-
-- 服务配置详情
-- MySQL 数据库
-- User: root
-- Password: mysql_nNP5wS
-- Host: 117.27.231.169
-- Port: 3306
-- Database: seckill_project_db
-- Redis 数据库
-- Addr: 117.27.231.169:6379
-- Password: redis_ZGcTkz
-- DB: 0
-- Elasticsearch
-- addr: http://14.103.150.223:9200
-- GRPC 服务
-- host: 127.0.0.1
-- port: 8081
-- Consul 服务
-- name: service
-- host: 127.0.0.1
-- port: 8500
 
 

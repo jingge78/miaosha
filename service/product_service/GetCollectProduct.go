@@ -8,7 +8,7 @@ import (
 )
 
 func (p *ServerProduct) GetCollectProduct(ctx context.Context, req *product.GetCollectProductRequest) (*product.GetCollectProductResponse, error) {
-	var collectProduct model.EbStoreProductRelation
+	var collectProduct model.StoreProductRelation
 	getCollectProduct, err := collectProduct.GetCollectProduct(int(req.UserId))
 	if err != nil {
 		return nil, err
