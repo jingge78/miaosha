@@ -15,6 +15,25 @@ message AddStoreCartResponse {
   uint64 StoreCartId = 1;
 }
 
+message DeleteCartRequest {
+  uint64 Uid = 1;
+  uint64 ProductId = 2;
+}
+
+message DeleteCartResponse {
+  bool Success = 1;
+}
+
+message ClearCartRequest {
+  uint64 Uid = 1;
+}
+
+message ClearCartResponse {
+  bool Success = 1;
+}
+
 service StoreCart {
   rpc AddStoreCart(AddStoreCartRequest) returns (AddStoreCartResponse);
+  rpc DeleteCart(DeleteCartRequest) returns (DeleteCartResponse);
+  rpc ClearCart(ClearCartRequest) returns (ClearCartResponse);
 }

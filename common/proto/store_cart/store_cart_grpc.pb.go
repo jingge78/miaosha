@@ -20,6 +20,8 @@ const _ = grpc.SupportPackageIsVersion8
 
 const (
 	StoreCart_AddStoreCart_FullMethodName = "/store_cart.StoreCart/AddStoreCart"
+	StoreCart_DeleteCart_FullMethodName   = "/store_cart.StoreCart/DeleteCart"
+	StoreCart_ClearCart_FullMethodName    = "/store_cart.StoreCart/ClearCart"
 )
 
 // StoreCartClient is the client API for StoreCart service.
@@ -27,6 +29,8 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type StoreCartClient interface {
 	AddStoreCart(ctx context.Context, in *AddStoreCartRequest, opts ...grpc.CallOption) (*AddStoreCartResponse, error)
+	DeleteCart(ctx context.Context, in *DeleteCartRequest, opts ...grpc.CallOption) (*DeleteCartResponse, error)
+	ClearCart(ctx context.Context, in *ClearCartRequest, opts ...grpc.CallOption) (*ClearCartResponse, error)
 }
 
 type storeCartClient struct {
@@ -47,11 +51,33 @@ func (c *storeCartClient) AddStoreCart(ctx context.Context, in *AddStoreCartRequ
 	return out, nil
 }
 
+func (c *storeCartClient) DeleteCart(ctx context.Context, in *DeleteCartRequest, opts ...grpc.CallOption) (*DeleteCartResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteCartResponse)
+	err := c.cc.Invoke(ctx, StoreCart_DeleteCart_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *storeCartClient) ClearCart(ctx context.Context, in *ClearCartRequest, opts ...grpc.CallOption) (*ClearCartResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ClearCartResponse)
+	err := c.cc.Invoke(ctx, StoreCart_ClearCart_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // StoreCartServer is the server API for StoreCart service.
 // All implementations must embed UnimplementedStoreCartServer
 // for forward compatibility
 type StoreCartServer interface {
 	AddStoreCart(context.Context, *AddStoreCartRequest) (*AddStoreCartResponse, error)
+	DeleteCart(context.Context, *DeleteCartRequest) (*DeleteCartResponse, error)
+	ClearCart(context.Context, *ClearCartRequest) (*ClearCartResponse, error)
 	mustEmbedUnimplementedStoreCartServer()
 }
 
@@ -61,6 +87,12 @@ type UnimplementedStoreCartServer struct {
 
 func (UnimplementedStoreCartServer) AddStoreCart(context.Context, *AddStoreCartRequest) (*AddStoreCartResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddStoreCart not implemented")
+}
+func (UnimplementedStoreCartServer) DeleteCart(context.Context, *DeleteCartRequest) (*DeleteCartResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteCart not implemented")
+}
+func (UnimplementedStoreCartServer) ClearCart(context.Context, *ClearCartRequest) (*ClearCartResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ClearCart not implemented")
 }
 func (UnimplementedStoreCartServer) mustEmbedUnimplementedStoreCartServer() {}
 
@@ -93,6 +125,42 @@ func _StoreCart_AddStoreCart_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _StoreCart_DeleteCart_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteCartRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StoreCartServer).DeleteCart(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: StoreCart_DeleteCart_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StoreCartServer).DeleteCart(ctx, req.(*DeleteCartRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _StoreCart_ClearCart_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ClearCartRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StoreCartServer).ClearCart(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: StoreCart_ClearCart_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StoreCartServer).ClearCart(ctx, req.(*ClearCartRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // StoreCart_ServiceDesc is the grpc.ServiceDesc for StoreCart service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -103,6 +171,14 @@ var StoreCart_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AddStoreCart",
 			Handler:    _StoreCart_AddStoreCart_Handler,
+		},
+		{
+			MethodName: "DeleteCart",
+			Handler:    _StoreCart_DeleteCart_Handler,
+		},
+		{
+			MethodName: "ClearCart",
+			Handler:    _StoreCart_ClearCart_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
