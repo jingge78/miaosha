@@ -32,3 +32,11 @@ func (c *StoreCart) UpdateStoreCartProductNum(productId, num uint64) error {
 func (c *StoreCart) AddStoreCart() error {
 	return global.DB.Debug().Table("store_cart").Create(&c).Error
 }
+
+func (c *StoreCart) DeleteCart(uid, productId uint64) error {
+	return global.DB.Debug().Table("store_cart").Where("uid = ? and product_id = ?", uid, productId).Delete(&c).Error
+}
+
+func (c *StoreCart) ClearCart(uid uint64) interface{} {
+	return global.DB.Debug().Table("store_cart").Where("uid = ?", uid).Delete(&c).Error
+}

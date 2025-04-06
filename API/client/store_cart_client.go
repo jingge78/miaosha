@@ -30,3 +30,31 @@ func AddStoreCart(ctx context.Context, in *store_cart.AddStoreCartRequest) (*sto
 	}
 	return client.(*store_cart.AddStoreCartResponse), nil
 }
+
+func DeleteCart(ctx context.Context, in *store_cart.DeleteCartRequest) (*store_cart.DeleteCartResponse, error) {
+	client, err := StoreCartClient(ctx, func(ctx context.Context, client store_cart.StoreCartClient) (interface{}, error) {
+		del, err := client.DeleteCart(ctx, in)
+		if err != nil {
+			return nil, err
+		}
+		return del, nil
+	})
+	if err != nil {
+		return nil, err
+	}
+	return client.(*store_cart.DeleteCartResponse), nil
+}
+
+func ClearCart(ctx context.Context, in *store_cart.ClearCartRequest) (*store_cart.ClearCartResponse, error) {
+	client, err := StoreCartClient(ctx, func(ctx context.Context, client store_cart.StoreCartClient) (interface{}, error) {
+		clears, err := client.ClearCart(ctx, in)
+		if err != nil {
+			return nil, err
+		}
+		return clears, nil
+	})
+	if err != nil {
+		return nil, err
+	}
+	return client.(*store_cart.ClearCartResponse), nil
+}

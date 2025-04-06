@@ -28,3 +28,33 @@ func AddStoreCart(c *gin.Context) {
 	}
 	response.CurrencySuccessResponse(c, "添加购物车成功", map[string]interface{}{"store_cart": add})
 }
+
+func DeleteCart(c *gin.Context) {
+	var data request.DeleteCart
+	if err := c.ShouldBind(&data); err != nil {
+		response.CurrencyErrorResponse(c, err.Error())
+		return
+	}
+	Uid := c.GetUint("userId")
+	add, err := client.DeleteCart(c, &store_cart.DeleteCartRequest{
+		Uid:       uint64(Uid),
+		ProductId: data.ProductId,
+	})
+	if err != nil {
+		response.CurrencyErrorResponse(c, "删除购物车商品失败")
+		return
+	}
+	response.CurrencySuccessResponse(c, "删除购物车商品成功", map[string]interface{}{"store_cart": add})
+}
+
+func ClearCart(c *gin.Context) {
+	Uid := c.GetUint("userId")
+	add, err := client.ClearCart(c, &store_cart.ClearCartRequest{
+		Uid: uint64(Uid),
+	})
+	if err != nil {
+		response.CurrencyErrorResponse(c, "清空购物车失败")
+		return
+	}
+	response.CurrencySuccessResponse(c, "清空购物车成功", map[string]interface{}{"store_cart": add})
+}

@@ -6,3 +6,7 @@ type AddStoreCart struct {
 	ProductAttrUnique string `form:"productAttrUnique" json:"productAttrUnique" binding:"required"`
 	CartNum           uint64 `form:"cartNum" json:"cartNum" binding:"required"`
 }
+
+type DeleteCart struct {
+	ProductId uint64 `form:"productId" json:"productId" binding:"required"`
+}
